@@ -1,0 +1,28 @@
+{
+  "name": "cssconfco-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cssconfco/cssconfco-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cssconfco/cssconfco-website/issues"
+  },
+  "homepage": "https://github.com/cssconfco/cssconfco-website#readme",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
