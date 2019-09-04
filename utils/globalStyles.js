@@ -60,7 +60,7 @@ const globalStyles = css.global`
     margin: 0;
     padding: 0;
     height: ${theme.minHeight.full};
-    background: ${theme.colors.gray[200]};
+    background: ${theme.colors.white};
     font-size: ${theme.fontSize.base.mobile};
     ${copyStyles}
   }

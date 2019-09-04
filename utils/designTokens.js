@@ -270,7 +270,7 @@ export const theme = {
 
 // decisions
 export const tokens = {
-  // Fonts
+  // fonts
   title: {
     fontFamily: theme.fontFamily.sans,
     fontWeight: theme.fontWeight.bold,
@@ -320,13 +320,11 @@ export const tokens = {
     },
     color: theme.colors.brand.tuna
   },
-
-  // Layout
+  // layout
   container: {
     maxWidth: theme.screens.xl
   },
-
-  // Utils
+  // utils
   queries: {
     screens: {
       xsmall: `max-width: ${theme.screens.max.xs}`,
