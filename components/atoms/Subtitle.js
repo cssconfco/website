@@ -8,7 +8,7 @@ import { subtitleStyles } from "../../utils/globalStyles";
 const Subtitle = ({
   children,
   size,
-  isAlt,
+  color,
   isInverted,
   isInline,
   isCentered
@@ -18,10 +18,10 @@ const Subtitle = ({
       <h2
         className={classNames("subtitle", {
           [`size-${size}`]: size,
+          [`alt-${color}`]: color,
           "is-inverted": isInverted,
           "is-inline": isInline,
           "is-centered": isCentered,
-          "is-alt-color": isAlt
         })}
       >
         {children}
@@ -45,9 +45,18 @@ const Subtitle = ({
           color: ${theme.colors.white} !important;
         }
 
-        .is-alt-color {
-          color: ${tokens.subtitle.color.alt} !important;
+        .alt-blue {
+          color: ${tokens.subtitle.color.alt.blue} !important;
         }
+
+        .alt-red {
+          color: ${tokens.subtitle.color.alt.red} !important;
+        }
+
+        .alt-yellow {
+          color: ${tokens.subtitle.color.alt.yellow} !important;
+        }
+
 
         .size-1 {
           font-size: ${tokens.subtitle.fontSize[1]};
@@ -62,12 +71,13 @@ const Subtitle = ({
 };
 
 Subtitle.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.string.isRequired,
   isInverted: PropTypes.bool,
   isCentered: PropTypes.bool,
   isAlt: PropTypes.bool,
   isInline: PropTypes.bool,
-  size: PropTypes.number
+  size: PropTypes.oneOf([1, 2]),
+  color: PropTypes.oneOf(['blue', 'red', 'yellow'])
 };
 
 Subtitle.defaultProps = {

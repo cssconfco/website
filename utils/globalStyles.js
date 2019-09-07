@@ -1,7 +1,7 @@
-import css from "styled-jsx/css";
+import css from 'styled-jsx/css'
 
-import { theme, tokens } from "./designTokens";
-import fontFaces from "./fontFaces";
+import { theme, tokens } from './designTokens'
+import fontFaces from './fontFaces'
 
 export const titleStyles = `
   font-family: ${tokens.title.fontFamily};
@@ -9,22 +9,22 @@ export const titleStyles = `
   line-height: ${theme.lineHeight.tight};
   text-transform: ${tokens.title.textTransform};
   color: ${tokens.title.color};
-`;
+`
 
 export const subtitleStyles = `
   font-family: ${tokens.subtitle.fontFamily};
   font-weight: ${tokens.subtitle.fontWeight};
   line-height: ${theme.lineHeight.tight};
   text-transform: ${tokens.subtitle.textTransform};
-  color: ${tokens.subtitle.color};
-`;
+  color: ${tokens.subtitle.color.default};
+`
 
 export const copyStyles = `
   font-family: ${tokens.copy.fontFamily};
   font-weight: ${tokens.copy.fontWeight.normal};
   line-height: ${theme.lineHeight.normal};
   color: ${tokens.copy.color};
-`;
+`
 
 const globalStyles = css.global`
   ${fontFaces}
@@ -71,6 +71,6 @@ const globalStyles = css.global`
       font-size: ${theme.fontSize.base.desktop};
     }
   }
-`;
+`
 
-export default globalStyles;
+export default globalStyles

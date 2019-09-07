@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../atoms/Logo'
+import Subtitle from '../atoms/Subtitle'
 
 import { theme, tokens } from '../../utils/designTokens'
 
@@ -10,11 +11,26 @@ const Hero = () => {
         <div className="logo">
           <Logo />
         </div>
-        <div className="date-tribal tribal">
-          <div className="lovers"></div>
+        <div className="tribal-container">
+          <div className="date-tribal tribal">
+            <div className="lovers"></div>
+          </div>
+          <Subtitle size={1} color="blue">
+            March 20/21
+          </Subtitle>
         </div>
-        <div className="city-tribal tribal"></div>
-        <div className="place-tribal tribal"></div>
+        <div className="tribal-container tribal-container-reverse">
+          <div className="city-tribal tribal"></div>
+          <Subtitle size={1} color="red">
+            Medellín
+          </Subtitle>
+        </div>
+        <div className="tribal-container">
+          <div className="place-tribal tribal"></div>
+          <Subtitle size={1} color="yellow">
+            Ruta N
+          </Subtitle>
+        </div>
       </div>
       <style jsx>{`
         .hero {
@@ -43,13 +59,22 @@ const Hero = () => {
           margin-top: 80px;
         }
 
-        .tribal {
+        .tribal-container {
+          display: inline-flex;
+          flex-direction: column;
           margin: 20px;
           width: 100%;
           max-width: 500px;
+        }
+
+        .tribal-container-reverse {
+          flex-direction: column-reverse;
+        }
+
+        .tribal {
+          width: 100%;
+          max-width: 500px;
           height: 500px;
-          filter: brightness(200%);
-          opacity: 0.5;
         }
 
         .date-tribal {

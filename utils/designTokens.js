@@ -276,7 +276,7 @@ export const tokens = {
     fontWeight: theme.fontWeight.bold,
     textTransform: 'uppercase',
     fontSize: {
-      "4": theme.fontSize.xs,
+      "4": theme.fontSize.sm,
       "3": theme.fontSize.lg,
       "2": theme.fontSize["5xl"],
       "1": theme.fontSize["6xl"]
@@ -284,14 +284,21 @@ export const tokens = {
     color: theme.colors.brand.tuna
   },
   subtitle: {
-    fontFamily: theme.fontFamily.sans,
-    fontWeight: theme.fontWeight.bold,
-    textTransform: 'none',
+    fontFamily: theme.fontFamily.serif,
+    fontWeight: theme.fontWeight.normal,
+    textTransform: 'upppercase',
     fontSize: {
-      "2": theme.fontSize.xs,
-      "1": theme.fontSize.lg
+      "2": theme.fontSize.sm,
+      "1": theme.fontSize['4xl']
     },
-    color: theme.colors.brand.tuna
+    color: {
+      default: theme.colors.brand.tuna,
+      alt: {
+        blue: theme.colors.brand.bayofmany,
+        red: theme.colors.brand.cinnabar,
+        yellow: theme.colors.brand.koromiko
+      }
+    }
   },
   label: {
     fontFamily: theme.fontFamily.sans,
