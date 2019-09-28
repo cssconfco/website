@@ -327,7 +327,8 @@ export const decisions = {
   },
   // layout
   container: {
-    maxWidth: choices.screens.xl
+    maxWidth: choices.screens.xl,
+    padding: choices.spacing[8]
   },
   // utils
   queries: {

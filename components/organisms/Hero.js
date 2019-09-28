@@ -37,7 +37,7 @@ const Hero = () => {
       <style jsx>{`
         .hero {
           position: relative;
-          padding: 100px 20px 40px;
+          padding: 100px ${decisions.container.padding} 40px;
         }
 
         .hero :global(.logo) {
@@ -57,11 +57,14 @@ const Hero = () => {
 
         .lovers {
           display: none;
-          background: url('/static/images/css-lovers-text.svg') no-repeat;
+          background-image: url('/static/images/css-lovers-text.svg');
+          background-position: center center;
+          background-repeat: no-repeat;
           background-size: contain;
-          width: 350px;
-          height: 350px;
-          margin-top: 80px;
+          width: 100%;
+          height: 100%;
+          max-height: 300px;
+          margin: 80px 50px;
         }
 
         .tribal-container {
@@ -98,18 +101,21 @@ const Hero = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-          background: url('/static/images/date-tribal-vector.svg') center center
-            no-repeat;
+          background-image: url('/static/images/date-tribal-vector.svg');
+          background-position: center center;
+          background-repeat: no-repeat;
         }
 
         .city-tribal {
-          background: url('/static/images/medellin-tribal-vector.svg') center
-            center no-repeat;
+          background-image: url('/static/images/medellin-tribal-vector.svg');
+          background-position: center center;
+          background-repeat: no-repeat;
         }
 
         .place-tribal {
-          background: url('/static/images/rutan-tribal-vector.svg') center
-            center no-repeat;
+          background-image: url('/static/images/rutan-tribal-vector.svg');
+          background-position: center center;
+          background-repeat: no-repeat;
         }
       `}</style>
       <style jsx>{`
@@ -121,6 +127,7 @@ const Hero = () => {
           .hero :global(.logo) {
             top: -30px;
             left: -30px;
+            margin-left: ${decisions.container.padding};
             right: auto;
           }
 
@@ -139,11 +146,7 @@ const Hero = () => {
             top: auto;
             left: auto;
             transform: translate(0, 0);
-            white-space: nowrap;
-          }
-
-          .tribal {
-            background-size: contain;
+            white-space: normal;
           }
 
           .lovers {

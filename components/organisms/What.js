@@ -24,7 +24,7 @@ const What = () => {
         .what {
           position: relative;
           background: ${choices.colors.brand.dawnpink};
-          padding: 100px 20px;
+          padding: 100px ${decisions.container.padding};
           overflow: hidden;
         }
 
@@ -32,20 +32,22 @@ const What = () => {
         .what :global(.paragraph) {
           position: relative;
           z-index: 1;
-		}
-		
-		.what :global(.heading) {
+        }
+
+        .what :global(.heading) {
           margin-bottom: 20px;
         }
 
         .monkey {
           position: absolute;
-          background: url('/static/images/face-tribal-vector.svg') no-repeat;
+          display: inline-block;
+          background: url('/static/images/face-tribal-vector.svg') center center
+            no-repeat;
           background-size: contain;
           top: 0;
-          right: -50%;
-          width: 400px;
-          height: 400px;
+          right: -320px;
+          width: 600px;
+          height: 600px;
           opacity: 0.35;
         }
       `}</style>
@@ -58,6 +60,8 @@ const What = () => {
           .monkey {
             top: -180px;
             right: 100px;
+            width: 400px;
+            height: 400px;
             opacity: 1;
           }
         }
