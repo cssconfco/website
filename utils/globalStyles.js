@@ -1,29 +1,29 @@
 import css from 'styled-jsx/css'
 
-import { theme, tokens } from './designTokens'
+import { choices, decisions } from './designTokens'
 import fontFaces from './fontFaces'
 
 export const titleStyles = `
-  font-family: ${tokens.title.fontFamily};
-  font-weight: ${tokens.title.fontWeight};
-  line-height: ${theme.lineHeight.tight};
-  text-transform: ${tokens.title.textTransform};
-  color: ${tokens.title.color};
+  font-family: ${decisions.title.fontFamily};
+  font-weight: ${decisions.title.fontWeight};
+  line-height: ${choices.lineHeight.tight};
+  text-transform: ${decisions.title.textTransform};
+  color: ${decisions.title.color};
 `
 
 export const subtitleStyles = `
-  font-family: ${tokens.subtitle.fontFamily};
-  font-weight: ${tokens.subtitle.fontWeight};
-  line-height: ${theme.lineHeight.tight};
-  text-transform: ${tokens.subtitle.textTransform};
-  color: ${tokens.subtitle.color.default};
+  font-family: ${decisions.subtitle.fontFamily};
+  font-weight: ${decisions.subtitle.fontWeight};
+  line-height: ${choices.lineHeight.tight};
+  text-transform: ${decisions.subtitle.textTransform};
+  color: ${decisions.subtitle.color.default};
 `
 
-export const copyStyles = `
-  font-family: ${tokens.copy.fontFamily};
-  font-weight: ${tokens.copy.fontWeight.normal};
-  line-height: ${theme.lineHeight.normal};
-  color: ${tokens.copy.color};
+export const paragraphStyles = `
+  font-family: ${decisions.paragraph.fontFamily};
+  font-weight: ${decisions.paragraph.fontWeight.normal};
+  line-height: ${choices.lineHeight.normal};
+  color: ${decisions.paragraph.color};
 `
 
 const globalStyles = css.global`
@@ -59,16 +59,16 @@ const globalStyles = css.global`
   body {
     margin: 0;
     padding: 0;
-    height: ${theme.minHeight.full};
-    background: ${theme.colors.white};
-    font-size: ${theme.fontSize.base.mobile};
-    ${copyStyles}
+    height: ${choices.minHeight.full};
+    background: ${choices.colors.white};
+    font-size: ${choices.fontSize.base.mobile};
+    ${paragraphStyles}
   }
 
-  @media (${tokens.queries.screens.desktop}) {
+  @media (${decisions.queries.screens.desktop}) {
     html,
     body {
-      font-size: ${theme.fontSize.base.desktop};
+      font-size: ${choices.fontSize.base.desktop};
     }
   }
 `

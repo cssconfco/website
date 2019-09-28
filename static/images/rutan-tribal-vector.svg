@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 593 659" style="enable-background:new 0 0 593 659;" xml:space="preserve">
-<style type="text/css">
-	.st0{opacity:0.5;enable-background:new    ;}
-</style>
-<g>
-	<polygon class="st0" points="553,328.9 3.7,32.4 3.7,82.7 506.6,355 	"/>
-	<polygon class="st0" points="3.7,163.9 432.6,396.2 479,370.3 3.7,113.7 	"/>
-	<polygon class="st0" points="3.7,633.7 404.5,411.9 359.3,387.6 3.7,584.8 	"/>
-	<polygon class="st0" points="3.7,549.1 329,371 281.2,345 3.7,499.3 	"/>
-	<polygon class="st0" points="3.7,470.8 210.8,356.1 211,356.2 255.5,331.7 255.1,331.6 255.9,331.2 212.4,307.6 211.8,307.9 
-		3.7,194.5 3.7,243.1 167.3,332.3 3.7,422.4 	"/>
-	<polygon class="st0" points="6.8,380.8 116.2,332.4 6.8,279 	"/>
-	<path class="st0" d="M0,0l593,325.3V0H0z M553.4,257.3L146.9,37h406.5V257.3z"/>
-	<polygon class="st0" points="517.8,192.8 517.8,67.5 277.6,67.5 	"/>
-	<path class="st0" d="M593,659V333.7L0,659H593z M553.4,622H146.9l406.5-220.3V622z"/>
-	<polygon class="st0" points="517.8,591.5 517.8,466.2 277.6,591.5 	"/>
+<svg width="593" height="659" viewBox="0 0 593 659" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<g opacity="0.5">
+<path opacity="0.5" d="M3.6701 32.3716V82.6532L506.586 354.975L552.963 328.944L3.6701 32.3716Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M3.6701 113.69V163.86L432.628 396.245L479.004 370.326L3.6701 113.69Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M359.337 387.568L3.6701 584.801V633.748L404.49 411.931L359.337 387.568Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M281.152 344.963L3.6701 499.256V549.093L328.975 370.993L281.152 344.963Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M210.975 356.198L255.462 331.725L255.128 331.614L255.906 331.169L212.421 307.585L211.754 307.919L3.6701 194.452V243.065L167.268 332.281L3.6701 422.387V470.778L210.753 356.087L210.975 356.198Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M6.78412 278.996V380.783L116.22 332.392L6.78412 278.996Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M0 0L593 325.273V0H0ZM553.407 257.304L146.915 37.0437H553.407V257.304ZM517.818 192.783L277.593 67.5241H517.818V192.783Z" fill="#FBF4A0"/>
+<path opacity="0.5" d="M593 659V333.727L0 659H593ZM553.407 621.956H146.915L553.407 401.696V621.956ZM517.818 591.476H277.593L517.818 466.217V591.476Z" fill="#FBF4A0"/>
 </g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="593" height="659" fill="white"/>
+</clipPath>
+</defs>
 </svg>

@@ -2,8 +2,8 @@ import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 
-import { theme, tokens } from "../../utils/designTokens"
-import { copyStyles } from "../../utils/globalStyles"
+import { choices, decisions } from "../../utils/designTokens";
+import { paragraphStyles } from "../../utils/globalStyles"
 
 const Paragraph = ({
   children,
@@ -17,9 +17,9 @@ const Paragraph = ({
   return (
     <Fragment>
       <p
-        className={classNames("copy", {
+        className={classNames("paragraph", {
           [`size-${size}`]: size,
-          [`color-${color}`]: color,
+          [`alt-${color}`]: color,
           "is-inverted": isInverted,
           "is-inline": isInline,
           "is-centered": isCentered
@@ -28,13 +28,14 @@ const Paragraph = ({
         {children}
       </p>
       <style jsx>{`
-        .copy {
+        .paragraph {
           margin: 0;
           padding: 0;
-          ${copyStyles}
+          ${paragraphStyles}
           font-weight: ${
-            isBold ? tokens.copy.fontWeight.bold : tokens.copy.fontWeight.normal
-          }
+            isBold ? decisions.paragraph.fontWeight.bold : decisions.paragraph.fontWeight.normal
+          };
+          max-width: ${choices.screens.md};
         }
 
         .is-centered {
@@ -46,23 +47,27 @@ const Paragraph = ({
         }
 
         .is-inverted {
-          color: ${theme.colors.white} !important;
+          color: ${choices.colors.white} !important;
         }
 
-        .color-green {
-          color: ${theme.colors.green[600]}
+        .alt-blue {
+          color: ${decisions.subtitle.color.alt.blue} !important;
         }
 
-        .color-yellow {
-          color: ${theme.colors.yellow[600]};
+        .alt-red {
+          color: ${decisions.subtitle.color.alt.red} !important;
+        }
+
+        .alt-yellow {
+          color: ${decisions.subtitle.color.alt.yellow} !important;
         }
 
         .size-sm {
-          font-size: ${tokens.copy.fontSize.sm};
+          font-size: ${decisions.paragraph.fontSize.sm};
         }
 
         .size-md {
-          font-size: ${tokens.copy.fontSize.md};
+          font-size: ${decisions.paragraph.fontSize.md};
         }
       `}</style>
     </Fragment>
@@ -76,7 +81,7 @@ Paragraph.propTypes = {
   isBold: PropTypes.bool,
   isInline: PropTypes.bool,
   size: PropTypes.oneOf(["sm", "md"]),
-  color: PropTypes.string
+  color: PropTypes.oneOf(['blue', 'red', 'yellow'])
 }
 
 Paragraph.defaultProps = {

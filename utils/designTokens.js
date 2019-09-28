@@ -1,5 +1,4 @@
-// choices
-export const theme = {
+export const choices = {
   colors: {
     brand: {
       koromiko: "#fcb64d",
@@ -172,7 +171,7 @@ export const theme = {
   },
   fontSize: {
     base: {
-      mobile: "16px",
+      mobile: "20px",
       desktop: "18px"
     },
     xs: ".75rem",
@@ -268,76 +267,75 @@ export const theme = {
   }
 };
 
-// decisions
-export const tokens = {
+export const decisions = {
   // fonts
   title: {
-    fontFamily: theme.fontFamily.sans,
-    fontWeight: theme.fontWeight.bold,
+    fontFamily: choices.fontFamily.sans,
+    fontWeight: choices.fontWeight.bold,
     textTransform: 'uppercase',
     fontSize: {
-      "4": theme.fontSize.sm,
-      "3": theme.fontSize.lg,
-      "2": theme.fontSize["5xl"],
-      "1": theme.fontSize["6xl"]
+      "4": choices.fontSize.sm,
+      "3": choices.fontSize.lg,
+      "2": choices.fontSize["5xl"],
+      "1": choices.fontSize["6xl"]
     },
-    color: theme.colors.brand.tuna
+    color: choices.colors.brand.tuna
   },
   subtitle: {
-    fontFamily: theme.fontFamily.serif,
-    fontWeight: theme.fontWeight.normal,
+    fontFamily: choices.fontFamily.serif,
+    fontWeight: choices.fontWeight.normal,
     textTransform: 'upppercase',
     fontSize: {
-      "2": theme.fontSize.sm,
-      "1": theme.fontSize['4xl']
+      "2": choices.fontSize.lg,
+      "1": choices.fontSize['4xl']
     },
     color: {
-      default: theme.colors.brand.tuna,
+      default: choices.colors.brand.tuna,
       alt: {
-        blue: theme.colors.brand.bayofmany,
-        red: theme.colors.brand.cinnabar,
-        yellow: theme.colors.brand.koromiko
+        blue: choices.colors.brand.bayofmany,
+        red: choices.colors.brand.cinnabar,
+        yellow: choices.colors.brand.koromiko
       }
     }
   },
   label: {
-    fontFamily: theme.fontFamily.sans,
-    fontWeight: theme.fontWeight.bold,
-    fontSize: theme.fontSize.xs,
-    color: theme.colors.gray[900]
+    fontFamily: choices.fontFamily.sans,
+    fontWeight: choices.fontWeight.bold,
+    fontSize: choices.fontSize.xs,
+    color: choices.colors.gray[900]
   },
   eyebrow: {
-    fontFamily: theme.fontFamily.sans,
-    fontWeight: theme.fontWeight.bold,
+    fontFamily: choices.fontFamily.sans,
+    fontWeight: choices.fontWeight.bold,
     fontSize: {
-      "2": theme.fontSize.xs,
-      "1": theme.fontSize.lg
+      "2": choices.fontSize.xs,
+      "1": choices.fontSize.lg
     },
-    color: theme.colors.brand.tuna
+    color: choices.colors.brand.tuna
   },
-  copy: {
-    fontFamily: theme.fontFamily.sans,
+  paragraph: {
+    fontFamily: choices.fontFamily.sans,
     fontWeight: {
-      normal: theme.fontWeight.normal,
-      bold: theme.fontWeight.bold
+      normal: choices.fontWeight.normal,
+      bold: choices.fontWeight.bold
     },
     fontSize: {
-      sm: theme.fontSize.xs,
-      md: theme.fontSize.md
+      sm: choices.fontSize.md,
+      md: choices.fontSize.lg
     },
-    color: theme.colors.brand.tuna
+    color: choices.colors.brand.tuna
   },
   // layout
   container: {
-    maxWidth: theme.screens.xl
+    maxWidth: choices.screens.xl
   },
   // utils
   queries: {
     screens: {
-      xsmall: `max-width: ${theme.screens.max.xs}`,
-      small: `max-width: ${theme.screens.max.sm}`,
-      mobile: `max-width: ${theme.screens.max.lg}`,
-      desktop: `min-width: ${theme.screens.lg}`
+      xsmall: `max-width: ${choices.screens.max.xs}`,
+      small: `max-width: ${choices.screens.max.sm}`,
+      mobile: `max-width: ${choices.screens.max.lg}`,
+      desktop: `min-width: ${choices.screens.lg}`
     }
   }
 };

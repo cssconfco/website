@@ -2,12 +2,13 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { theme, tokens } from "../../utils/designTokens";
+import { choices, decisions } from "../../utils/designTokens";
 import { titleStyles } from "../../utils/globalStyles";
 
 const Heading = ({
   children,
   size,
+  color,
   isInverted,
   isDisabled,
   isInline,
@@ -18,6 +19,7 @@ const Heading = ({
       <h1
         className={classNames("heading", {
           [`size-${size}`]: size,
+          [`alt-${color}`]: color,
           "is-inverted": isInverted,
           "is-disabled": isDisabled,
           "is-inline": isInline,
@@ -42,28 +44,40 @@ const Heading = ({
         }
 
         .is-inverted {
-          color: ${theme.colors.white} !important;
+          color: ${choices.colors.white} !important;
+        }
+
+        .alt-blue {
+          color: ${decisions.subtitle.color.alt.blue} !important;
+        }
+
+        .alt-red {
+          color: ${decisions.subtitle.color.alt.red} !important;
+        }
+
+        .alt-yellow {
+          color: ${decisions.subtitle.color.alt.yellow} !important;
         }
 
         .is-disabled {
-          color: ${theme.colors.black} !important;
+          color: ${choices.colors.black} !important;
           opacity: 0.25;
         }
 
         .size-1 {
-          font-size: ${tokens.title.fontSize["1"]};
+          font-size: ${decisions.title.fontSize["1"]};
         }
 
         .size-2 {
-          font-size: ${tokens.title.fontSize["2"]};
+          font-size: ${decisions.title.fontSize["2"]};
         }
 
         .size-3 {
-          font-size: ${tokens.title.fontSize["3"]};
+          font-size: ${decisions.title.fontSize["3"]};
         }
 
         .size-4 {
-          font-size: ${tokens.title.fontSize["4"]};
+          font-size: ${decisions.title.fontSize["4"]};
         }
       `}</style>
     </Fragment>
@@ -76,7 +90,8 @@ Heading.propTypes = {
   isDisabled: PropTypes.bool,
   isCentered: PropTypes.bool,
   isInline: PropTypes.bool,
-  size: PropTypes.number
+  size: PropTypes.oneOf([1, 2, 3, 4]),
+  color: PropTypes.oneOf(['blue', 'red', 'yellow'])
 };
 
 Heading.defaultProps = {

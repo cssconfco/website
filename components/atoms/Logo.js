@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { theme } from '../../utils/designTokens'
+import { choices } from '../../utils/designTokens'
 
 const Logo = () => (
   <Link href="/">
@@ -17,7 +17,7 @@ const Logo = () => (
         }
 
         .logo img {
-          width: ${theme.minWidth.full};
+          width: ${choices.minWidth.full};
         }
       `}</style>
     </picture>

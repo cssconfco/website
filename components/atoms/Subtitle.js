@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { theme, tokens } from "../../utils/designTokens";
+import { choices, decisions } from "../../utils/designTokens";
 import { subtitleStyles } from "../../utils/globalStyles";
 
 const Subtitle = ({
@@ -42,28 +42,27 @@ const Subtitle = ({
         }
 
         .is-inverted {
-          color: ${theme.colors.white} !important;
+          color: ${choices.colors.white} !important;
         }
 
         .alt-blue {
-          color: ${tokens.subtitle.color.alt.blue} !important;
+          color: ${decisions.subtitle.color.alt.blue} !important;
         }
 
         .alt-red {
-          color: ${tokens.subtitle.color.alt.red} !important;
+          color: ${decisions.subtitle.color.alt.red} !important;
         }
 
         .alt-yellow {
-          color: ${tokens.subtitle.color.alt.yellow} !important;
+          color: ${decisions.subtitle.color.alt.yellow} !important;
         }
 
-
         .size-1 {
-          font-size: ${tokens.subtitle.fontSize[1]};
+          font-size: ${decisions.subtitle.fontSize[1]};
         }
 
         .size-2 {
-          font-size: ${tokens.subtitle.fontSize[2]};
+          font-size: ${decisions.subtitle.fontSize[2]};
         }
       `}</style>
     </Fragment>
