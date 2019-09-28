@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-import { choices, decisions } from "../../utils/designTokens";
-import { titleStyles } from "../../utils/globalStyles";
+import { choices, decisions } from '../../utils/designTokens'
+import { titleStyles } from '../../utils/globalStyles'
 
 const Heading = ({
   children,
@@ -12,25 +12,26 @@ const Heading = ({
   isInverted,
   isDisabled,
   isInline,
-  isCentered
+  isCentered,
+  withMargin
 }) => {
   return (
     <Fragment>
       <h1
-        className={classNames("heading", {
+        className={classNames('heading', {
           [`size-${size}`]: size,
           [`alt-${color}`]: color,
-          "is-inverted": isInverted,
-          "is-disabled": isDisabled,
-          "is-inline": isInline,
-          "is-centered": isCentered
+          'is-inverted': isInverted,
+          'is-disabled': isDisabled,
+          'is-inline': isInline,
+          'is-centered': isCentered
         })}
       >
         {children}
       </h1>
       <style jsx>{`
         .heading {
-          margin: 0;
+          margin: ${withMargin ? `0 0 ${choices.spacing[6]} 0` : '0'};
           padding: 0;
           ${titleStyles}
         }
@@ -65,24 +66,24 @@ const Heading = ({
         }
 
         .size-1 {
-          font-size: ${decisions.title.fontSize["1"]};
+          font-size: ${decisions.title.fontSize['1']};
         }
 
         .size-2 {
-          font-size: ${decisions.title.fontSize["2"]};
+          font-size: ${decisions.title.fontSize['2']};
         }
 
         .size-3 {
-          font-size: ${decisions.title.fontSize["3"]};
+          font-size: ${decisions.title.fontSize['3']};
         }
 
         .size-4 {
-          font-size: ${decisions.title.fontSize["4"]};
+          font-size: ${decisions.title.fontSize['4']};
         }
       `}</style>
     </Fragment>
-  );
-};
+  )
+}
 
 Heading.propTypes = {
   children: PropTypes.string,
@@ -90,12 +91,13 @@ Heading.propTypes = {
   isDisabled: PropTypes.bool,
   isCentered: PropTypes.bool,
   isInline: PropTypes.bool,
+  withMargin: PropTypes.bool,
   size: PropTypes.oneOf([1, 2, 3, 4]),
   color: PropTypes.oneOf(['blue', 'red', 'yellow'])
-};
+}
 
 Heading.defaultProps = {
   size: 4
-};
+}
 
-export default Heading;
+export default Heading

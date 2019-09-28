@@ -171,7 +171,7 @@ export const choices = {
   },
   fontSize: {
     base: {
-      mobile: "20px",
+      mobile: "16px",
       desktop: "18px"
     },
     xs: ".75rem",
@@ -286,7 +286,7 @@ export const decisions = {
     fontWeight: choices.fontWeight.normal,
     textTransform: 'upppercase',
     fontSize: {
-      "2": choices.fontSize.lg,
+      "2": choices.fontSize.sm,
       "1": choices.fontSize['4xl']
     },
     color: {

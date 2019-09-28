@@ -17,7 +17,7 @@ const Hero = () => {
               <div className="lovers"></div>
             </div>
             <Subtitle size={1} color="blue">
-              March 21, 2020
+              March 21 / 2020
             </Subtitle>
           </div>
           <div className="tribal-container tribal-container-reverse">
@@ -75,7 +75,6 @@ const Hero = () => {
           height: 180px;
           margin: 10px 20px;
           width: 100%;
-          max-width: 500px;
         }
 
         .tribal-container :global(.subtitle) {
@@ -92,7 +91,6 @@ const Hero = () => {
 
         .tribal {
           width: 100%;
-          max-width: 500px;
           height: 500px;
           background-size: cover;
         }
@@ -114,7 +112,7 @@ const Hero = () => {
 
         .place-tribal {
           background-image: url('/static/images/rutan-tribal-vector.svg');
-          background-position: center center;
+          background-position: center left;
           background-repeat: no-repeat;
         }
       `}</style>
@@ -147,6 +145,7 @@ const Hero = () => {
             left: auto;
             transform: translate(0, 0);
             white-space: normal;
+            text-align: right;
           }
 
           .lovers {

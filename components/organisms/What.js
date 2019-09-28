@@ -9,7 +9,7 @@ const What = () => {
   return (
     <section className="what">
       <Container>
-        <Heading size={1} color="red">
+        <Heading size={1} color="red" withMargin>
           What is CSS Conf?
         </Heading>
         <Paragraph color="red">
@@ -34,18 +34,15 @@ const What = () => {
           z-index: 1;
         }
 
-        .what :global(.heading) {
-          margin-bottom: 20px;
-        }
-
         .monkey {
           position: absolute;
           display: inline-block;
-          background: url('/static/images/face-tribal-vector.svg') center center
-            no-repeat;
+          background-image: url('/static/images/face-tribal-vector.svg');
+          background-position: center center;
+          background-repeat: no-repeat;
           background-size: contain;
-          top: 0;
-          right: -320px;
+          top: -100px;
+          right: -300px;
           width: 600px;
           height: 600px;
           opacity: 0.35;
@@ -55,11 +52,12 @@ const What = () => {
         @media (${decisions.queries.screens.desktop}) {
           .what {
             overflow: visible;
+            padding: 200px ${decisions.container.padding} 200px 150px;
           }
 
           .monkey {
-            top: -180px;
-            right: 100px;
+            top: -250px;
+            right: 150px;
             width: 400px;
             height: 400px;
             opacity: 1;
