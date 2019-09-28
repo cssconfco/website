@@ -4,6 +4,7 @@ import swal from 'sweetalert'
 import Hero from '../components/organisms/Hero'
 import What from '../components/organisms/What'
 import Newsletter from '../components/organisms/Newsletter'
+import Conduct from '../components/organisms/Conduct'
 
 class Home extends Component {
   state = { name: '', email: '' }
@@ -50,6 +51,7 @@ class Home extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
+        <Conduct />
       </Fragment>
     )
   }

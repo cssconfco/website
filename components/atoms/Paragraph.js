@@ -35,7 +35,7 @@ const Paragraph = ({
           font-weight: ${
             isBold ? decisions.paragraph.fontWeight.bold : decisions.paragraph.fontWeight.normal
           };
-          max-width: ${choices.screens.md};
+          max-width: ${choices.screens.sm};
         }
 
         .is-centered {

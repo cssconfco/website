@@ -1,9 +1,10 @@
 import React from 'react'
+
+import Container from '../atoms/Container'
 import Heading from '../atoms/Heading'
 import Paragraph from '../atoms/Paragraph'
 
 import { choices, decisions } from '../../utils/designTokens'
-import Container from '../atoms/Container'
 
 const What = () => {
   return (
