@@ -165,7 +165,7 @@ export const choices = {
     }
   },
   fontFamily: {
-    serif: ["Georgia", '"Times New Roman"', "serif"],
+    serif: ["Roboto Slab", '"Times New Roman"', "serif"],
     sans: ["Apercu", "Arial", "sans-serif"],
     mono: ['"Roboto Mono"', "Consolas", "monospace"]
   },
@@ -320,8 +320,8 @@ export const decisions = {
       bold: choices.fontWeight.bold
     },
     fontSize: {
-      sm: choices.fontSize.md,
-      md: choices.fontSize.lg
+      sm: choices.fontSize.lg,
+      md: choices.fontSize.xl
     },
     color: choices.colors.brand.tuna
   },

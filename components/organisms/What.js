@@ -13,11 +13,14 @@ const What = () => {
         <Heading size={1} color="red" withMargin>
           What is CSS Conf?
         </Heading>
-        <Paragraph color="red">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum beatae
-          minima impedit. Distinctio consectetur assumenda quaerat vero dolore,
-          quae repellat ab nulla minus ipsa dicta ducimus cum, veniam, provident
-          nobis!
+        <Paragraph color="red" withMargin isJustified>
+          The CSSConf is a worldwide organization dedicated to holding
+          conferences for designers, programmers and web interface creators,
+          with the purpose of connecting the community in different countries.
+        </Paragraph>
+        <Paragraph color="red" isJustified>
+          CSSConf Colombia joined the family on January 29th,
+          2019, for the first time.
         </Paragraph>
         <div className="monkey"></div>
       </Container>
@@ -53,14 +56,14 @@ const What = () => {
         @media (${decisions.queries.screens.desktop}) {
           .what {
             overflow: visible;
-            padding: 200px ${decisions.container.padding} 200px 150px;
+            padding: 100px ${decisions.container.padding} 150px 200px;
           }
 
           .monkey {
-            top: -250px;
+            top: -150px;
             right: 150px;
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
             opacity: 1;
           }
         }

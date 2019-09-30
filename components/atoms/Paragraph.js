@@ -12,7 +12,9 @@ const Paragraph = ({
   isBold,
   isInverted,
   isInline,
-  isCentered
+  isCentered,
+  isJustified,
+  withMargin
 }) => {
   return (
     <Fragment>
@@ -22,14 +24,15 @@ const Paragraph = ({
           [`alt-${color}`]: color,
           "is-inverted": isInverted,
           "is-inline": isInline,
-          "is-centered": isCentered
+          "is-centered": isCentered,
+          "is-justified": isJustified
         })}
       >
         {children}
       </p>
       <style jsx>{`
         .paragraph {
-          margin: 0;
+          margin: ${withMargin ? `0 0 ${choices.spacing[6]} 0` : '0'};
           padding: 0;
           ${paragraphStyles}
           font-weight: ${
@@ -40,6 +43,10 @@ const Paragraph = ({
 
         .is-centered {
           text-align: center;
+        }
+
+        .is-justified {
+          text-align: justify;
         }
 
         .is-inline {
@@ -78,8 +85,10 @@ Paragraph.propTypes = {
   children: PropTypes.node,
   isInverted: PropTypes.bool,
   isCentered: PropTypes.bool,
+  isJustified: PropTypes.bool,
   isBold: PropTypes.bool,
   isInline: PropTypes.bool,
+  withMargin: PropTypes.bool,
   size: PropTypes.oneOf(["sm", "md"]),
   color: PropTypes.oneOf(['blue', 'red', 'yellow'])
 }

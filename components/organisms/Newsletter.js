@@ -4,6 +4,7 @@ import Heading from '../atoms/Heading'
 
 import Container from '../atoms/Container'
 import Button from '../atoms/Button'
+import Responsive from '../atoms/Responsive'
 
 import { choices, decisions } from '../../utils/designTokens'
 import Subtitle from '../atoms/Subtitle'
@@ -46,9 +47,8 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
               required
             />
           </div>
-
-          <Button type="submit">
-            <Heading size={4} isInverted>
+          <Button type="submit" withMargin>
+            <Heading size={3} isInverted>
               Subscribe
             </Heading>
           </Button>
@@ -107,16 +107,11 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
 
         .bird {
           position: absolute;
-          display: inline-block;
+          display: none;
           background-image: url('/static/images/hero-tribal-bird-vector.svg');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
-          top: 0;
-          right: -250px;
-          width: 400px;
-          height: 400px;
-          opacity: 0.35;
         }
 
         .lizard {
@@ -127,7 +122,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
           background-repeat: no-repeat;
           background-size: contain;
           top: 0;
-          left: -10px;
+          right: 0;
           width: 220px;
           height: 100%;
           opacity: 0.35;
@@ -136,13 +131,15 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
       <style jsx>{`
         @media (${decisions.queries.screens.desktop}) {
           .newsletter {
-			overflow: visible;
+            overflow: visible;
           }
 
           .bird {
-			top: -250px;
-			right: -300px;
-            width: 250px;
+            display: inline-block;
+            top: -205px;
+            left: -350px;
+            width: 300px;
+            height: 300px;
             opacity: 1;
           }
 

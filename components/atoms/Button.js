@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { choices } from '../../utils/designTokens'
 
-const Button = ({ children, type, handleClick, isGhost }) => {
+const Button = ({ children, type, handleClick, withMargin }) => {
   return (
     <Fragment>
       <button type={type} className="button" onClick={handleClick}>
@@ -12,11 +12,12 @@ const Button = ({ children, type, handleClick, isGhost }) => {
       </button>
       <style jsx>{`
         .button {
+          margin: ${withMargin ? `${choices.spacing[4]} 0 0 0` : '0'};
           background: ${choices.colors.brand.cinnabar};
           border: none;
           color: ${choices.colors.white};
           cursor: pointer;
-          padding: ${choices.spacing[2]} ${choices.spacing[20]};
+          padding: ${choices.spacing[4]} ${choices.spacing[20]};
           text-transform: uppercase;
         }
       `}</style>
@@ -28,7 +29,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   handleClick: PropTypes.func,
   type: PropTypes.string,
-  isGhost: PropTypes.bool
+  withMargin: PropTypes.bool
 }
 
 Button.defaultProps = {
