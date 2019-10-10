@@ -54,8 +54,8 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
           </Button>
         </form>
         <div className="bird"></div>
+        <div className="lizard"></div>
       </Container>
-      <div className="lizard"></div>
       <style jsx>{`
         .newsletter {
           position: relative;
@@ -107,25 +107,26 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
 
         .bird {
           position: absolute;
-          display: none;
+          display: inline-block;
           background-image: url('/static/images/hero-tribal-bird-vector.svg');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
+          top: 50%;
+          left: 0;
+          transform: translate(-50%, -50%);
+          width: 600px;
+          height: 600px;
+          opacity: 0.2;
         }
 
         .lizard {
           position: absolute;
-          display: inline-block;
+          display: none;
           background-image: url('/static/images/iguana-tribal-vector.svg');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
-          top: 0;
-          right: 0;
-          width: 220px;
-          height: 100%;
-          opacity: 0.35;
         }
       `}</style>
       <style jsx>{`
@@ -141,9 +142,15 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
             width: 300px;
             height: 300px;
             opacity: 1;
+            transform: translate(0, 0);
           }
 
           .lizard {
+            display: inline-block;
+            bottom: 0;
+            right: -350px;
+            width: 300px;
+            height: 300px;
             opacity: 1;
           }
         }

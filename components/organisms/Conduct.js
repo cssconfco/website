@@ -24,8 +24,8 @@ const Conduct = () => {
             nationality, religion, points of view or political experience.
           </Paragraph>
         </div>
+        <div className="bird"></div>
       </Container>
-      <div className="bird"></div>
       <style jsx>{`
         .conduct {
           position: relative;
@@ -49,27 +49,30 @@ const Conduct = () => {
           position: absolute;
           display: inline-block;
           background-image: url('/static/images/code-of-conduct-bird.svg');
-          background-position: top left;
+          background-position: center center;
           background-repeat: no-repeat;
-          background-size: cover;
-          top: 50px;
-          right: 0;
-          width: 400px;
-          height: 400px;
-          opacity: 0.15;
+          background-size: contain;
+          top: 50%;
+          left: -50%;
+          width: 800px;
+          height: 800px;
+          opacity: 0.1;
+          transform: translate(0, -50%);
         }
       `}</style>
       <style jsx>{`
         @media (${decisions.queries.screens.desktop}) {
           .conduct {
             overflow: visible;
-            padding: 100px ${decisions.container.padding} 100px 150px;
+            padding: 100px ${decisions.container.padding} 100px 400px;
           }
 
           .bird {
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: -300px;
             opacity: 1;
-            width: 300px;
-            height: 300px;
           }
         }
       `}</style>
