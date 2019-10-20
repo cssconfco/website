@@ -119,7 +119,7 @@ const Hero = () => {
       <style jsx>{`
         @media (${decisions.queries.screens.desktop}) {
           .hero {
-            padding-top: 80px;
+            padding-top: 50px;
           }
 
           .hero :global(.logo) {

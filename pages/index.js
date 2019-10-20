@@ -5,6 +5,7 @@ import Hero from '../components/organisms/Hero'
 import What from '../components/organisms/What'
 import Newsletter from '../components/organisms/Newsletter'
 import Conduct from '../components/organisms/Conduct'
+import Navbar from '../components/organisms/Navbar'
 
 class Home extends Component {
   state = { name: '', email: '' }
@@ -43,6 +44,7 @@ class Home extends Component {
 
     return (
       <Fragment>
+        <Navbar />
         <Hero />
         <What />
         <Newsletter

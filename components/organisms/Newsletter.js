@@ -11,7 +11,7 @@ import Subtitle from '../atoms/Subtitle'
 
 const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
   return (
-    <section className="newsletter">
+    <section id="newsletter" className="newsletter">
       <Container>
         <Heading size={1} isInverted withMargin>
           Newsletter
