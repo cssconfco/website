@@ -14,8 +14,8 @@ const Navbar = () => {
       <Container>
         <ul>
           <li>
-            <Link href="https://forms.gle/t1JizcqqBYL4NG3i7" target="_blank">
-              <a>
+            <Link href="https://forms.gle/t1JizcqqBYL4NG3i7">
+              <a target="_blank">
                 <Paragraph>CFP</Paragraph>
               </a>
             </Link>
@@ -26,15 +26,14 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <Link href="mailto:hello@cssconf.co" target="_blank">
-              <a>
+            <Link href="mailto:hello@cssconf.co">
+              <a target="_blank">
                 <Paragraph>Contact</Paragraph>
               </a>
             </Link>
           </li>
         </ul>
       </Container>
-
       <style jsx>{`
         .navbar {
           margin-top: 20px;

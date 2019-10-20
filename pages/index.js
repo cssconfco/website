@@ -6,6 +6,7 @@ import What from '../components/organisms/What'
 import Newsletter from '../components/organisms/Newsletter'
 import Conduct from '../components/organisms/Conduct'
 import Navbar from '../components/organisms/Navbar'
+import Footer from '../components/organisms/Footer'
 
 class Home extends Component {
   state = { name: '', email: '' }
@@ -54,6 +55,7 @@ class Home extends Component {
           handleChange={this.handleChange}
         />
         <Conduct />
+        <Footer />
       </Fragment>
     )
   }
