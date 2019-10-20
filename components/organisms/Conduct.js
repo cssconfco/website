@@ -14,7 +14,7 @@ const Conduct = () => {
           <Heading size={1} color="blue" withMargin>
             Code of Conduct
           </Heading>
-          <Paragraph color="blue" isJustified>
+          <Paragraph color="blue">
             We want everyone to enjoy this conference to the fullest, to make
             each person feel safe and welcome. To achieve this, we have defined
             a <strong>Code of Conduct</strong>, an agreement in which you will

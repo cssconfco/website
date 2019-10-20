@@ -13,12 +13,12 @@ const What = () => {
         <Heading size={1} color="red" withMargin>
           What is CSS Conf?
         </Heading>
-        <Paragraph color="red" withMargin isJustified>
+        <Paragraph color="red" withMargin>
           The CSSConf is a worldwide organization dedicated to holding
           conferences for designers, programmers and web interface creators,
           with the purpose of connecting the community in different countries.
         </Paragraph>
-        <Paragraph color="red" isJustified>
+        <Paragraph color="red">
           CSSConf Colombia joined the family on January 29th,
           2019, for the first time.
         </Paragraph>
