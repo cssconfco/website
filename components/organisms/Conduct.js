@@ -23,8 +23,8 @@ const Conduct = () => {
             orientation, disability, physical appearance, race, ethnicity,
             nationality, religion, points of view or political experience.
           </Paragraph>
+          <div className="bird"></div>
         </div>
-        <div className="bird"></div>
       </Container>
       <style jsx>{`
         .conduct {
@@ -35,6 +35,7 @@ const Conduct = () => {
         }
 
         .content {
+          position: relative;
           margin: 0 auto;
           max-width: ${choices.screens.md};
         }
@@ -64,14 +65,14 @@ const Conduct = () => {
         @media (${decisions.queries.screens.desktop}) {
           .conduct {
             overflow: visible;
-            padding: 100px ${decisions.container.padding} 100px 400px;
+            padding: 100px ${decisions.container.padding} 100px 500px;
           }
 
           .bird {
             width: 400px;
             height: 400px;
             top: 50%;
-            left: -300px;
+            left: -430px;
             opacity: 1;
           }
         }

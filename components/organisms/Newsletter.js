@@ -147,11 +147,12 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
 
           .lizard {
             display: inline-block;
-            bottom: 0;
-            right: -350px;
+            bottom: -180px;
+            right: -280px;
             width: 300px;
             height: 300px;
             opacity: 1;
+            z-index: 1;
           }
         }
       `}</style>
