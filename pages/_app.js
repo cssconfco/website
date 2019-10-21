@@ -1,6 +1,7 @@
-import App, { Container as NextContainer } from "next/app";
+import App, { Container as NextContainer } from 'next/app'
 
-import globalStyles from "../utils/globalStyles";
+import GoogleAnalytics from '../components/layout/GoogleAnalytics'
+import globalStyles from '../utils/globalStyles'
 
 export default class CustomApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -8,18 +9,20 @@ export default class CustomApp extends App {
       pageProps: Component.getInitialProps
         ? await Component.getInitialProps(ctx)
         : {}
-    };
+    }
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps } = this.props
     return (
       <NextContainer>
-        <Component {...pageProps} />
-        <style jsx global>
-          {globalStyles}
-        </style>
+        <GoogleAnalytics>
+          <Component {...pageProps} />
+          <style jsx global>
+            {globalStyles}
+          </style>
+        </GoogleAnalytics>
       </NextContainer>
-    );
+    )
   }
 }

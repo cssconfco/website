@@ -21,9 +21,12 @@
   "homepage": "https://github.com/cssconfco/cssconfco-website#readme",
   "dependencies": {
     "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "mailchimp-api-v3": "^1.13.1",
     "next": "^9.0.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-ga": "^2.7.0",
     "react-responsive": "^8.0.1",
     "sweetalert": "^2.1.2"
   }

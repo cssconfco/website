@@ -65,6 +65,11 @@ const Hero = () => {
           height: 100%;
           max-height: 300px;
           margin: 80px 50px;
+          transition: filter 0.5s ease;
+        }
+
+        .lovers:hover {
+          transition: filter 1s ease;
         }
 
         .tribal-container {
@@ -93,6 +98,12 @@ const Hero = () => {
           width: 100%;
           height: 500px;
           background-size: cover;
+          transition: filter 1s ease;
+        }
+
+        .tribal:hover {
+          filter: saturate(10);
+          transition: filter 0.5s ease;
         }
 
         .date-tribal {

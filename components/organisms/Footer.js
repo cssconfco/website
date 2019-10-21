@@ -53,7 +53,8 @@ const Footer = () => {
 
         .footer :global(.container) {
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
+          flex-wrap: wrap;
         }
 
         .footer ul {
@@ -84,6 +85,11 @@ const Footer = () => {
       `}</style>
       <style jsx>{`
         @media (${decisions.queries.screens.desktop}) {
+          .footer :global(.container) {
+            justify-content: space-between;
+            flex-wrap: nowrap;
+          }
+
           .footer ul {
             justify-content: flex-start;
             margin-right: 10px;
