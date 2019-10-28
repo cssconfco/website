@@ -14,11 +14,9 @@ const Navbar = () => {
       <Container>
         <ul>
           <li>
-            <Link href="https://forms.gle/t1JizcqqBYL4NG3i7">
-              <a target="_blank">
-                <Paragraph>CFP</Paragraph>
-              </a>
-            </Link>
+            <a href="https://forms.gle/t1JizcqqBYL4NG3i7" target="_blank">
+              <Paragraph>CFP</Paragraph>
+            </a>
           </li>
           <li>
             <a href="#newsletter" onClick={smoothScroll('#newsletter')}>
@@ -26,11 +24,9 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <Link href="mailto:hello@cssconf.co">
-              <a target="_blank">
-                <Paragraph>Contact</Paragraph>
-              </a>
-            </Link>
+            <a href="mailto:hello@cssconf.co" target="_blank">
+              <Paragraph>Contact</Paragraph>
+            </a>
           </li>
         </ul>
       </Container>

@@ -12,37 +12,29 @@ const Footer = () => {
       <Container>
         <ul>
           <li>
-            <Link href="https://github.com/cssconfco/codigo-de-conducta">
-              <a target="_blank">
-                <Paragraph color="red">Code of Conduct</Paragraph>
-              </a>
-            </Link>
+            <a
+              href="https://github.com/cssconfco/codigo-de-conducta"
+              target="_blank"
+            >
+              <Paragraph color="red">Code of Conduct</Paragraph>
+            </a>
           </li>
           <li>
-            <Link href="http://cssconf.org">
-              <a target="_blank">
-                <Paragraph color="red">CSS Conf</Paragraph>
-              </a>
-            </Link>
+            <a href="http://cssconf.org" target="_blank">
+              <Paragraph color="red">CSS Conf</Paragraph>
+            </a>
           </li>
         </ul>
         <ul>
           <li className="not-underline">
-            <Link href="https://instagram.com/cssconfco">
-              <a target="_blank">
-                <img
-                  className="social-icon"
-                  src="/static/icons/instagram.svg"
-                />
-              </a>
-            </Link>
+            <a href="https://instagram.com/cssconfco" target="_blank">
+              <img className="social-icon" src="/static/icons/instagram.svg" />
+            </a>
           </li>
           <li className="not-underline">
-            <Link href="https://twitter.com/cssconfco">
-              <a target="_blank">
-                <img className="social-icon" src="/static/icons/twitter.svg" />
-              </a>
-            </Link>
+            <a href="https://twitter.com/cssconfco" target="_blank">
+              <img className="social-icon" src="/static/icons/twitter.svg" />
+            </a>
           </li>
         </ul>
       </Container>
