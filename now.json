@@ -1,0 +1,8 @@
+{
+  "alias": "cssconf.co",
+  "env": {
+    "GOOGLE_ANALYTICS_ID": "@cssconfco-google-analytics-id",
+    "MAILCHIMP_API_KEY": "@cssconfco-mailchimp-api-key",
+    "MAILCHIMP_AUDIENCE_ID": "@cssconfco-mailchimp-audience-id"
+  }
+}
