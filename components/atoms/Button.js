@@ -4,10 +4,15 @@ import PropTypes from 'prop-types'
 
 import { choices } from '../../utils/designTokens'
 
-const Button = ({ children, type, handleClick, withMargin }) => {
+const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
   return (
     <Fragment>
-      <button type={type} className="button" onClick={handleClick}>
+      <button
+        type={type}
+        className="button"
+        onClick={handleClick}
+        disabled={isDisabled}
+      >
         {children}
       </button>
       <style jsx>{`
@@ -19,6 +24,11 @@ const Button = ({ children, type, handleClick, withMargin }) => {
           cursor: pointer;
           padding: ${choices.spacing[4]} ${choices.spacing[20]};
           text-transform: uppercase;
+        }
+
+        .button:disabled {
+          opacity: 0.5;
+          pointer-events: none;
         }
       `}</style>
     </Fragment>

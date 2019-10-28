@@ -1,8 +1,10 @@
 import ReactGA from 'react-ga'
+import { config } from "../config/client"
+
 
 export const initGA = () => {
   console.log('GA', 'Initialized!')
-  ReactGA.initialize('UA-150437644-1')
+  ReactGA.initialize(config.googleAnalyticsId)
 }
 export const logPageView = () => {
   console.log('GA', `Page viewed ${window.location.pathname}`)

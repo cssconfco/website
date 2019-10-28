@@ -1,16 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { initGA, logPageView } from '../../utils/analytics'
+import { config } from '../../config/client'
 
 class GoogleAnalytics extends Component {
   componentDidMount() {
-    const isProduction =
-      window &&
-      window.location &&
-      window.location.href &&
-      window.location.href.startsWith('https://cssconf.co')
-
-    if (isProduction) {
+    if (config.production) {
       if (!window.GA_INITIALIZED) {
         initGA()
         window.GA_INITIALIZED = true

@@ -20,7 +20,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
           <div className="field-group">
             <label htmlFor="name">
               <Subtitle size={2} isInverted>
-                Name:
+                Fullname:
               </Subtitle>
             </label>
             <input
