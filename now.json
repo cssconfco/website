@@ -1,13 +1,6 @@
 {
   "version": 2,
-  "alias": ["cssconf", "cssconf.co", "www.cssconf.co"],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "status": 301,
-      "headers": { "Location": "https://cssconf.co/$1" }
-    }
-  ],
+  "alias": ["www.cssconf.co"],
   "env": {
     "GOOGLE_ANALYTICS_ID": "@cssconfco-google-analytics-id",
     "MAILCHIMP_API_KEY": "@cssconfco-mailchimp-api-key",

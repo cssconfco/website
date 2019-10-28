@@ -9,13 +9,27 @@ import Navbar from '../components/organisms/Navbar'
 import Footer from '../components/organisms/Footer'
 
 class Home extends Component {
-  state = { name: '', email: '' }
+  state = { name: '', email: '', loading: false }
+
+  startLoading = () => {
+    this.setState({ loading: true })
+  }
+
+  stopLoading = () => {
+    this.setState({ loading: false })
+  }
+
+  resetForm = () => {
+    this.setState({ name: '', email: '', loading: false })
+  }
 
   handleSubmit = async event => {
     event && event.preventDefault()
-    const { name, email } = this.state
+    this.startLoading()
 
     try {
+      const { name, email } = this.state
+
       await fetch('/api/subscribe', {
         method: 'POST',
         body: JSON.stringify({ name, email }),
@@ -30,8 +44,9 @@ class Home extends Component {
         'success'
       )
 
-      this.setState({ name: '', email: '' })
+      this.resetForm()
     } catch (error) {
+      this.stopLoading()
       console.error(error)
     }
   }
@@ -41,7 +56,7 @@ class Home extends Component {
   }
 
   render() {
-    const { name, email } = this.state
+    const { name, email, loading } = this.state
 
     return (
       <Fragment>
@@ -53,6 +68,7 @@ class Home extends Component {
           email={email}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
+          isLoading={loading}
         />
         <Conduct />
         <Footer />

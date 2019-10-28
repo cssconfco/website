@@ -9,7 +9,7 @@ import Responsive from '../atoms/Responsive'
 import { choices, decisions } from '../../utils/designTokens'
 import Subtitle from '../atoms/Subtitle'
 
-const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
+const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
   return (
     <section id="newsletter" className="newsletter">
       <Container>
@@ -47,7 +47,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange }) => {
               required
             />
           </div>
-          <Button type="submit" withMargin>
+          <Button type="submit" withMargin isDisabled={isLoading}>
             <Heading size={3} isInverted>
               Subscribe
             </Heading>
