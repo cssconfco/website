@@ -8,6 +8,8 @@ import Conduct from '../components/organisms/Conduct'
 import Navbar from '../components/organisms/Navbar'
 import Footer from '../components/organisms/Footer'
 
+import { logEvent } from '../utils/analytics'
+
 class Home extends Component {
   state = { name: '', email: '', loading: false }
 
@@ -43,6 +45,8 @@ class Home extends Component {
         'We will send you more information to your email',
         'success'
       )
+
+      logEvent({ category: 'signup', action: 'click', label: 'newsletter' })
 
       this.resetForm()
     } catch (error) {
