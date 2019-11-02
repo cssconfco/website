@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga'
-import { config } from "../config/client"
+import { config } from '../config/client'
 
 export const initGA = () => {
   console.log('GA', 'Initialized!')
@@ -10,7 +10,12 @@ export const logPageView = () => {
   ReactGA.set({ page: window.location.pathname })
   ReactGA.pageview(window.location.pathname)
 }
-export const logEvent = (category = '', action = '', label = '', value = 1) => {
+export const logEvent = ({
+  category = '',
+  action = '',
+  label = '',
+  value = 1
+}) => {
   if (category && action) {
     ReactGA.event({ category, action, label, value })
   }
