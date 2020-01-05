@@ -1,9 +1,9 @@
-import React, { Fragment } from "react"
-import PropTypes from "prop-types"
-import classNames from "classnames"
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-import { choices, decisions } from "../../utils/designTokens";
-import { paragraphStyles } from "../../utils/globalStyles"
+import { choices, decisions } from '../../utils/designTokens'
+import { paragraphStyles } from '../../utils/globalStyles'
 
 const Paragraph = ({
   children,
@@ -19,13 +19,13 @@ const Paragraph = ({
   return (
     <Fragment>
       <p
-        className={classNames("paragraph", {
+        className={classNames('paragraph', {
           [`size-${size}`]: size,
           [`alt-${color}`]: color,
-          "is-inverted": isInverted,
-          "is-inline": isInline,
-          "is-centered": isCentered,
-          "is-justified": isJustified
+          'is-inverted': isInverted,
+          'is-inline': isInline,
+          'is-centered': isCentered,
+          'is-justified': isJustified
         })}
       >
         {children}
@@ -36,7 +36,9 @@ const Paragraph = ({
           padding: 0;
           ${paragraphStyles}
           font-weight: ${
-            isBold ? decisions.paragraph.fontWeight.bold : decisions.paragraph.fontWeight.normal
+            isBold
+              ? decisions.paragraph.fontWeight.bold
+              : decisions.paragraph.fontWeight.normal
           };
           max-width: ${choices.screens.sm};
         }
@@ -89,12 +91,12 @@ Paragraph.propTypes = {
   isBold: PropTypes.bool,
   isInline: PropTypes.bool,
   withMargin: PropTypes.bool,
-  size: PropTypes.oneOf(["sm", "md"]),
+  size: PropTypes.oneOf(['sm', 'md']),
   color: PropTypes.oneOf(['blue', 'red', 'yellow'])
 }
 
 Paragraph.defaultProps = {
-  size: "md"
+  size: 'md'
 }
 
 export default Paragraph

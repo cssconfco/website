@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "dev": "next",
     "build": "next build",
     "start": "next start"
@@ -21,13 +22,39 @@
   "homepage": "https://github.com/cssconfco/cssconfco-website#readme",
   "dependencies": {
     "classnames": "^2.2.6",
+    "crypto-random-string": "^3.0.1",
     "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
     "mailchimp-api-v3": "^1.13.1",
+    "moment": "^2.24.0",
     "next": "^9.0.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-ga": "^2.7.0",
     "react-responsive": "^8.0.1",
-    "sweetalert": "^2.1.2"
+    "sha256": "^0.2.0",
+    "sweetalert": "^2.1.2",
+    "woocommerce-api": "^1.5.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

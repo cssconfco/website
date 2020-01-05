@@ -5,7 +5,7 @@ import { config } from '../../config/client'
 
 class GoogleAnalytics extends Component {
   componentDidMount() {
-    if (config.production) {
+    if (config.isProduction) {
       if (!window.GA_INITIALIZED) {
         initGA()
         window.GA_INITIALIZED = true

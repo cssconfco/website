@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
 import { choices } from '../../utils/designTokens'
@@ -37,9 +36,10 @@ const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  handleClick: PropTypes.func,
   type: PropTypes.string,
-  withMargin: PropTypes.bool
+  handleClick: PropTypes.func,
+  withMargin: PropTypes.bool,
+  isDisabled: PropTypes.bool
 }
 
 Button.defaultProps = {

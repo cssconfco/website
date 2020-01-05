@@ -3,7 +3,7 @@ import { config } from '../config/client'
 
 export const initGA = () => {
   console.log('GA', 'Initialized!')
-  ReactGA.initialize(config.googleAnalyticsId || 'UA-150437644-1')
+  ReactGA.initialize(config.googleAnalyticsId)
 }
 export const logPageView = () => {
   console.log('GA', `Page viewed ${window.location.pathname}`)

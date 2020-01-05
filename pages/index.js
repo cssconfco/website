@@ -51,7 +51,7 @@ class Home extends Component {
       this.resetForm()
     } catch (error) {
       this.stopLoading()
-      console.error(error)
+      console.error('Error callilng api/subscribe', error)
     }
   }
 

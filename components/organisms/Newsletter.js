@@ -1,13 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import Heading from '../atoms/Heading'
-
-import Container from '../atoms/Container'
 import Button from '../atoms/Button'
-import Responsive from '../atoms/Responsive'
+import Container from '../atoms/Container'
+import Heading from '../atoms/Heading'
+import Subtitle from '../atoms/Subtitle'
 
 import { choices, decisions } from '../../utils/designTokens'
-import Subtitle from '../atoms/Subtitle'
 
 const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
   return (
@@ -158,6 +157,19 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
       `}</style>
     </section>
   )
+}
+
+Newsletter.propTypes = {
+  name: PropTypes.string,
+  email: PropTypes.string,
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
+  isLoading: PropTypes.bool
+}
+
+Newsletter.defaultProps = {
+  handleSubmit: () => {},
+  handleChange: () => {}
 }
 
 export default Newsletter

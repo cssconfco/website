@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 import Paragraph from '../atoms/Paragraph'
 import Container from '../atoms/Container'
@@ -14,7 +13,11 @@ const Navbar = () => {
       <Container>
         <ul>
           <li>
-            <a href="https://forms.gle/t1JizcqqBYL4NG3i7" target="_blank">
+            <a
+              href="https://forms.gle/t1JizcqqBYL4NG3i7"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Paragraph>CFP</Paragraph>
             </a>
           </li>
@@ -24,7 +27,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="mailto:hello@cssconf.co" target="_blank">
+            <a
+              href="mailto:hello@cssconf.co"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Paragraph>Contact</Paragraph>
             </a>
           </li>

@@ -19,8 +19,8 @@ const What = () => {
           with the purpose of connecting the community in different countries.
         </Paragraph>
         <Paragraph color="red">
-          CSSConf Colombia joined the family on January 29th,
-          2019, for the first time.
+          CSSConf Colombia joined the family on January 29th, 2019, for the
+          first time.
         </Paragraph>
         <div className="monkey"></div>
       </Container>

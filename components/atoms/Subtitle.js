@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-import { choices, decisions } from "../../utils/designTokens";
-import { subtitleStyles } from "../../utils/globalStyles";
+import { choices, decisions } from '../../utils/designTokens'
+import { subtitleStyles } from '../../utils/globalStyles'
 
 const Subtitle = ({
   children,
@@ -16,12 +16,12 @@ const Subtitle = ({
   return (
     <Fragment>
       <h2
-        className={classNames("subtitle", {
+        className={classNames('subtitle', {
           [`size-${size}`]: size,
           [`alt-${color}`]: color,
-          "is-inverted": isInverted,
-          "is-inline": isInline,
-          "is-centered": isCentered,
+          'is-inverted': isInverted,
+          'is-inline': isInline,
+          'is-centered': isCentered
         })}
       >
         {children}
@@ -66,8 +66,8 @@ const Subtitle = ({
         }
       `}</style>
     </Fragment>
-  );
-};
+  )
+}
 
 Subtitle.propTypes = {
   children: PropTypes.string.isRequired,
@@ -77,10 +77,10 @@ Subtitle.propTypes = {
   isInline: PropTypes.bool,
   size: PropTypes.oneOf([1, 2]),
   color: PropTypes.oneOf(['blue', 'red', 'yellow'])
-};
+}
 
 Subtitle.defaultProps = {
   size: 2
-};
+}
 
-export default Subtitle;
+export default Subtitle

@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 import Paragraph from '../atoms/Paragraph'
 import Container from '../atoms/Container'
@@ -15,24 +14,37 @@ const Footer = () => {
             <a
               href="https://github.com/cssconfco/codigo-de-conducta"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Paragraph color="red">Code of Conduct</Paragraph>
             </a>
           </li>
           <li>
-            <a href="http://cssconf.org" target="_blank">
+            <a
+              href="http://cssconf.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Paragraph color="red">CSS Conf</Paragraph>
             </a>
           </li>
         </ul>
         <ul>
           <li className="not-underline">
-            <a href="https://instagram.com/cssconfco" target="_blank">
+            <a
+              href="https://instagram.com/cssconfco"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img className="social-icon" src="/static/icons/instagram.svg" />
             </a>
           </li>
           <li className="not-underline">
-            <a href="https://twitter.com/cssconfco" target="_blank">
+            <a
+              href="https://twitter.com/cssconfco"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img className="social-icon" src="/static/icons/twitter.svg" />
             </a>
           </li>
