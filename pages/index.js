@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import swal from 'sweetalert'
 
 import Hero from '../components/organisms/Hero'
@@ -9,6 +9,8 @@ import Navbar from '../components/organisms/Navbar'
 import Footer from '../components/organisms/Footer'
 
 import { logEvent } from '../utils/analytics'
+import fetchJson from '../utils/fetchJson'
+import { config } from '../config/client'
 
 class Home extends Component {
   state = { name: '', email: '', loading: false }
@@ -32,7 +34,7 @@ class Home extends Component {
     try {
       const { name, email } = this.state
 
-      await fetch('/api/subscribe', {
+      await fetchJson(`${config.apiUrl}/subscribe`, {
         method: 'POST',
         body: JSON.stringify({ name, email }),
         headers: {
@@ -63,7 +65,7 @@ class Home extends Component {
     const { name, email, loading } = this.state
 
     return (
-      <Fragment>
+      <>
         <Navbar />
         <Hero />
         <What />
@@ -76,7 +78,7 @@ class Home extends Component {
         />
         <Conduct />
         <Footer />
-      </Fragment>
+      </>
     )
   }
 }

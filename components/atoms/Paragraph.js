@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
@@ -9,19 +8,22 @@ const Paragraph = ({
   children,
   color,
   size,
-  isBold,
+  weight,
   isInverted,
   isInline,
   isCentered,
   isJustified,
-  withMargin
+  withMargin,
+  style
 }) => {
   return (
-    <Fragment>
+    <>
       <p
+        style={style}
         className={classNames('paragraph', {
           [`size-${size}`]: size,
           [`alt-${color}`]: color,
+          [`paragraph-${weight}`]: weight,
           'is-inverted': isInverted,
           'is-inline': isInline,
           'is-centered': isCentered,
@@ -35,12 +37,15 @@ const Paragraph = ({
           margin: ${withMargin ? `0 0 ${choices.spacing[6]} 0` : '0'};
           padding: 0;
           ${paragraphStyles}
-          font-weight: ${
-            isBold
-              ? decisions.paragraph.fontWeight.bold
-              : decisions.paragraph.fontWeight.normal
-          };
           max-width: ${choices.screens.sm};
+        }
+        
+        .paragraph-normal {
+          font-weight: ${decisions.paragraph.fontWeight.normal}
+        }
+        
+        .paragraph-bold {
+          font-weight: ${decisions.paragraph.fontWeight.bold};
         }
 
         .is-centered {
@@ -71,6 +76,10 @@ const Paragraph = ({
           color: ${decisions.subtitle.color.alt.yellow} !important;
         }
 
+        .size-xs {
+          font-size: ${decisions.paragraph.fontSize.xs};
+        }
+
         .size-sm {
           font-size: ${decisions.paragraph.fontSize.sm};
         }
@@ -79,7 +88,7 @@ const Paragraph = ({
           font-size: ${decisions.paragraph.fontSize.md};
         }
       `}</style>
-    </Fragment>
+    </>
   )
 }
 
@@ -88,15 +97,17 @@ Paragraph.propTypes = {
   isInverted: PropTypes.bool,
   isCentered: PropTypes.bool,
   isJustified: PropTypes.bool,
-  isBold: PropTypes.bool,
   isInline: PropTypes.bool,
   withMargin: PropTypes.bool,
-  size: PropTypes.oneOf(['sm', 'md']),
-  color: PropTypes.oneOf(['blue', 'red', 'yellow'])
+  size: PropTypes.oneOf(['xs', 'sm', 'md']),
+  weight: PropTypes.oneOf(['normal', 'bold']),
+  color: PropTypes.oneOf(['blue', 'red', 'yellow']),
+  style: PropTypes.object
 }
 
 Paragraph.defaultProps = {
-  size: 'md'
+  size: 'md',
+  weight: 'normal'
 }
 
 export default Paragraph

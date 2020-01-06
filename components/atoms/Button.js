@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import { choices } from '../../utils/designTokens'
 
 const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
   return (
-    <Fragment>
+    <>
       <button
         type={type}
         className="button"
@@ -18,7 +17,7 @@ const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
         .button {
           margin: ${withMargin ? `${choices.spacing[4]} 0 0 0` : '0'};
           background: ${choices.colors.brand.cinnabar};
-          border: none;
+          border: 1px solid transparent;
           color: ${choices.colors.white};
           cursor: pointer;
           padding: ${choices.spacing[4]} ${choices.spacing[20]};
@@ -26,11 +25,11 @@ const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
         }
 
         .button:disabled {
-          opacity: 0.5;
+          opacity: ${choices.opacity[50]};
           pointer-events: none;
         }
       `}</style>
-    </Fragment>
+    </>
   )
 }
 

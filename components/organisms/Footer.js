@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Paragraph from '../atoms/Paragraph'
 import Container from '../atoms/Container'
 

@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import { decisions } from '../../utils/designTokens'
 
 const Container = ({ children }) => {
   return (
-    <Fragment>
+    <>
       <div className="container">{children}</div>
       <style jsx>{`
         .container {
@@ -14,7 +13,7 @@ const Container = ({ children }) => {
           max-width: ${decisions.container.maxWidth};
         }
       `}</style>
-    </Fragment>
+    </>
   )
 }
 

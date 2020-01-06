@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
@@ -14,7 +13,7 @@ const Subtitle = ({
   isCentered
 }) => {
   return (
-    <Fragment>
+    <>
       <h2
         className={classNames('subtitle', {
           [`size-${size}`]: size,
@@ -65,7 +64,7 @@ const Subtitle = ({
           font-size: ${decisions.subtitle.fontSize[2]};
         }
       `}</style>
-    </Fragment>
+    </>
   )
 }
 

@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import ReactResponsive from 'react-responsive'
 
 import { choices } from '../../utils/designTokens'
@@ -11,7 +10,7 @@ const XSmall = props => <ReactResponsive {...props} maxWidth={maxXsScreen} />
 const Mobile = props => <ReactResponsive {...props} maxWidth={maxLgScreen} />
 const Desktop = props => <ReactResponsive {...props} minWidth={minLgScreen} />
 
-const Responsive = () => <Fragment />
+const Responsive = () => null
 
 Responsive.XSmall = XSmall
 Responsive.Mobile = Mobile

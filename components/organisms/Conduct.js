@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Container from '../atoms/Container'
 import Heading from '../atoms/Heading'
 import Paragraph from '../atoms/Paragraph'

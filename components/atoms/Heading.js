@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
@@ -16,7 +15,7 @@ const Heading = ({
   withMargin
 }) => {
   return (
-    <Fragment>
+    <>
       <h1
         className={classNames('heading', {
           [`size-${size}`]: size,
@@ -92,7 +91,7 @@ const Heading = ({
           }
         }
       `}</style>
-    </Fragment>
+    </>
   )
 }
 
