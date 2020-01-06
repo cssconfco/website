@@ -1,5 +1,5 @@
 import WooCommerceAPI from 'woocommerce-api'
-const { config } = require('../../config/server')
+import { config } from '../../config/server'
 
 class WooCommerceService {
   constructor(version = 'wc/v2') {
@@ -36,35 +36,6 @@ class WooCommerceService {
 
   getProduct({ productId } = {}) {
     return this.request(`products/${productId}`)
-  }
-
-  // Subscriptions
-  getSubscriptions({ page = 1, perPage = 10 }) {
-    return this.request(`subscriptions?page=${page}&per_page=${perPage}`)
-  }
-
-  getSubscription({ subscriptionId } = {}) {
-    return this.request(`subscriptions/${subscriptionId}`)
-  }
-
-  getSubscriptionOrders({ subscriptionId } = {}) {
-    return this.request(`subscriptions/${subscriptionId}/orders`)
-  }
-
-  createSubscription({ subscription } = {}) {
-    return this.request('subscriptions', 'post', subscription)
-  }
-
-  pauseSubscription({ subscriptionId } = {}) {
-    return this.request(`subscriptions/${subscriptionId}`, 'put', {
-      status: 'on-hold'
-    })
-  }
-
-  activateSubscription({ subscriptionId } = {}) {
-    return this.request(`subscriptions/${subscriptionId}`, 'put', {
-      status: 'active'
-    })
   }
 
   // Orders
@@ -107,15 +78,6 @@ class WooCommerceService {
 
   createCustomer({ customer }) {
     return this.request('customers', 'post', customer)
-  }
-
-  // Shippings
-  getShippingZones() {
-    return this.request('shipping/zones')
-  }
-
-  getShippingZoneMethods({ shippingZoneId }) {
-    return this.request(`shipping/zones/${shippingZoneId}/methods`)
   }
 }
 

@@ -1,5 +1,5 @@
-const Mailchimp = require('mailchimp-api-v3')
-const { config } = require('../../config/server')
+import Mailchimp from 'mailchimp-api-v3'
+import { config } from '../../config/server'
 
 const mailchimp = new Mailchimp(config.mailchimpApiKey)
 

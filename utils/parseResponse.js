@@ -11,22 +11,6 @@ const orderParams = [
   'billing'
 ]
 
-const subscriptionParams = [
-  'number',
-  'status',
-  'currency',
-  'date_created',
-  'start_date',
-  'end_date',
-  'discount_total',
-  'shipping_total',
-  'total',
-  'total_tax',
-  'next_payment_date',
-  'billing_period',
-  'billing_interval'
-]
-
 const productParams = [
   'id',
   'type',
@@ -36,14 +20,12 @@ const productParams = [
   'regular_price',
   'featured',
   'status',
-  'in_stock'
+  'in_stock',
+  'virtual'
 ]
 
 export const parseOrder = (order = {}, extraParams = []) =>
   pick(order, [...orderParams, ...extraParams])
-
-export const parseSubscription = (subscription = {}, extraParams = []) =>
-  pick(subscription, [...subscriptionParams, ...extraParams])
 
 export const parseProduct = (product = {}, extraParams = []) => ({
   ...pick(product, [...productParams, ...extraParams]),
