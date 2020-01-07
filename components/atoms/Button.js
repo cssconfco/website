@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types'
 
-import { choices } from '../../utils/designTokens'
+import { choices, decisions } from '../../utils/designTokens'
 
-const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
+const Button = ({
+  children,
+  type,
+  handleClick,
+  withMargin,
+  isDisabled,
+  isLoading
+}) => {
   return (
     <>
       <button
         type={type}
         className="button"
         onClick={handleClick}
-        disabled={isDisabled}
+        disabled={isDisabled || isLoading}
       >
         {children}
       </button>
@@ -22,11 +29,19 @@ const Button = ({ children, type, handleClick, withMargin, isDisabled }) => {
           cursor: pointer;
           padding: ${choices.spacing[4]} ${choices.spacing[20]};
           text-transform: uppercase;
+          width: 100%;
         }
 
         .button:disabled {
           opacity: ${choices.opacity[50]};
           pointer-events: none;
+        }
+      `}</style>
+      <style jsx>{`
+        @media (${decisions.queries.screens.desktop}) {
+          .button {
+            max-width: 460px;
+          }
         }
       `}</style>
     </>
@@ -38,7 +53,8 @@ Button.propTypes = {
   type: PropTypes.string,
   handleClick: PropTypes.func,
   withMargin: PropTypes.bool,
-  isDisabled: PropTypes.bool
+  isDisabled: PropTypes.bool,
+  isLoading: PropTypes.bool
 }
 
 Button.defaultProps = {

@@ -12,6 +12,7 @@ export default async (req, res) => {
       const response = countries.map(mapCountry)
       res.send(response)
     } catch (error) {
+      console.error(error)
       res.status(500).send(error)
     }
   } else {

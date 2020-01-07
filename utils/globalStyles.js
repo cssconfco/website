@@ -118,7 +118,7 @@ export const formStyles = css.global`
   [type='password'] {
     ${paragraphStyles}
     font-size: ${decisions.paragraph.fontSize.sm};
-    border: 1px solid ${choices.colors.gray[300]};
+    border: 1px solid ${choices.colors.gray[400]};
     font-weight: lighter;
     height: 55px;
     padding: 5px 15px;
@@ -130,6 +130,9 @@ export const formStyles = css.global`
     color: ${choices.colors.gray[400]};
   }
 
+  a {
+    border: 1px solid transparent;
+  }
 
   a:focus,
   button:focus,

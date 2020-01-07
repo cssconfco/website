@@ -9,13 +9,15 @@ import CheckoutSummary from '../../components/organisms/CheckoutSummary'
 import { choices, decisions } from '../../utils/designTokens'
 
 const mapProduct = product => ({ ...product, quantity: product.quantity || 1 })
-const sumProductQuantity = (acc, cur) => acc + cur.quantity
+const sumProductSubtotals = (acc, cur) => acc + Number(cur.price * cur.quantity)
 const handleEpaycoDialog = () => {}
 
 const Tickets = ({ countries, products }) => {
   const shoppingCartList = products.map(mapProduct)
-  const shoppingCartTotals = shoppingCartList.reduce(sumProductQuantity, 0)
   const getShoppingCartItems = () => shoppingCartList
+  const shoppingCartTotals = {
+    total: shoppingCartList.reduce(sumProductSubtotals, 0)
+  }
 
   return (
     <CheckAdBlocker>
@@ -25,10 +27,7 @@ const Tickets = ({ countries, products }) => {
           handleEpaycoDialog={handleEpaycoDialog}
           getShoppingCartItems={getShoppingCartItems}
         />
-        <CheckoutSummary
-          shoppingCartList={shoppingCartList}
-          shoppingCartTotals={shoppingCartTotals}
-        />
+        <CheckoutSummary list={shoppingCartList} totals={shoppingCartTotals} />
         <style jsx>{`
           .container {
             display: flex;

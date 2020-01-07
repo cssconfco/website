@@ -14,6 +14,7 @@ export default async (req, res) => {
 
       res.send(response)
     } catch (error) {
+      console.error(error)
       res.status(500).send(error)
     }
   } else {

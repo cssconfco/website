@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
+import swal from 'sweetalert'
 
 import { isEqual } from 'lodash'
 import fetchJson from '../../utils/fetchJson'
@@ -139,6 +140,12 @@ class CheckoutForm extends Component {
 
       this.props.handleEpaycoDialog(checkoutResponseData)
     } catch (error) {
+      swal(
+        'Opps!',
+        'Something went wrong with your order, please try again',
+        'error'
+      )
+
       console.error('Error processing checkout in checkout form', error)
     }
   }
@@ -149,13 +156,13 @@ class CheckoutForm extends Component {
     return (
       <div className="checkout-form">
         <Form handleSubmit={this.handleSubmit}>
-          <Form.Fieldset title="Invoice Details">
+          <Form.Fieldset title="Billing Details">
             <Form.Group isHalf>
               <Label htmlFor="firstname">Name</Label>
               <input
                 {...this.getDefaultInputProps('firstname')}
                 type="text"
-                placeholder="Your Fullname"
+                placeholder="Your Firstname"
                 autoFocus
                 required
               />
@@ -227,14 +234,14 @@ class CheckoutForm extends Component {
             </Form.Group>
           </Form.Fieldset>
           <Form.Fieldset>
-            <Form.Group style={{ maxWidth: '500px' }}>
+            <Form.Group isCentered>
               <Button
                 type="submit"
                 isDisabled={isDisabled}
                 isLoading={isLoading}
               >
                 <Heading size={3} isInverted>
-                  Buy Ticket
+                  {isLoading ? 'Loading...' : 'Buy Ticket'}
                 </Heading>
               </Button>
               <div style={{ margin: '10px 0 20px 1px' }}>

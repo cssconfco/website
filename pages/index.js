@@ -52,6 +52,12 @@ class Home extends Component {
 
       this.resetForm()
     } catch (error) {
+      swal(
+        'Opps!',
+        'Something went wrong with your subscription, please try again',
+        'error'
+      )
+
       this.stopLoading()
       console.error('Error callilng api/subscribe', error)
     }

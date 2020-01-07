@@ -20,6 +20,7 @@ export default async (req, res) => {
       )
       res.send(results)
     } catch (error) {
+      console.error(error)
       res.status(500).send(error)
     }
   } else {
