@@ -4,11 +4,10 @@ import { sortBy, isEmpty, noop } from 'lodash'
 import Currency from '../atoms/Currency'
 import Subtitle from '../atoms/Subtitle'
 import Heading from '../atoms/Heading'
-// import ShoppingCartItem from '../ShoppingCartItem'
+import ShoppingCartItem from './ShoppingCartItem'
 
 import { choices, decisions } from '../../utils/designTokens'
 
-const ShoppingCartItem = () => null
 const ShoppingCartList = ({ list, totals }) => {
   const shoppingCartIsEmpty = isEmpty(list)
 
@@ -46,7 +45,6 @@ const ShoppingCartList = ({ list, totals }) => {
               price={price}
               regularPrice={regularPrice}
               quantity={quantity}
-              isSummary={true}
             />
           )
         )}
@@ -63,7 +61,6 @@ const ShoppingCartList = ({ list, totals }) => {
         .shoppingcart-list {
           display: flex;
           flex-direction: column;
-          align-items: space-between;
           border: 1px solid ${choices.colors.gray[400]};
           background: ${choices.colors.gray[100]};
           margin: ${choices.spacing[2]} 0 ${choices.spacing[8]};
@@ -88,7 +85,7 @@ const ShoppingCartList = ({ list, totals }) => {
         }
 
         .shoppingcart-list-total {
-          border-top: 1px dashed ${choices.colors.gray[300]};
+          border-top: 2px dashed ${choices.colors.gray[400]};
           align-items: center;
           display: flex;
           justify-content: space-between;
@@ -96,7 +93,7 @@ const ShoppingCartList = ({ list, totals }) => {
         }
 
         .shoppingcart-list-container {
-          height: 100%;
+          height: auto;
           overflow-y: scroll;
         }
       `}</style>

@@ -130,7 +130,7 @@ export const formStyles = css.global`
     color: ${choices.colors.gray[400]};
   }
 
-  a {
+  form a {
     border: 1px solid transparent;
   }
 
@@ -144,14 +144,14 @@ export const formStyles = css.global`
 export const reactSelectStyles = css.global`
   div.react-select__control {
     background: transparent;
-    border: 1px solid ${choices.colors.gray[300]};
+    border: 1px solid ${choices.colors.gray[400]};
     border-radius: 0;
     cursor: text;
     height: 55px;
   }
 
   div.react-select__control:hover {
-    border: 1px solid ${choices.colors.gray[300]};
+    border: 1px solid ${choices.colors.gray[400]};
   }
 
   div.react-select__control--is-focused {
@@ -160,6 +160,7 @@ export const reactSelectStyles = css.global`
 
   .react-select__value-container {
     ${paragraphStyles}
+    font-size: ${decisions.paragraph.fontSize.sm};
     position: initial !important;
     height: 55px;
     padding-left: 15px;
@@ -217,6 +218,10 @@ export const initialStyles = css.global`
     background: ${choices.colors.white};
     font-size: ${choices.fontSize.base.mobile};
     ${paragraphStyles}
+  }
+
+  a {
+    display: inline-block;
   }
 
   @media (${decisions.queries.screens.desktop}) {

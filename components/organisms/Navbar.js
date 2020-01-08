@@ -1,23 +1,22 @@
 import Paragraph from '../atoms/Paragraph'
 import Container from '../atoms/Container'
+import Link from 'next/link'
 
 import smoothScroll from '../../utils/smoothScroll'
 
-import { decisions } from '../../utils/designTokens'
+import { decisions, choices } from '../../utils/designTokens'
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <Container>
         <ul>
-          <li>
-            <a
-              href="https://forms.gle/t1JizcqqBYL4NG3i7"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Paragraph>CFP</Paragraph>
-            </a>
+          <li className="has-navbar-button">
+            <Link href="/tickets">
+              <a className="navbar-button">
+                <Paragraph size="sm">Buy a Ticket ✨</Paragraph>
+              </a>
+            </Link>
           </li>
           <li>
             <a href="#newsletter" onClick={smoothScroll('#newsletter')}>
@@ -43,6 +42,7 @@ const Navbar = () => {
         .navbar ul {
           display: flex;
           justify-content: center;
+          align-items: center;
           list-style: none;
           padding: 0;
           margin: 0;
@@ -57,8 +57,22 @@ const Navbar = () => {
           text-decoration: none;
         }
 
-        .navbar ul li:hover {
+        .navbar ul li:hover:not(.has-navbar-button) {
           border-bottom: 3px solid currentColor;
+        }
+
+        .navbar-button {
+          background: ${choices.colors.brand.bayofmany};
+          padding: ${choices.spacing[1]} ${choices.spacing[6]};
+          border-radius: ${choices.borderRadius.full};
+        }
+
+        .navbar-button:hover {
+          background: ${choices.colors.blue[800]};
+        }
+
+        .navbar-button > :global(p) {
+          color: ${choices.colors.white};
         }
       `}</style>
       <style jsx>{`

@@ -185,7 +185,7 @@ class CheckoutForm extends Component {
                 required
               />
             </Form.Group>
-            <Form.Group isHalf isBlock>
+            <Form.Group isHalf>
               <Label htmlFor="billingCountry">Country</Label>
               <Select
                 {...this.getDefaultReactSelectProps('billingCountry')}
