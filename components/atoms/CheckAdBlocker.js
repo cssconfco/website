@@ -27,7 +27,7 @@ const CheckAdBlocker = ({ children }) => {
         <Paragraph size="sm" color="red">
           In order to procced with the payment is neccesasary to{' '}
           <strong>disable the ad blocker</strong> temporarily and{' '}
-          <strong>refresh the page</strong> and try again.{' '}
+          <strong>refresh the page</strong>.{' '}
           <a
             href="https://github.com/epayco/Plugin_ePayco_WooCommerce/issues/5#issuecomment-523054153"
             target="_blank"

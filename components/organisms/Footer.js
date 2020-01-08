@@ -50,6 +50,7 @@ const Footer = () => {
       </Container>
       <style jsx>{`
         .footer {
+          border-top: 1px solid ${choices.colors.gray[400]};
           padding: 20px 0;
         }
 

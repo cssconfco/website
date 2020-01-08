@@ -10,9 +10,6 @@ class CustomDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>CSS Conf Colombia</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-
           <link
             href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
             rel="stylesheet"
@@ -35,8 +32,16 @@ class CustomDocument extends Document {
             sizes="16x16"
             href="/static/favicons/favicon-16x16.png"
           />
+
           <link rel="icon" href="/static/favicons/favicon.ico" />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
+
+          <script
+            async
+            defer
+            type="text/javascript"
+            src="https://checkout.epayco.co/checkout.js"
+          />
         </Head>
         <body>
           <Main />

@@ -1,4 +1,5 @@
 import App, { Container as NextContainer } from 'next/app'
+import Head from 'next/head'
 
 import GoogleAnalytics from '../components/layout/GoogleAnalytics'
 import {
@@ -22,6 +23,17 @@ export default class CustomApp extends App {
     return (
       <NextContainer>
         <GoogleAnalytics>
+          <Head>
+            <title>CSS Conf Colombia 2020 — A CSS Lovers Conference</title>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <meta
+              name="description"
+              content="The CSS Conf is a worldwide organization dedicated to holding conferences for designers, programmers and web interface creators."
+            />
+          </Head>
           <Component {...pageProps} />
           <style jsx global>
             {initialStyles}

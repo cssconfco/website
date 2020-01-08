@@ -65,11 +65,11 @@ const Heading = ({
         }
 
         .size-1 {
-          font-size: ${decisions.title.fontSize['2']};
+          font-size: ${decisions.title.fontSize['1']};
         }
 
         .size-2 {
-          font-size: ${decisions.title.fontSize['3']};
+          font-size: ${decisions.title.fontSize['2']};
         }
 
         .size-3 {
@@ -80,23 +80,12 @@ const Heading = ({
           font-size: ${decisions.title.fontSize['4']};
         }
       `}</style>
-      <style jsx>{`
-        @media (${decisions.queries.screens.desktop}) {
-          .size-1 {
-            font-size: ${decisions.title.fontSize['1']};
-          }
-
-          .size-2 {
-            font-size: ${decisions.title.fontSize['2']};
-          }
-        }
-      `}</style>
     </>
   )
 }
 
 Heading.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   isInverted: PropTypes.bool,
   isDisabled: PropTypes.bool,
   isCentered: PropTypes.bool,

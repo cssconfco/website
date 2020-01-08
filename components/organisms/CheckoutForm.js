@@ -13,6 +13,7 @@ import Heading from '../atoms/Heading'
 import Form from '../molecules/Form'
 
 import { config } from '../../config/client'
+import { choices } from '../../utils/designTokens'
 
 // prettier-ignore
 const CELL_PHONE_MASK = [ /[1-9]/, /\d/, /\d/,' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/];
@@ -127,7 +128,7 @@ class CheckoutForm extends Component {
     try {
       this.setState({ isLoading: true })
 
-      const { data: checkoutResponseData } = await fetchJson(
+      const checkoutResponseData = await fetchJson(
         `${config.apiUrl}/checkout/process`,
         {
           method: 'POST',
@@ -147,6 +148,7 @@ class CheckoutForm extends Component {
       )
 
       console.error('Error processing checkout in checkout form', error)
+      this.setState({ isLoading: false })
     }
   }
 
@@ -263,6 +265,11 @@ class CheckoutForm extends Component {
             </Form.Group>
           </Form.Fieldset>
         </Form>
+        <style jsx>{`
+          .checkout-form {
+            margin-top: ${choices.spacing[8]};
+          }
+        `}</style>
       </div>
     )
   }

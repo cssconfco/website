@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import FormGroup from './FormGroup'
+import Group from './Group'
 import Fieldset from './Fieldset'
 
 const Form = ({ style, children, handleSubmit }) => (
@@ -23,7 +23,7 @@ Form.propTypes = {
   style: PropTypes.object
 }
 
-Form.Group = FormGroup
+Form.Group = Group
 Form.Fieldset = Fieldset
 
 export default Form

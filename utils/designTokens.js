@@ -274,10 +274,10 @@ export const decisions = {
     fontWeight: choices.fontWeight.bold,
     textTransform: 'uppercase',
     fontSize: {
-      '4': choices.fontSize.sm,
+      '4': choices.fontSize.md,
       '3': choices.fontSize.lg,
-      '2': choices.fontSize['5xl'],
-      '1': choices.fontSize['6xl']
+      '2': choices.fontSize['3xl'],
+      '1': choices.fontSize['5xl']
     },
     color: choices.colors.brand.tuna
   },
@@ -286,8 +286,8 @@ export const decisions = {
     fontWeight: choices.fontWeight.normal,
     textTransform: 'upppercase',
     fontSize: {
-      '2': choices.fontSize.sm,
-      '1': choices.fontSize['4xl']
+      '2': choices.fontSize.lg,
+      '1': choices.fontSize['3xl']
     },
     color: {
       default: choices.colors.brand.tuna,

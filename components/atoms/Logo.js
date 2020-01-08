@@ -1,14 +1,15 @@
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
 import { choices } from '../../utils/designTokens'
 
-const Logo = () => (
+const Logo = ({ width }) => (
   <Link href="/">
     <picture className="logo">
       <img src="/static/logos/css-conf-logo.svg" />
       <style jsx>{`
         .logo {
-          max-width: 150px;
+          max-width: ${width}px;
           margin: 0;
           cursor: pointer;
           display: inline-block;
@@ -22,5 +23,13 @@ const Logo = () => (
     </picture>
   </Link>
 )
+
+Logo.propTypes = {
+  width: PropTypes.number
+}
+
+Logo.defaultProps = {
+  width: 150
+}
 
 export default Logo

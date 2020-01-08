@@ -7,7 +7,7 @@ import Currency from '../atoms/Currency'
 import { choices } from '../../utils/designTokens'
 
 const getQuantitiesUnits = quantity =>
-  `${quantity} unidad${quantity > 1 ? 'es' : ''}`
+  `${quantity} unit${quantity > 1 ? 's' : ''}`
 
 const ShoppingCartItem = ({ image, name, price, quantity }) => {
   return (
@@ -18,7 +18,7 @@ const ShoppingCartItem = ({ image, name, price, quantity }) => {
       <div className="shoppingcart-item-info">
         <Subtitle size={2}>{name}</Subtitle>
         <Paragraph weight="bold">
-          <Currency>{price}</Currency>
+          <Currency>{Number(price)}</Currency>
         </Paragraph>
         <div className="shoppingcart-item-actions">
           <Paragraph isCentered>{getQuantitiesUnits(quantity)}</Paragraph>
@@ -59,10 +59,10 @@ const ShoppingCartItem = ({ image, name, price, quantity }) => {
 }
 
 ShoppingCartItem.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  quantity: PropTypes.string.isRequired
+  quantity: PropTypes.number.isRequired
 }
 
 export default ShoppingCartItem

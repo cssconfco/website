@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { choices, decisions } from '../../utils/designTokens'
 
-const FormGroup = ({ children, style, isHalf, isCentered, isBlock }) => (
+const Group = ({ children, style, isHalf, isCentered, isBlock }) => (
   <>
     <div
       style={style}
@@ -65,7 +65,7 @@ const FormGroup = ({ children, style, isHalf, isCentered, isBlock }) => (
   </>
 )
 
-FormGroup.propTypes = {
+Group.propTypes = {
   children: PropTypes.node.isRequired,
   style: PropTypes.object,
   isHalf: PropTypes.bool,
@@ -73,4 +73,4 @@ FormGroup.propTypes = {
   isBlock: PropTypes.bool
 }
 
-export default FormGroup
+export default Group

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { sortBy, isEmpty, noop } from 'lodash'
+import { sortBy, isEmpty } from 'lodash'
 
 import Currency from '../atoms/Currency'
 import Subtitle from '../atoms/Subtitle'
@@ -8,7 +8,7 @@ import ShoppingCartItem from './ShoppingCartItem'
 
 import { choices, decisions } from '../../utils/designTokens'
 
-const ShoppingCartList = ({ list, totals }) => {
+const CheckoutSummary = ({ list, totals }) => {
   const shoppingCartIsEmpty = isEmpty(list)
 
   if (shoppingCartIsEmpty) {
@@ -20,7 +20,7 @@ const ShoppingCartList = ({ list, totals }) => {
       <div className="shoppingcart-list-summary">
         <div className="shoppingcart-list-summary-info">
           <Subtitle size={1}>Summary</Subtitle>
-          <Heading size={2}>
+          <Heading size={1}>
             <Currency>{totals.total}</Currency>
           </Heading>
         </div>
@@ -64,8 +64,8 @@ const ShoppingCartList = ({ list, totals }) => {
           border: 1px solid ${choices.colors.gray[400]};
           background: ${choices.colors.gray[100]};
           margin: ${choices.spacing[2]} 0 ${choices.spacing[8]};
-          padding: ${choices.spacing[2]} ${choices.spacing[6]}
-            ${choices.spacing[4]};
+          padding: ${choices.spacing[8]} ${choices.spacing[6]}
+            ${choices.spacing[4]} ${choices.spacing[10]};
           width: 100%;
         }
 
@@ -112,7 +112,7 @@ const ShoppingCartList = ({ list, totals }) => {
             border-color: transparent transparent transparent
               ${choices.colors.gray[500]};
             height: 100vh;
-            max-width: 550px;
+            max-width: 450px;
           }
         }
       `}</style>
@@ -120,26 +120,14 @@ const ShoppingCartList = ({ list, totals }) => {
   )
 }
 
-ShoppingCartList.propTypes = {
-  show: PropTypes.bool,
-  true: PropTypes.bool,
+CheckoutSummary.propTypes = {
   totals: PropTypes.object,
-  list: PropTypes.array,
-  handleHide: PropTypes.func,
-  handleIncreaseProductFromShoppingCart: PropTypes.func,
-  handleDecreaseProductFromShoppingCart: PropTypes.func,
-  handleRemoveProductFromShoppingCart: PropTypes.func
+  list: PropTypes.array
 }
 
-ShoppingCartList.defaultProps = {
-  show: false,
-  true: false,
+CheckoutSummary.defaultProps = {
   totals: {},
-  list: [],
-  handleHide: noop,
-  handleIncreaseProductFromShoppingCart: noop,
-  handleDecreaseProductFromShoppingCart: noop,
-  handleRemoveProductFromShoppingCart: noop
+  list: []
 }
 
-export default ShoppingCartList
+export default CheckoutSummary
