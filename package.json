@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/cssconfco/cssconfco-website#readme",
   "dependencies": {
+    "@hapi/boom": "^9.0.0",
     "base-64": "^0.1.0",
     "classnames": "^2.2.6",
     "crypto-random-string": "^1.0.0",

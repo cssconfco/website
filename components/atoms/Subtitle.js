@@ -56,6 +56,10 @@ const Subtitle = ({
           color: ${decisions.subtitle.color.alt.yellow} !important;
         }
 
+        .alt-gray {
+          color: ${decisions.subtitle.color.alt.gray} !important;
+        }
+
         .size-1 {
           font-size: ${decisions.subtitle.fontSize[1]};
         }

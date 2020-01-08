@@ -294,7 +294,8 @@ export const decisions = {
       alt: {
         blue: choices.colors.brand.bayofmany,
         red: choices.colors.brand.cinnabar,
-        yellow: choices.colors.brand.koromiko
+        yellow: choices.colors.brand.koromiko,
+        gray: choices.colors.gray[800]
       }
     }
   },
