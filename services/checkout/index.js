@@ -19,16 +19,14 @@ class CheckoutService {
       billingAddress,
       complementaryBillingAddress,
       billingCountry,
-      billingCity,
-      billingDepartment
+      billingCity
     } = userInfo
 
     return {
       address_1: billingAddress,
       address_2: complementaryBillingAddress,
       country: billingCountry,
-      city: billingCity,
-      state: billingDepartment
+      city: billingCity
     }
   }
 

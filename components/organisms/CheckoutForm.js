@@ -226,11 +226,13 @@ class CheckoutForm extends Component {
               />
             </Form.Group>
             <Form.Group isHalf>
-              <Label htmlFor="comments">T-shirt size</Label>
+              <Label htmlFor="comments">
+                Comments: T-shirt size & Translation Device
+              </Label>
               <input
                 {...this.getDefaultInputProps('comments')}
                 type="text"
-                placeholder="Small / Medium / Large / Extra Large"
+                placeholder="Size M, and I need a translation device"
                 required
               />
             </Form.Group>
