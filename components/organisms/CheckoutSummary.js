@@ -96,8 +96,7 @@ const CheckoutSummary = ({ list, totals }) => {
           height: auto;
           overflow-y: auto;
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .shoppingcart-list {
             background: linear-gradient(
@@ -112,6 +111,7 @@ const CheckoutSummary = ({ list, totals }) => {
             border-color: transparent transparent transparent
               ${choices.colors.gray[500]};
             height: 100vh;
+            min-height: 600px;
             max-width: 450px;
           }
         }

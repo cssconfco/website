@@ -178,7 +178,7 @@ class CheckoutResponse extends Component {
             <a>
               <Button>
                 <Heading size={3} isInverted>
-                  Return to CSS Conf
+                  Return to Home
                 </Heading>
               </Button>
             </a>

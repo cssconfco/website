@@ -126,8 +126,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           background-repeat: no-repeat;
           background-size: contain;
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .newsletter {
             overflow: visible;

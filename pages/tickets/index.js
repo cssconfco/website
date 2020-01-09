@@ -57,8 +57,7 @@ const Tickets = ({ countries, products }) => {
               flex-direction: column-reverse;
               padding: 0 ${choices.spacing[2]};
             }
-          `}</style>
-          <style jsx>{`
+
             @media (${decisions.queries.screens.desktop}) {
               .checkout {
                 flex-direction: row;

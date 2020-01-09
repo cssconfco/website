@@ -36,8 +36,7 @@ const Button = ({
           opacity: ${choices.opacity[50]};
           pointer-events: none;
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .button {
             max-width: 460px;

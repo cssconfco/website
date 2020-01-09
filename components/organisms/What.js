@@ -49,8 +49,7 @@ const What = () => {
           height: 600px;
           opacity: 0.35;
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .what {
             overflow: visible;

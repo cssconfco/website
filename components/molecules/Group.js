@@ -44,8 +44,7 @@ const Group = ({ children, style, isHalf, isCentered, isBlock }) => (
       .form-group:last-child {
         margin-right: 0;
       }
-    `}</style>
-    <style jsx>{`
+
       @media (${decisions.queries.screens.desktop}) {
         .is-half {
           width: calc(50% - ${choices.spacing[2]});

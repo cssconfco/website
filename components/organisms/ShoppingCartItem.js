@@ -36,6 +36,7 @@ const ShoppingCartItem = ({ image, name, price, quantity }) => {
           margin-left: 20px;
           align-items: flex-start;
           justify-content: center;
+          width: 100%;
         }
 
         .shoppingcart-item-actions {
@@ -50,8 +51,8 @@ const ShoppingCartItem = ({ image, name, price, quantity }) => {
           align-items: center;
           padding: 5px 10px;
           border: 1px solid ${choices.colors.gray[300]};
-          height: 120px;
-          width: 120px;
+          width: 100%;
+          max-width: 120px;
         }
       `}</style>
     </div>

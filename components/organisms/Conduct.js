@@ -58,8 +58,7 @@ const Conduct = () => {
           opacity: 0.1;
           transform: translate(0, -50%);
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .conduct {
             overflow: visible;

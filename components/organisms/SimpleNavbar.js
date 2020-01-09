@@ -22,8 +22,7 @@ const SimpleNavbar = () => {
         .simple-navbar :global(.logo) {
           margin-right: ${choices.spacing[4]};
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .simple-navbar {
             justify-content: left;

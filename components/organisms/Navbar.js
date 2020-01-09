@@ -74,8 +74,7 @@ const Navbar = () => {
         .navbar-button > :global(p) {
           color: ${choices.colors.white};
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .navbar {
             position: absolute;

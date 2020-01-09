@@ -85,8 +85,7 @@ const Footer = () => {
           width: 30px;
           height: 30px;
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .footer :global(.container) {
             justify-content: space-between;

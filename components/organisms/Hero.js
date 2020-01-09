@@ -124,8 +124,7 @@ const Hero = () => {
           background-position: center left;
           background-repeat: no-repeat;
         }
-      `}</style>
-      <style jsx>{`
+
         @media (${decisions.queries.screens.desktop}) {
           .hero {
             padding-top: 50px;
