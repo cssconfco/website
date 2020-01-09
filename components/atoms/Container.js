@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import { decisions } from '../../utils/designTokens'
 
-const Container = ({ children }) => {
+const Container = ({ children, size }) => {
   return (
     <>
       <div className="container">{children}</div>
@@ -10,7 +10,7 @@ const Container = ({ children }) => {
         .container {
           position: relative;
           margin: 0 auto;
-          max-width: ${decisions.container.maxWidth};
+          max-width: ${decisions.container.maxWidth[size]};
         }
       `}</style>
     </>
@@ -18,7 +18,12 @@ const Container = ({ children }) => {
 }
 
 Container.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  size: PropTypes.string
+}
+
+Container.deafultProps = {
+  size: 'large'
 }
 
 export default Container

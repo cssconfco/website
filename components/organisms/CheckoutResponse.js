@@ -91,7 +91,7 @@ class CheckoutResponse extends Component {
     }
 
     return (
-      <Container>
+      <Container size="small">
         <div className="checkout-response">
           <div className="checkout-response-header">
             <Heading size={2} isCentered>
