@@ -23,7 +23,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Paragraph color="red">CSS Conf</Paragraph>
+              <Paragraph color="red">CSSConf.org</Paragraph>
             </a>
           </li>
         </ul>

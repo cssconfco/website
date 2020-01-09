@@ -94,7 +94,7 @@ const CheckoutSummary = ({ list, totals }) => {
 
         .shoppingcart-list-container {
           height: auto;
-          overflow-y: scroll;
+          overflow-y: auto;
         }
       `}</style>
       <style jsx>{`

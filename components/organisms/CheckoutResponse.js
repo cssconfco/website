@@ -149,7 +149,7 @@ class CheckoutResponse extends Component {
           <div className="checkout-response-container">
             <div className="checkout-response-address">
               <Subtitle size={1} color="gray">
-                <i className="fas fa-file-invoice-dollar" /> Billing Address
+                <i className="fas fa-file-invoice-dollar" /> Billing Details
               </Subtitle>
 
               <Paragraph>
@@ -175,11 +175,13 @@ class CheckoutResponse extends Component {
           </div>
           <br />
           <Link href="/">
-            <Button>
-              <Heading size={3} isInverted>
-                Return to CSS Conf
-              </Heading>
-            </Button>
+            <a>
+              <Button>
+                <Heading size={3} isInverted>
+                  Return to CSS Conf
+                </Heading>
+              </Button>
+            </a>
           </Link>
           <style jsx>{`
             .checkout-response {
@@ -189,7 +191,7 @@ class CheckoutResponse extends Component {
             }
 
             .checkout-response-header {
-              margin: ${choices.spacing[8]} 0 ${choices.spacing[6]};
+              margin: ${choices.spacing[6]} 0;
               width: 100%;
             }
 
