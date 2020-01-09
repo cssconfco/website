@@ -326,6 +326,16 @@ export const decisions = {
     },
     color: choices.colors.brand.tuna
   },
+  icon: {
+    color: {
+      gray: choices.colors.gray[900]
+    },
+    fontSize: {
+      sm: choices.fontSize.sm,
+      md: choices.fontSize.md,
+      lg: choices.fontSize.xl
+    }
+  },
   // layout
   container: {
     maxWidth: { large: choices.screens.xl, small: choices.screens.md },

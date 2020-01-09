@@ -15,6 +15,7 @@ import Container from '../atoms/Container'
 import cleanUrlQueryParams from '../../utils/cleanUrlQueryParams'
 import scrollToTop from '../../utils/scrollToTop'
 import { choices } from '../../utils/designTokens'
+import Icon from '../atoms/Icon'
 
 class CheckoutResponse extends Component {
   get fullName() {
@@ -98,14 +99,17 @@ class CheckoutResponse extends Component {
               Order Details
             </Heading>
             <Paragraph>
-              Hi! <strong>{this.fullName}</strong>, your transaction is{' '}
-              <strong>{this.transactionStatus}</strong>.
+              Hi! <strong>{this.fullName}</strong>, your transaction status is{' '}
+              <strong className="transaction-status">
+                {this.transactionStatus}
+              </strong>
+              .
             </Paragraph>
           </div>
           <div className="checkout-response-container">
             <div className="checkout-response-info">
               <Subtitle size={1} color="gray">
-                <i className="fas fa-money-bill-alt" /> Payment information
+                <Icon icon="money" size="lg" /> <span>Payment information</span>
               </Subtitle>
               <Paragraph>
                 <strong>Invoice</strong> <span>{idInvoice}</span>
@@ -125,7 +129,8 @@ class CheckoutResponse extends Component {
 
           <div className="checkout-response-order">
             <Subtitle size={1} color="gray">
-              <i className="fas fa-receipt" /> Order #{order.number}
+              <Icon icon="receipt" size="lg" />{' '}
+              <span>Order #{order.number}</span>
             </Subtitle>
 
             <Subtitle size={2} color="gray">
@@ -149,7 +154,7 @@ class CheckoutResponse extends Component {
           <div className="checkout-response-container">
             <div className="checkout-response-address">
               <Subtitle size={1} color="gray">
-                <i className="fas fa-file-invoice-dollar" /> Billing Details
+                <Icon icon="invoice" size="lg" /> <span>Billing Details</span>
               </Subtitle>
 
               <Paragraph>
@@ -205,12 +210,17 @@ class CheckoutResponse extends Component {
 
             .checkout-response-address,
             .checkout-response-info {
-              background: ${choices.colors.gray[300]};
-              border: 2px dashed ${choices.colors.gray[500]};
+              background: ${choices.colors.yellow[100]};
+              border: 2px dashed ${choices.colors.yellow[500]};
               margin: ${choices.spacing[4]} 0;
               padding: ${choices.spacing[6]} ${choices.spacing[4]}
                 ${choices.spacing[4]};
               width: 100%;
+            }
+
+            .checkout-response-address {
+              background: ${choices.colors.red[100]};
+              border: 2px dashed ${choices.colors.red[500]};
             }
 
             .checkout-response-order {
@@ -229,6 +239,19 @@ class CheckoutResponse extends Component {
 
             .checkout-response :global(.button > .heading) {
               margin-bottom: 0;
+            }
+
+            .checkout-response :global(.icon) {
+              margin-right: ${choices.spacing[2]};
+            }
+
+            .checkout-response :global(.subtitle) {
+              display: flex;
+              align-items: center;
+            }
+
+            .transaction-status {
+              text-decoration: underline;
             }
           `}</style>
         </div>
