@@ -1,18 +1,22 @@
 {
   "version": 2,
+  "build": {
+    "env": {
+      "GOOGLE_ANALYTICS_ID": "@cssconfco-google-analytics-id",
+      "CLIENT_URL": "@cssconfco-client-url",
+      "API_URL": "@cssconfco-api-url",
+      "EPAYCO_VALIDATE_URL": "@cssconfco-epayco-validate-url",
+      "EPAYCO_PUBLIC_KEY": "@cssconfco-epayco-public-key",
+      "EPAYCO_ENV": "@cssconfco-epayco-env"
+    }
+  },
   "env": {
-    "GOOGLE_ANALYTICS_ID": "@cssconfco-google-analytics-id",
     "MAILCHIMP_API_KEY": "@cssconfco-mailchimp-api-key",
     "MAILCHIMP_AUDIENCE_ID": "@cssconfco-mailchimp-audience-id",
     "WP_CONSUMER_KEY": "@cssconfco-wp-consumer-key",
     "WP_CONSUMER_SECRET": "@cssconfco-wp-consumer-secret",
-    "EPAYCO_CLIENT_ID": "@cssconfco-epayco-client-id",
-    "EPAYCO_SECRET_KEY": "@cssconfco-epayco-secret-key",
     "WORDPRESS_URL": "@cssconfco-wordpress-url",
-    "CLIENT_URL": "@cssconfco-client-url",
-    "API_URL": "@cssconfco-api-url",
-    "EPAYCO_VALIDATE_URL": "@cssconfco-epayco-validate-url",
-    "EPAYCO_PUBLIC_KEY": "@cssconfco-epayco-public-key",
-    "EPAYCO_ENV": "@cssconfco-epayco-env"
+    "EPAYCO_CLIENT_ID": "@cssconfco-epayco-client-id",
+    "EPAYCO_SECRET_KEY": "@cssconfco-epayco-secret-key"
   }
 }
