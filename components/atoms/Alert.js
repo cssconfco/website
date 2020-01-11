@@ -11,12 +11,11 @@ const Alert = ({ children, type }) => (
     <style jsx>{`
       .alert {
         display: inline-flex;
-        align-items: center;
+        flex-direction: column;
         padding: ${choices.spacing[2]} ${choices.spacing[4]};
         border-radius: ${choices.borderRadius.md};
         height: ${choices.minHeight.full};
-        margin: ${choices.spacing[2]} ${choices.spacing[4]}
-          ${choices.spacing[16]};
+        margin: ${choices.spacing[8]} ${choices.spacing[4]};
       }
 
       .alert-info {

@@ -8,6 +8,7 @@ import {
   checkboxStyles,
   reactSelectStyles
 } from '../utils/globalStyles'
+import Footer from '../components/organisms/Footer'
 
 export default class CustomApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -34,7 +35,26 @@ export default class CustomApp extends App {
               content="The CSS Conf is a worldwide organization dedicated to holding conferences for designers, programmers and web interface creators."
             />
           </Head>
-          <Component {...pageProps} />
+          <div className="wrapper">
+            <Component {...pageProps} />
+            <div className="push" />
+          </div>
+          <Footer />
+          <style jsx>{`
+            .wrapper {
+              min-height: 100%;
+              margin-bottom: -80px;
+            }
+
+            :global(#__next) {
+              height: 100%;
+            }
+
+            .push,
+            :global(.footer) {
+              height: 80px;
+            }
+          `}</style>
           <style jsx global>
             {initialStyles}
           </style>

@@ -4,22 +4,29 @@ import { config } from '../../config/client'
 
 import SimpleNavbar from '../../components/organisms/SimpleNavbar'
 import CheckoutResponse from '../../components/organisms/CheckoutResponse'
-import Footer from '../../components/organisms/Footer'
 
 import fetchJson from '../../utils/fetchJson'
 import parseCheckoutResponse from '../../utils/parseCheckoutResponse'
 import { decodeOrderParams } from '../../utils/orderParams'
+import redirectToHomePage from '../../utils/redirectToHomePage'
 
 async function getEpaycoData({ query }) {
   const ePaycoReference = get(query, 'ref_payco')
   const ePaycoReferenceX = get(query, 'x_ref_payco')
 
   if (ePaycoReference) {
-    const { data: ePaycoData } = await fetchJson(
-      `${config.ePaycoValidateUrl}/${ePaycoReference}`
-    )
+    try {
+      const { data: ePaycoData } = await fetchJson(
+        `${config.ePaycoValidateUrl}/${ePaycoReference}`
+      )
 
-    return parseCheckoutResponse(ePaycoData)
+      return parseCheckoutResponse(ePaycoData)
+    } catch (error) {
+      console.error(
+        'Error getting ePayco data in checkout response page',
+        error
+      )
+    }
   } else if (ePaycoReferenceX) {
     return parseCheckoutResponse(query)
   }
@@ -39,11 +46,10 @@ const Response = props => (
   <>
     <SimpleNavbar />
     <CheckoutResponse {...props} />
-    <Footer />
   </>
 )
 
-Response.getInitialProps = async ({ query }) => {
+Response.getInitialProps = async ({ res, query }) => {
   try {
     const ePayco = await getEpaycoData({ query })
 
@@ -62,6 +68,8 @@ Response.getInitialProps = async ({ query }) => {
       'Error getting initial props in checkout response page',
       error
     )
+
+    redirectToHomePage(res)
   }
 }
 

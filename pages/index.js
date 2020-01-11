@@ -6,7 +6,6 @@ import What from '../components/organisms/What'
 import Newsletter from '../components/organisms/Newsletter'
 import Conduct from '../components/organisms/Conduct'
 import Navbar from '../components/organisms/Navbar'
-import Footer from '../components/organisms/Footer'
 
 import { logEvent } from '../utils/analytics'
 import fetchJson from '../utils/fetchJson'
@@ -83,7 +82,6 @@ class Home extends Component {
           isLoading={loading}
         />
         <Conduct />
-        <Footer />
       </>
     )
   }
