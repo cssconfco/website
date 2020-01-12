@@ -90,7 +90,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
         input {
           height: 40px;
           width: 100%;
-          border: none;
+          border: 1px solid transparent;
           margin-right: 20px;
           padding: 10px 20px;
           font-size: ${choices.fontSize.lg};
