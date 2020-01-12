@@ -109,7 +109,7 @@ class CheckoutResponse extends Component {
           <div className="checkout-response-container">
             <div className="checkout-response-info">
               <Subtitle size={1} color="gray">
-                <Icon icon="money" size="lg" /> <span>Payment information</span>
+                <Icon icon="money" size="lg" /> <span>Payment info</span>
               </Subtitle>
               <Paragraph>
                 <strong>Invoice</strong> <span>{idInvoice}</span>
