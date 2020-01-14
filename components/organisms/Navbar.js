@@ -14,7 +14,7 @@ const Navbar = () => {
           <li className="has-navbar-button">
             <Link href="/tickets">
               <a className="navbar-button">
-                <Paragraph size="sm">Buy a Ticket</Paragraph>
+                <Paragraph size="sm">Buy Ticket</Paragraph>
               </a>
             </Link>
           </li>
