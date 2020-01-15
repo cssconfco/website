@@ -14,6 +14,7 @@ import Form from '../molecules/Form'
 
 import { config } from '../../config/client'
 import { choices } from '../../utils/designTokens'
+import { logEvent } from '../../utils/analytics'
 
 // prettier-ignore
 const CELL_PHONE_MASK = [ /[1-9]/, /\d/, /\d/,' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/];
@@ -138,6 +139,8 @@ class CheckoutForm extends Component {
           }
         }
       )
+
+      logEvent({ category: 'ticket', action: 'submit', label: 'order' })
 
       this.props.handleEpaycoDialog(checkoutResponseData)
     } catch (error) {

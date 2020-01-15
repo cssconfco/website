@@ -4,6 +4,7 @@ import { isEmpty, get } from 'lodash'
 import Error from 'next/error'
 import Link from 'next/link'
 
+import Icon from '../atoms/Icon'
 import Heading from '../atoms/Heading'
 import Currency from '../atoms/Currency'
 import Subtitle from '../atoms/Subtitle'
@@ -15,7 +16,7 @@ import Container from '../atoms/Container'
 import cleanUrlQueryParams from '../../utils/cleanUrlQueryParams'
 import scrollToTop from '../../utils/scrollToTop'
 import { choices } from '../../utils/designTokens'
-import Icon from '../atoms/Icon'
+import { logEvent } from '../../utils/analytics'
 
 class CheckoutResponse extends Component {
   get fullName() {
@@ -81,6 +82,7 @@ class CheckoutResponse extends Component {
   componentDidMount() {
     scrollToTop()
     cleanUrlQueryParams()
+    logEvent({ category: 'ticket', action: 'load', label: 'response' })
   }
 
   render() {
