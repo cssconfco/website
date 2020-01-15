@@ -12,6 +12,7 @@ import SimpleNavbar from '../../components/organisms/SimpleNavbar'
 
 import fetchJson from '../../utils/fetchJson'
 import { choices, decisions } from '../../utils/designTokens'
+import { logEvent } from '../../utils/analytics'
 
 import EPaycoService from '../../services/epayco'
 
@@ -36,6 +37,7 @@ const Tickets = ({ countries, products }) => {
 
   useEffect(() => {
     ePaycoService = new EPaycoService(config.ePaycoPublicKey, config.ePaycoTest)
+    logEvent({ category: 'ticket', action: 'load', label: 'checkout' })
   }, [])
 
   return (
