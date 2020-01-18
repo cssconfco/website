@@ -6,6 +6,7 @@ import What from '../components/organisms/What'
 import Newsletter from '../components/organisms/Newsletter'
 import Conduct from '../components/organisms/Conduct'
 import Navbar from '../components/organisms/Navbar'
+import Speakers from '../components/organisms/Speakers'
 
 import { logEvent } from '../utils/analytics'
 import fetchJson from '../utils/fetchJson'
@@ -72,6 +73,7 @@ class Home extends Component {
     return (
       <>
         <Navbar />
+        <Speakers />
         <Hero />
         <What />
         <Newsletter

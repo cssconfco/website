@@ -22,7 +22,7 @@ Container.propTypes = {
   size: PropTypes.string
 }
 
-Container.deafultProps = {
+Container.defaultProps = {
   size: 'large'
 }
 

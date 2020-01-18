@@ -1,4 +1,3 @@
-import Logo from '../atoms/Logo'
 import Subtitle from '../atoms/Subtitle'
 import Container from '../atoms/Container'
 
@@ -8,7 +7,6 @@ const Hero = () => {
   return (
     <section className="hero">
       <Container>
-        <Logo />
         <div className="tribals">
           <div className="tribal-container">
             <div className="date-tribal tribal">
@@ -35,16 +33,7 @@ const Hero = () => {
       <style jsx>{`
         .hero {
           position: relative;
-          padding: 100px ${decisions.container.padding} 40px;
-        }
-
-        .hero :global(.logo) {
-          position: absolute;
-          margin: 0 auto;
-          top: -80px;
-          left: 0;
-          right: 0;
-          z-index: 1;
+          padding: 30px ${decisions.container.padding};
         }
 
         .tribals {
@@ -127,14 +116,7 @@ const Hero = () => {
 
         @media (${decisions.queries.screens.desktop}) {
           .hero {
-            padding-top: 50px;
-          }
-
-          .hero :global(.logo) {
-            top: -30px;
-            left: -30px;
-            margin-left: ${decisions.container.padding};
-            right: auto;
+            padding-top: 20px;
           }
 
           .tribals {

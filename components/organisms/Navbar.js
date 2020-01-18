@@ -1,6 +1,8 @@
-import Paragraph from '../atoms/Paragraph'
-import Container from '../atoms/Container'
 import Link from 'next/link'
+
+import Logo from '../atoms/Logo'
+import Container from '../atoms/Container'
+import Paragraph from '../atoms/Paragraph'
 
 import smoothScroll from '../../utils/smoothScroll'
 
@@ -10,33 +12,50 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Container>
-        <ul>
-          <li className="has-navbar-button">
-            <Link href="/tickets">
-              <a className="navbar-button">
-                <Paragraph size="sm">Buy Ticket</Paragraph>
+        <header>
+          <Logo width={100} />
+          <ul>
+            <li className="has-navbar-button">
+              <Link href="/tickets">
+                <a className="navbar-button">
+                  <Paragraph size="sm">Buy Ticket</Paragraph>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <a href="#newsletter" onClick={smoothScroll('#newsletter')}>
+                <Paragraph>Newsletter</Paragraph>
               </a>
-            </Link>
-          </li>
-          <li>
-            <a href="#newsletter" onClick={smoothScroll('#newsletter')}>
-              <Paragraph>Newsletter</Paragraph>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:hello@cssconf.co"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Paragraph>Contact</Paragraph>
-            </a>
-          </li>
-        </ul>
+            </li>
+            {/* <li className="visible-desktop">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Paragraph>Scholarships</Paragraph>
+              </a>
+            </li> */}
+            <li>
+              <a
+                href="mailto:hello@cssconf.co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Paragraph>Contact</Paragraph>
+              </a>
+            </li>
+          </ul>
+        </header>
       </Container>
       <style jsx>{`
+        header {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
+
         .navbar {
+          position: relative;
           margin-top: 20px;
+          z-index: 10;
         }
 
         .navbar ul {
@@ -45,7 +64,7 @@ const Navbar = () => {
           align-items: center;
           list-style: none;
           padding: 0;
-          margin: 0;
+          margin: 20px 0;
         }
 
         .navbar ul li {
@@ -65,6 +84,7 @@ const Navbar = () => {
           background: ${choices.colors.brand.bayofmany};
           padding: ${choices.spacing[1]} ${choices.spacing[6]};
           border-radius: ${choices.borderRadius.full};
+          text-align: center;
         }
 
         .navbar-button:hover {
@@ -75,17 +95,31 @@ const Navbar = () => {
           color: ${choices.colors.white};
         }
 
+        .visible-desktop {
+          display: none;
+        }
+
         @media (${decisions.queries.screens.desktop}) {
+          header {
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+          }
+
           .navbar {
             position: absolute;
             width: 100%;
             z-index: 1;
-            margin-top: 10px;
+            margin-top: 20px;
           }
 
           .navbar ul {
             justify-content: flex-end;
             margin-right: 10px;
+          }
+
+          .visible-desktop {
+            display: inline-block;
           }
         }
       `}</style>
