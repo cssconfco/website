@@ -27,7 +27,7 @@ const Navbar = () => {
                 <Paragraph>Newsletter</Paragraph>
               </a>
             </li>
-            {/* <li className="visible-desktop">
+            {/* <li className="on-desktop">
               <a href="#" target="_blank" rel="noopener noreferrer">
                 <Paragraph>Scholarships</Paragraph>
               </a>
@@ -95,7 +95,7 @@ const Navbar = () => {
           color: ${choices.colors.white};
         }
 
-        .visible-desktop {
+        .on-desktop {
           display: none;
         }
 
@@ -118,7 +118,7 @@ const Navbar = () => {
             margin-right: 10px;
           }
 
-          .visible-desktop {
+          .on-desktop {
             display: inline-block;
           }
         }

@@ -17,14 +17,20 @@ const Speakers = () => {
             <div className="speaker-list">
               <Speaker image="luis-gadea">
                 <>
-                  <Paragrapah weight="bold">Luis Gadea</Paragrapah>
+                  <Paragrapah weight="bold">🇨🇦 Luis Gadea</Paragrapah>
                   <Paragrapah>Character designer</Paragrapah>
                 </>
               </Speaker>
               <Speaker image="evangelina-ferreira">
                 <>
-                  <Paragrapah weight="bold">Evangelina Ferreira</Paragrapah>
+                  <Paragrapah weight="bold">🇦🇷 Evangelina Ferreira</Paragrapah>
                   <Paragrapah>Google Developer Expert</Paragrapah>
+                </>
+              </Speaker>
+              <Speaker image="laura-gonzalez">
+                <>
+                  <Paragrapah weight="bold">🇬🇧 Laura Gonzales</Paragrapah>
+                  <Paragrapah>UI Engineer - Facebook</Paragrapah>
                 </>
               </Speaker>
               <Speaker image="next-speaker" />
