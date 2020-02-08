@@ -112,8 +112,8 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           top: 50%;
           left: 0;
           transform: translate(-50%, -50%);
-          width: 500px;
-          height: 500px;
+          width: 450px;
+          height: 450px;
           opacity: 0.2;
         }
 
