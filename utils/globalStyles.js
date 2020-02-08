@@ -134,7 +134,7 @@ export const formStyles = css.global`
     border: 1px solid transparent;
   }
 
-  a:focus,
+  a:focus:not(.not-focus),
   button:focus,
   :not(.react-select__input) > input:focus {
     ${focusStyles}

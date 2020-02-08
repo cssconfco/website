@@ -5,6 +5,8 @@ import fetchJson from '../../utils/fetchJson'
 import Paragraph from './Paragraph'
 import Alert from './Alert'
 
+import { links } from '../../utils/constants'
+
 const CheckAdBlocker = ({ children }) => {
   const [haveAdBlocker, setHaveAdBlocker] = useState(false)
 
@@ -29,7 +31,7 @@ const CheckAdBlocker = ({ children }) => {
           <strong>disable the ad blocker</strong> temporarily and{' '}
           <strong>refresh the page</strong>.{' '}
           <a
-            href="https://github.com/epayco/Plugin_ePayco_WooCommerce/issues/5#issuecomment-523054153"
+            href={links.EPAYCO_ISSUE}
             target="_blank"
             rel="noopener noreferrer"
           >

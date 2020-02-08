@@ -18,6 +18,7 @@ import EPaycoService from '../../services/epayco'
 
 import { config } from '../../config/client'
 import Heading from '../../components/atoms/Heading'
+import { links } from '../../utils/constants'
 
 const mapProduct = product => ({ ...product, quantity: product.quantity || 1 })
 const sumProductSubtotals = (acc, cur) => acc + Number(cur.price * cur.quantity)
@@ -70,7 +71,7 @@ const Tickets = ({ countries, products }) => {
                 color="blue"
               >
                 We recommend you to suscribe to our{' '}
-                <Link href="/#newsletter">
+                <Link href={links.NEWSLETTER}>
                   <a>newsletter</a>
                 </Link>{' '}
                 so you can know with anticipation the date of our next batch of
@@ -84,7 +85,7 @@ const Tickets = ({ countries, products }) => {
                 Remember that we also publish that information in our social
                 networks. Please, follow us in{' '}
                 <a
-                  href="https://twitter.com/cssconfco"
+                  href={links.TWITTER}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -92,7 +93,7 @@ const Tickets = ({ countries, products }) => {
                 </a>{' '}
                 and{' '}
                 <a
-                  href="https://instagram.com/cssconfco"
+                  href={links.INSTAGRAM}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -107,7 +108,7 @@ const Tickets = ({ countries, products }) => {
             .checkout {
               display: flex;
               flex-direction: column-reverse;
-              padding: 0 ${choices.spacing[2]};
+              padding: 0 ${choices.spacing[4]};
             }
 
             @media (${decisions.queries.screens.desktop}) {

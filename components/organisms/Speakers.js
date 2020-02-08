@@ -8,7 +8,7 @@ import { choices, decisions } from '../../utils/designTokens'
 const Speakers = () => {
   return (
     <>
-      <section className="speakers">
+      <section id="speakers" className="speakers">
         <Container>
           <div className="container-list">
             <Heading color="red" size={2}>

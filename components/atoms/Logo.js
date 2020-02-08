@@ -2,9 +2,10 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 import { choices } from '../../utils/designTokens'
+import { links } from '../../utils/constants'
 
 const Logo = ({ width }) => (
-  <Link href="/">
+  <Link href={links.HOME}>
     <picture className="logo">
       <img src="/static/logos/css-conf-logo.svg" />
       <style jsx>{`

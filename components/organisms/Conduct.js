@@ -3,6 +3,7 @@ import Heading from '../atoms/Heading'
 import Paragraph from '../atoms/Paragraph'
 
 import { choices, decisions } from '../../utils/designTokens'
+import { links } from '../../utils/constants'
 
 const Conduct = () => {
   return (
@@ -15,11 +16,21 @@ const Conduct = () => {
           <Paragraph color="blue">
             We want everyone to enjoy this conference to the fullest, to make
             each person feel safe and welcome. To achieve this, we have defined
-            a <strong>Code of Conduct</strong>, an agreement in which you will
-            take an active role. This agreement is simple: be kind to everyone
-            at all times, regardless of gender, gender identity, age, sexual
-            orientation, disability, physical appearance, race, ethnicity,
-            nationality, religion, points of view or political experience.
+            a{' '}
+            <strong>
+              <a
+                href={links.CODE_OF_CONDUCT}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code of Conduct
+              </a>
+            </strong>
+            , an agreement in which you will take an active role. This agreement
+            is simple: be kind to everyone at all times, regardless of gender,
+            gender identity, age, sexual orientation, disability, physical
+            appearance, race, ethnicity, nationality, religion, points of view
+            or political experience.
           </Paragraph>
           <div className="bird"></div>
         </div>

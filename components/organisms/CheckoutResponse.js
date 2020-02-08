@@ -17,6 +17,7 @@ import cleanUrlQueryParams from '../../utils/cleanUrlQueryParams'
 import scrollToTop from '../../utils/scrollToTop'
 import { choices } from '../../utils/designTokens'
 import { logEvent } from '../../utils/analytics'
+import { links } from '../../utils/constants'
 
 class CheckoutResponse extends Component {
   get fullName() {
@@ -181,7 +182,7 @@ class CheckoutResponse extends Component {
             </div>
           </div>
           <br />
-          <Link href="/">
+          <Link href={links.HOME}>
             <a>
               <Button>
                 <Heading size={3} isInverted>

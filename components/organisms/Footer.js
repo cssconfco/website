@@ -2,6 +2,7 @@ import Paragraph from '../atoms/Paragraph'
 import Container from '../atoms/Container'
 
 import { decisions, choices } from '../../utils/designTokens'
+import { links } from '../../utils/constants'
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
         <ul>
           <li>
             <a
-              href="https://github.com/cssconfco/codigo-de-conducta"
+              href={links.CODE_OF_CONDUCT}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -18,32 +19,39 @@ const Footer = () => {
             </a>
           </li>
           <li>
+            <a href={links.FAQS} target="_blank" rel="noopener noreferrer">
+              <Paragraph color="red">FAQS</Paragraph>
+            </a>
+          </li>
+          <li>
             <a
-              href="http://cssconf.org"
+              href={links.CSSCONF_ORG}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Paragraph color="red">CSSConf.org</Paragraph>
+              <Paragraph color="red">cssconf.org</Paragraph>
             </a>
           </li>
         </ul>
         <ul>
           <li className="not-underline">
             <a
-              href="https://instagram.com/cssconfco"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="social-icon" src="/static/icons/instagram.svg" />
-            </a>
-          </li>
-          <li className="not-underline">
-            <a
-              href="https://twitter.com/cssconfco"
+              className="not-focus"
+              href={links.TWITTER}
               target="_blank"
               rel="noopener noreferrer"
             >
               <img className="social-icon" src="/static/icons/twitter.svg" />
+            </a>
+          </li>
+          <li className="not-underline">
+            <a
+              className="not-focus"
+              href={links.INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className="social-icon" src="/static/icons/instagram.svg" />
             </a>
           </li>
         </ul>

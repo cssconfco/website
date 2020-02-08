@@ -15,6 +15,8 @@ import Form from '../molecules/Form'
 import { config } from '../../config/client'
 import { choices } from '../../utils/designTokens'
 import { logEvent } from '../../utils/analytics'
+import { links } from '../../utils/constants'
+import scrollToTop from '../../utils/scrollToTop'
 
 // prettier-ignore
 const CELL_PHONE_MASK = [ /[1-9]/, /\d/, /\d/,' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/];
@@ -34,6 +36,10 @@ class CheckoutForm extends Component {
       isLoading: false,
       isDisabled: false
     }
+  }
+
+  componentDidMount() {
+    scrollToTop()
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -256,13 +262,23 @@ class CheckoutForm extends Component {
                   )}
                 />
                 <label htmlFor="termsAndConditionsAccepted">
-                  <a
-                    href="https://github.com/cssconfco/codigo-de-conducta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    I have read and accepted the Code of Conduct
-                  </a>
+                  <span style={{ display: 'inline-block' }}>
+                    <a
+                      href={links.CODE_OF_CONDUCT}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      I have read and accepted the Code of Conduct
+                    </a>{' '}
+                    and{' '}
+                    <a
+                      href={links.FAQS}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      FAQS
+                    </a>
+                  </span>
                 </label>
               </div>
             </Form.Group>

@@ -7,6 +7,7 @@ import Paragraph from '../atoms/Paragraph'
 import smoothScroll from '../../utils/smoothScroll'
 
 import { decisions, choices } from '../../utils/designTokens'
+import { links } from '../../utils/constants'
 
 const Navbar = () => {
   return (
@@ -16,25 +17,32 @@ const Navbar = () => {
           <Logo width={100} />
           <ul>
             <li className="has-navbar-button">
-              <Link href="/tickets">
+              <Link href={links.TICKETS}>
                 <a className="navbar-button">
-                  <Paragraph size="sm">Buy Ticket</Paragraph>
+                  <Paragraph size="sm">Buy a Ticket</Paragraph>
                 </a>
               </Link>
             </li>
             <li>
-              <a href="#newsletter" onClick={smoothScroll('#newsletter')}>
+              <a
+                href={links.NEWSLETTER}
+                onClick={smoothScroll(links.NEWSLETTER)}
+              >
                 <Paragraph>Newsletter</Paragraph>
               </a>
             </li>
-            {/* <li className="on-desktop">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+            <li className="on-desktop">
+              <a
+                href={links.SCHOLARSHIP}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Paragraph>Scholarships</Paragraph>
               </a>
-            </li> */}
+            </li>
             <li>
               <a
-                href="mailto:hello@cssconf.co"
+                href={links.CONTACT_EMAIL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
