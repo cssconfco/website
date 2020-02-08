@@ -28,7 +28,7 @@ const Navbar = () => {
                 href={links.NEWSLETTER}
                 onClick={smoothScroll(links.NEWSLETTER)}
               >
-                <Paragraph>Newsletter</Paragraph>
+                <Paragraph size="sm">Newsletter</Paragraph>
               </a>
             </li>
             <li className="on-desktop">
@@ -37,7 +37,12 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Paragraph>Scholarships</Paragraph>
+                <Paragraph size="sm">Scholarships</Paragraph>
+              </a>
+            </li>
+            <li className="on-desktop">
+              <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
+                <Paragraph size="sm">Team</Paragraph>
               </a>
             </li>
             <li>
@@ -46,7 +51,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Paragraph>Contact</Paragraph>
+                <Paragraph size="sm">Contact</Paragraph>
               </a>
             </li>
           </ul>

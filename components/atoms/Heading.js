@@ -48,15 +48,15 @@ const Heading = ({
         }
 
         .alt-blue {
-          color: ${decisions.subtitle.color.alt.blue} !important;
+          color: ${decisions.title.color.alt.blue} !important;
         }
 
         .alt-red {
-          color: ${decisions.subtitle.color.alt.red} !important;
+          color: ${decisions.title.color.alt.red} !important;
         }
 
         .alt-yellow {
-          color: ${decisions.subtitle.color.alt.yellow} !important;
+          color: ${decisions.title.color.alt.yellow} !important;
         }
 
         .is-disabled {

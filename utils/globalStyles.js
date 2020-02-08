@@ -8,7 +8,7 @@ export const titleStyles = `
   font-weight: ${decisions.title.fontWeight};
   line-height: ${choices.lineHeight.tight};
   text-transform: ${decisions.title.textTransform};
-  color: ${decisions.title.color};
+  color: ${decisions.title.color.default};
 `
 
 export const subtitleStyles = `
@@ -23,7 +23,7 @@ export const paragraphStyles = `
   font-family: ${decisions.paragraph.fontFamily};
   font-weight: ${decisions.paragraph.fontWeight.normal};
   line-height: ${choices.lineHeight.normal};
-  color: ${decisions.paragraph.color};
+  color: ${decisions.paragraph.color.default};
 `
 
 const focusStyles = `

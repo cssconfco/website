@@ -52,13 +52,12 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           </Button>
         </form>
         <div className="bird"></div>
-        <div className="lizard"></div>
       </Container>
       <style jsx>{`
         .newsletter {
           position: relative;
           background: ${choices.colors.brand.bayofmany};
-          padding: 100px ${decisions.container.padding};
+          padding: 100px ${decisions.container.padding} 50px;
           overflow: hidden;
           display: flex;
           flex-direction: column;
@@ -113,18 +112,9 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           top: 50%;
           left: 0;
           transform: translate(-50%, -50%);
-          width: 600px;
-          height: 600px;
+          width: 500px;
+          height: 500px;
           opacity: 0.2;
-        }
-
-        .lizard {
-          position: absolute;
-          display: none;
-          background-image: url('/static/images/iguana-tribal-vector.svg');
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: contain;
         }
 
         @media (${decisions.queries.screens.desktop}) {
@@ -140,16 +130,6 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
             height: 300px;
             opacity: 1;
             transform: translate(0, 0);
-          }
-
-          .lizard {
-            display: inline-block;
-            bottom: -180px;
-            right: -280px;
-            width: 300px;
-            height: 300px;
-            opacity: 1;
-            z-index: 1;
           }
         }
       `}</style>

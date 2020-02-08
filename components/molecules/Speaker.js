@@ -10,23 +10,23 @@ const Speaker = ({ image, children }) => {
       </div>
       <style jsx>{`
         .speaker {
-		  display: inline-flex;
-		  flex-direction: column;
-		  justify-content: flex-end;
-		  align-items: flex-end;
-		  text-align: right;
-		  background-image: url('/static/images/speakers/${image}.png');
-		  background-position: center center;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+          text-align: right;
+          background-image: url('/static/images/speakers/${image}.png');
+          background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
           height: 300px;
-		  width: 300px;
-		  margin: ${choices.spacing[8]} ${choices.spacing[8]} ${choices.spacing[10]} ;
-		}
+          width: 300px;
+          margin: ${choices.spacing[8]} ${choices.spacing[8]} ${choices.spacing[10]} ;
+        }
 
-		.info {
-			margin-bottom: -20px;
-		}
+        .info {
+          margin-bottom: -20px;
+        }
       `}</style>
     </Fragment>
   )

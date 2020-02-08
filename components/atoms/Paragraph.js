@@ -65,15 +65,15 @@ const Paragraph = ({
         }
 
         .alt-blue {
-          color: ${decisions.subtitle.color.alt.blue} !important;
+          color: ${decisions.paragraph.color.alt.blue} !important;
         }
 
         .alt-red {
-          color: ${decisions.subtitle.color.alt.red} !important;
+          color: ${decisions.paragraph.color.alt.red} !important;
         }
 
         .alt-yellow {
-          color: ${decisions.subtitle.color.alt.yellow} !important;
+          color: ${decisions.paragraph.color.alt.yellow} !important;
         }
 
         .size-xs {

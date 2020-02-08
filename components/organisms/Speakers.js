@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Paragrapah from '../atoms/Paragraph'
 import Container from '../atoms/Container'
 import Speaker from '../molecules/Speaker'
@@ -5,7 +6,7 @@ import Heading from '../atoms/Heading'
 
 import { choices, decisions } from '../../utils/designTokens'
 
-const Speakers = () => {
+const Speakers = ({ speakers }) => {
   return (
     <>
       <section id="speakers" className="speakers">
@@ -15,24 +16,16 @@ const Speakers = () => {
               Speakers
             </Heading>
             <div className="speaker-list">
-              <Speaker image="luis-gadea">
-                <>
-                  <Paragrapah weight="bold">🇨🇦 Luis Gadea</Paragrapah>
-                  <Paragrapah>Character designer</Paragrapah>
-                </>
-              </Speaker>
-              <Speaker image="evangelina-ferreira">
-                <>
-                  <Paragrapah weight="bold">🇦🇷 Evangelina Ferreira</Paragrapah>
-                  <Paragrapah>Google Developer Expert</Paragrapah>
-                </>
-              </Speaker>
-              <Speaker image="laura-gonzalez">
-                <>
-                  <Paragrapah weight="bold">🇬🇧 Laura Gonzales</Paragrapah>
-                  <Paragrapah>UI Engineer - Facebook</Paragrapah>
-                </>
-              </Speaker>
+              {speakers.map(({ id, name, flag, title }) => (
+                <Speaker key={id} image={id}>
+                  <>
+                    <Paragrapah weight="bold">
+                      {flag} {name}
+                    </Paragrapah>
+                    <Paragrapah>{title}</Paragrapah>
+                  </>
+                </Speaker>
+              ))}
               <Speaker image="next-speaker" />
             </div>
           </div>
@@ -43,7 +36,7 @@ const Speakers = () => {
         .speakers {
           position: relative;
           background: ${choices.colors.white};
-          padding: 50px ${decisions.container.padding};
+          padding: 50px ${decisions.container.padding} 0;
           height: 100%;
           min-height: 800px;
           overflow: hidden;
@@ -77,16 +70,17 @@ const Speakers = () => {
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
-          top: -450px;
-          right: -600px;
-          width: 1200px;
-          height: 1200px;
+          top: -200px;
+          right: -400px;
+          width: 800px;
+          height: 800px;
           opacity: 0.8;
         }
 
         @media (${decisions.queries.screens.desktop}) {
           .container-list {
-            margin: 150px 50px 20px;
+            margin: 150px 0 20px;
+            padding: 0 100px;
           }
 
           .container-list > :global(.heading) {
@@ -102,11 +96,31 @@ const Speakers = () => {
           }
 
           .fish {
+            top: -450px;
             right: -250px;
+            width: 1200px;
+            height: 1200px;
           }
         }
       `}</style>
     </>
+  )
+}
+
+Speakers.defaultProps = {
+  speakers: []
+}
+
+Speakers.propTypes = {
+  speakers: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      flag: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      twitterUrl: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    })
   )
 }
 

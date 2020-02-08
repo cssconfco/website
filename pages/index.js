@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import swal from 'sweetalert'
 
-import Hero from '../components/organisms/Hero'
-import What from '../components/organisms/What'
-import Newsletter from '../components/organisms/Newsletter'
 import Conduct from '../components/organisms/Conduct'
+import Hero from '../components/organisms/Hero'
 import Navbar from '../components/organisms/Navbar'
+import Newsletter from '../components/organisms/Newsletter'
 import Speakers from '../components/organisms/Speakers'
+import Team from '../components/organisms/Team'
+import What from '../components/organisms/What'
 
-import { logEvent } from '../utils/analytics'
 import fetchJson from '../utils/fetchJson'
+import { logEvent } from '../utils/analytics'
+import { speakers, team } from '../utils/constants'
+
 import { config } from '../config/client'
 
 class Home extends Component {
@@ -73,7 +76,7 @@ class Home extends Component {
     return (
       <>
         <Navbar />
-        <Speakers />
+        <Speakers speakers={speakers} />
         <Hero />
         <What />
         <Newsletter
@@ -83,6 +86,7 @@ class Home extends Component {
           handleChange={this.handleChange}
           isLoading={loading}
         />
+        <Team team={team} />
         <Conduct />
       </>
     )

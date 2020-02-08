@@ -279,7 +279,15 @@ export const decisions = {
       '2': choices.fontSize['3xl'],
       '1': choices.fontSize['5xl']
     },
-    color: choices.colors.brand.tuna
+    color: {
+      default: choices.colors.brand.tuna,
+      alt: {
+        blue: choices.colors.brand.bayofmany,
+        red: choices.colors.brand.cinnabar,
+        yellow: choices.colors.brand.chiffon,
+        gray: choices.colors.gray[800]
+      }
+    }
   },
   subtitle: {
     fontFamily: choices.fontFamily.serif,
@@ -324,7 +332,15 @@ export const decisions = {
       sm: choices.fontSize.lg,
       md: choices.fontSize.xl
     },
-    color: choices.colors.brand.tuna
+    color: {
+      default: choices.colors.brand.tuna,
+      alt: {
+        blue: choices.colors.brand.bayofmany,
+        red: choices.colors.brand.cinnabar,
+        yellow: choices.colors.brand.chiffon,
+        gray: choices.colors.gray[800]
+      }
+    }
   },
   icon: {
     color: {
