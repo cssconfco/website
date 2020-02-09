@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Logo from '../atoms/Logo'
 import Container from '../atoms/Container'
 import Paragraph from '../atoms/Paragraph'
+import Responsive from '../atoms/Responsive'
 
 import smoothScroll from '../../utils/smoothScroll'
 
@@ -14,7 +15,12 @@ const Navbar = () => {
     <nav className="navbar">
       <Container>
         <header>
-          <Logo width={100} />
+          <Responsive.Mobile>
+            <Logo width={50} />
+          </Responsive.Mobile>
+          <Responsive.Desktop>
+            <Logo width={100} />
+          </Responsive.Desktop>
           <ul>
             <li className="has-navbar-button">
               <Link href={links.TICKETS}>

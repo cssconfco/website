@@ -8,15 +8,17 @@ import fetchJson from '../../utils/fetchJson'
 import MaskedInput from 'react-text-mask'
 
 import Button from '../atoms/Button'
-import Label from '../atoms/Label'
-import Heading from '../atoms/Heading'
 import Form from '../molecules/Form'
+import Heading from '../atoms/Heading'
+import Label from '../atoms/Label'
+import Paragraph from '../atoms/Paragraph'
+
+import scrollToTop from '../../utils/scrollToTop'
+import { choices, decisions } from '../../utils/designTokens'
+import { links } from '../../utils/constants'
+import { logEvent } from '../../utils/analytics'
 
 import { config } from '../../config/client'
-import { choices } from '../../utils/designTokens'
-import { logEvent } from '../../utils/analytics'
-import { links } from '../../utils/constants'
-import scrollToTop from '../../utils/scrollToTop'
 
 // prettier-ignore
 const CELL_PHONE_MASK = [ /[1-9]/, /\d/, /\d/,' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/];
@@ -261,14 +263,18 @@ class CheckoutForm extends Component {
                     'termsAndConditionsAccepted'
                   )}
                 />
-                <label htmlFor="termsAndConditionsAccepted">
-                  <span style={{ display: 'inline-block' }}>
+                <label
+                  className="terms-and-conditions"
+                  htmlFor="termsAndConditionsAccepted"
+                >
+                  <Paragraph size="xs" isInline>
+                    I have read and accepted the{' '}
                     <a
                       href={links.CODE_OF_CONDUCT}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      I have read and accepted the Code of Conduct
+                      Code of Conduct
                     </a>{' '}
                     and{' '}
                     <a
@@ -278,7 +284,7 @@ class CheckoutForm extends Component {
                     >
                       FAQS
                     </a>
-                  </span>
+                  </Paragraph>
                 </label>
               </div>
             </Form.Group>
@@ -287,6 +293,16 @@ class CheckoutForm extends Component {
         <style jsx>{`
           .checkout-form {
             margin-top: ${choices.spacing[8]};
+          }
+
+          .terms-and-conditions > :global(.paragraph) {
+            max-width: 250px;
+          }
+
+          @media (${decisions.queries.screens.desktop}) {
+            .terms-and-conditions > :global(.paragraph) {
+              max-width: 100%;
+            }
           }
         `}</style>
       </div>

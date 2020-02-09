@@ -88,7 +88,7 @@ export const team = [
     id: 'juan',
     name: 'Juan Perez',
     title: 'Designer',
-    twitterHandle: '@superperez'
+    twitterHandle: '@supeerperez'
   },
   {
     id: 'andrea',
