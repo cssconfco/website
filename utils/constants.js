@@ -94,21 +94,18 @@ export const team = [
     id: 'andrea',
     name: 'Andrea Córdoba',
     title: 'Supporter',
-    twitterHandle: '@dandre_coder',
-    hide: true
+    twitterHandle: '@dandre_coder'
   },
   {
     id: 'henry',
     name: 'Henry Zarsa',
     title: 'Supporter',
-    twitterHandle: '@henry_zarza',
-    hide: true
+    twitterHandle: '@henry_zarza'
   },
   {
     id: 'jonathan',
     name: 'Jonathan Avendaño',
     title: 'Supporter',
-    twitterHandle: '@jdavidavendano',
-    hide: true
+    twitterHandle: '@jdavidavendano'
   }
 ]

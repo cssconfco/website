@@ -15,7 +15,8 @@ const Mate = ({ id, children }) => {
           display: inline-flex;
           flex-direction: column;
           align-items: flex-end;
-          margin: ${choices.spacing[4]} ${choices.spacing[4]};
+          margin: ${choices.spacing[4]};
+          max-width: 50%;
         }
 
         .mate {
@@ -43,6 +44,7 @@ const Mate = ({ id, children }) => {
         @media (${decisions.queries.screens.desktop}) {
           .container {
             margin: ${choices.spacing[8]} ${choices.spacing[8]} ${choices.spacing[10]};
+            width: auto;
           }
 
           .mate {
