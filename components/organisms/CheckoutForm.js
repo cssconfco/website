@@ -12,8 +12,8 @@ import Form from '../molecules/Form'
 import Heading from '../atoms/Heading'
 import Label from '../atoms/Label'
 import Paragraph from '../atoms/Paragraph'
+import Responsive from '../atoms/Responsive'
 
-import scrollToTop from '../../utils/scrollToTop'
 import { choices, decisions } from '../../utils/designTokens'
 import { links } from '../../utils/constants'
 import { logEvent } from '../../utils/analytics'
@@ -38,10 +38,6 @@ class CheckoutForm extends Component {
       isLoading: false,
       isDisabled: false
     }
-  }
-
-  componentDidMount() {
-    setTimeout(scrollToTop, 0)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -175,13 +171,23 @@ class CheckoutForm extends Component {
           <Form.Fieldset title="Billing Details">
             <Form.Group isHalf>
               <Label htmlFor="firstname">Name</Label>
-              <input
-                {...this.getDefaultInputProps('firstname')}
-                type="text"
-                placeholder="Your Firstname"
-                autoFocus
-                required
-              />
+              <Responsive.Mobile>
+                <input
+                  {...this.getDefaultInputProps('firstname')}
+                  type="text"
+                  placeholder="Your Firstname"
+                  required
+                />
+              </Responsive.Mobile>
+              <Responsive.Desktop>
+                <input
+                  {...this.getDefaultInputProps('firstname')}
+                  type="text"
+                  placeholder="Your Firstname"
+                  autoFocus
+                  required
+                />
+              </Responsive.Desktop>
             </Form.Group>
             <Form.Group isHalf>
               <Label htmlFor="lastname">Lastname</Label>
