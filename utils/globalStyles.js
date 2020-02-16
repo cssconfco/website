@@ -119,7 +119,7 @@ export const formStyles = css.global`
     ${paragraphStyles}
     font-size: ${decisions.paragraph.fontSize.sm};
     border: 1px solid ${choices.colors.gray[400]};
-    font-weight: lighter;
+    font-weight: ${choices.fontWeight.light};
     height: 55px;
     padding: 5px 15px;
     transition: box-shadow 0.2s;
@@ -128,6 +128,7 @@ export const formStyles = css.global`
 
   input::placeholder {
     color: ${choices.colors.gray[400]};
+    font-weight: ${choices.fontWeight.normal};
   }
 
   form a {
@@ -170,6 +171,7 @@ export const reactSelectStyles = css.global`
   div.react-select__control .react-select__placeholder {
     ${paragraphStyles}
     color: ${choices.colors.gray[300]};
+    font-weight: ${choices.fontWeight.normal};
   }
 
   div.react-select__control .react-select__indicator-separator {
