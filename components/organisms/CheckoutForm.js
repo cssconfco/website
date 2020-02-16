@@ -41,7 +41,7 @@ class CheckoutForm extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => scrollToTop('smooth'), 500)
+    setTimeout(scrollToTop, 0)
   }
 
   componentDidUpdate(prevProps, prevState) {

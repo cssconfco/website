@@ -79,22 +79,16 @@ export const team = [
     twitterHandle: '@xacarana'
   },
   {
-    id: 'luis',
-    name: 'Luis Perez',
-    title: 'Designer',
-    twitterHandle: '@lperezp_pe'
-  },
-  {
     id: 'juan',
     name: 'Juan Perez',
     title: 'Designer',
     twitterHandle: '@supeerperez'
   },
   {
-    id: 'andrea',
-    name: 'Andrea Córdoba',
-    title: 'Supporter',
-    twitterHandle: '@dandre_coder'
+    id: 'luis',
+    name: 'Luis Perez',
+    title: 'Designer',
+    twitterHandle: '@lperezp_pe'
   },
   {
     id: 'henry',
@@ -103,9 +97,27 @@ export const team = [
     twitterHandle: '@henry_zarza'
   },
   {
+    id: 'andrea',
+    name: 'Andrea Córdoba',
+    title: 'Supporter',
+    twitterHandle: '@dandre_coder'
+  },
+  {
     id: 'jonathan',
     name: 'Jonathan Avendaño',
     title: 'Supporter',
     twitterHandle: '@jdavidavendano'
+  },
+  {
+    id: 'maria',
+    name: 'Maria Sanchez',
+    title: 'Supporter',
+    twitterHandle: '@mariaballer1na'
+  },
+  {
+    id: 'manuela',
+    name: 'Manuela Castrillón',
+    title: 'Supporter',
+    twitterHandle: '@manucastrillonm'
   }
 ]

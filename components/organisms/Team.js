@@ -20,7 +20,7 @@ const Team = ({ team }) => {
               {team
                 .filter(mate => !mate.hide)
                 .map(({ id, name, title, twitterHandle }) => (
-                  <Mate key={id} id={id}>
+                  <Mate key={id} id={id} type={title}>
                     <Paragraph color="yellow" size="sm" weight="bold">
                       {name}
                     </Paragraph>
