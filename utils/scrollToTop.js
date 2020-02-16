@@ -1,3 +1,3 @@
-export default function scrollToTop(behaviour) {
-  window.scroll({ top: 0, left: 0, behaviour })
+export default function scrollToTop(behavior) {
+  window.scroll({ top: 0, left: 0, behavior })
 }
