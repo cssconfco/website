@@ -126,12 +126,15 @@ class CheckoutForm extends Component {
   handleSubmit = async event => {
     event && event.preventDefault()
 
+    const { shoppingCartList, shoppingCartCoupon } = this.props
+
     const checkoutPayload = {
       userInfo: {
         ...this.state.values,
         billingCountry: this.state.values.billingCountry.value
       },
-      shoppingCartItems: this.props.getShoppingCartItems()
+      shoppingCartItems: shoppingCartList,
+      coupon: shoppingCartCoupon
     }
 
     try {
@@ -312,8 +315,9 @@ class CheckoutForm extends Component {
 }
 
 CheckoutForm.propTypes = {
-  getShoppingCartItems: PropTypes.func.isRequired,
-  handleEpaycoDialog: PropTypes.func.isRequired
+  handleEpaycoDialog: PropTypes.func.isRequired,
+  shoppingCartList: PropTypes.array,
+  shoppingCartCoupon: PropTypes.object
 }
 
 CheckoutForm.defaultProps = {

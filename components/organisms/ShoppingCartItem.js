@@ -9,7 +9,7 @@ import { choices } from '../../utils/designTokens'
 const getQuantitiesUnits = quantity =>
   `${quantity} unit${quantity > 1 ? 's' : ''}`
 
-const ShoppingCartItem = ({ image, name, price, quantity }) => {
+const ShoppingCartItem = ({ image, name, price, regularPrice, quantity }) => {
   return (
     <div className="shoppingcart-item">
       <div className="shoppingcart-item-image">
@@ -18,7 +18,22 @@ const ShoppingCartItem = ({ image, name, price, quantity }) => {
       <div className="shoppingcart-item-info">
         <Subtitle size={2}>{name}</Subtitle>
         <Paragraph weight="bold">
-          <Currency>{Number(price)}</Currency>
+          {price !== regularPrice ? (
+            <>
+              <span
+                style={{
+                  textDecoration: 'line-through',
+                  color: choices.colors.brand.cinnabar,
+                  fontSize: choices.fontSize.md
+                }}
+              >
+                <Currency>{Number(price)}</Currency>
+              </span>
+              <Currency>{Number(regularPrice)}</Currency>
+            </>
+          ) : (
+            <Currency>{Number(regularPrice)}</Currency>
+          )}
         </Paragraph>
         <div className="shoppingcart-item-actions">
           <Paragraph isCentered>{getQuantitiesUnits(quantity)}</Paragraph>
@@ -63,6 +78,7 @@ ShoppingCartItem.propTypes = {
   image: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  regularPrice: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired
 }
 

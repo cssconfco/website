@@ -79,6 +79,11 @@ class WooCommerceService {
   createCustomer({ customer }) {
     return this.request('customers', 'post', customer)
   }
+
+  // Coupons
+  getCoupon({ code }) {
+    return code ? this.request(`coupons?code=${code}`) : Promise.resolve([])
+  }
 }
 
 export default WooCommerceService

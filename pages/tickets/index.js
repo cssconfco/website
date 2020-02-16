@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
@@ -20,17 +20,35 @@ import { config } from '../../config/client'
 import Heading from '../../components/atoms/Heading'
 import { links } from '../../utils/constants'
 
-const mapProduct = product => ({ ...product, quantity: product.quantity || 1 })
-const sumProductSubtotals = (acc, cur) => acc + Number(cur.price * cur.quantity)
+const sumProductSubtotals = (acc, cur) =>
+  acc + Number(cur.regular_price * cur.quantity)
+const getQuantityAndDiscount = (discount = 0) => product => ({
+  ...product,
+  quantity: product.quantity || 1,
+  regular_price: `${Number(product.regular_price) - discount}`
+})
+
+let ePaycoService = {}
 
 const Tickets = ({ countries, products }) => {
-  const shoppingCartList = products.map(mapProduct)
-  const getShoppingCartItems = () => shoppingCartList
-  const shoppingCartTotals = {
-    total: shoppingCartList.reduce(sumProductSubtotals, 0)
-  }
+  const shoppingCartList = products.map(getQuantityAndDiscount())
+  const shoppingCartTotal = shoppingCartList.reduce(sumProductSubtotals, 0)
 
-  let ePaycoService = {}
+  const [shoppingCart, setShoppingCart] = useState({
+    list: shoppingCartList,
+    totals: { total: shoppingCartTotal }
+  })
+
+  const handleSubmitCoupon = ({ coupon }) => {
+    const shoppingCartList = products.map(getQuantityAndDiscount(coupon.amount))
+    const shoppingCartTotal = shoppingCartList.reduce(sumProductSubtotals, 0)
+
+    setShoppingCart({
+      coupon: coupon,
+      list: shoppingCartList,
+      totals: { total: shoppingCartTotal }
+    })
+  }
 
   const handleEpaycoDialog = data => {
     ePaycoService.openDialog(data)
@@ -46,18 +64,21 @@ const Tickets = ({ countries, products }) => {
       <SimpleNavbar />
       <Cointaner>
         <div className="checkout">
-          {shoppingCartList && shoppingCartList.length ? (
+          {shoppingCart && shoppingCart.list && shoppingCart.list.length ? (
             <>
               <CheckAdBlocker>
                 <CheckoutForm
                   countries={countries}
                   handleEpaycoDialog={handleEpaycoDialog}
-                  getShoppingCartItems={getShoppingCartItems}
+                  shoppingCartList={shoppingCart.list}
+                  shoppingCartCoupon={shoppingCart.coupon}
                 />
               </CheckAdBlocker>
               <CheckoutSummary
-                list={shoppingCartList}
-                totals={shoppingCartTotals}
+                list={shoppingCart.list}
+                totals={shoppingCart.totals}
+                shoppingCartCoupon={shoppingCart.coupon}
+                handleSubmitCoupon={handleSubmitCoupon}
               />
             </>
           ) : (

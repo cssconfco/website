@@ -27,7 +27,7 @@ const Button = ({
           border: 1px solid transparent;
           color: ${choices.colors.white};
           cursor: pointer;
-          padding: ${choices.spacing[4]} ${choices.spacing[20]};
+          padding: ${choices.spacing[4]} ${choices.spacing[12]};
           text-transform: uppercase;
           width: 100%;
         }

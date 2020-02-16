@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { sortBy, isEmpty } from 'lodash'
+import swal from 'sweetalert'
+import fetchJson from '../../utils/fetchJson'
 
+import Button from '../atoms/Button'
 import Currency from '../atoms/Currency'
 import Subtitle from '../atoms/Subtitle'
 import Heading from '../atoms/Heading'
@@ -8,11 +12,59 @@ import ShoppingCartItem from './ShoppingCartItem'
 
 import { choices, decisions } from '../../utils/designTokens'
 
-const CheckoutSummary = ({ list, totals }) => {
+import { config } from '../../config/client'
+import Paragraph from '../atoms/Paragraph'
+
+const CheckoutSummary = ({
+  list,
+  totals,
+  shoppingCartCoupon,
+  handleSubmitCoupon
+}) => {
   const shoppingCartIsEmpty = isEmpty(list)
 
   if (shoppingCartIsEmpty) {
     return null
+  }
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [code, setCode] = useState('')
+
+  const handleChange = event => {
+    const { value } = event.target
+    setCode(value)
+  }
+
+  const handleSubmit = async event => {
+    event && event.preventDefault()
+
+    setIsLoading(true)
+
+    try {
+      const coupon = await fetchJson(`${config.apiUrl}/coupons?code=${code}`)
+      setIsLoading(false)
+
+      if (coupon && coupon.code) {
+        handleSubmitCoupon({ coupon })
+      } else {
+        setCode('')
+        swal(
+          'Opps!',
+          'Coupon code entered is expired or invalid, please try again',
+          'info'
+        )
+      }
+    } catch (error) {
+      swal(
+        'Opps!',
+        'Something went wrong with your coupon code, please try again',
+        'error'
+      )
+
+      setIsLoading(false)
+
+      console.error('Error aplicando el cupon', error)
+    }
   }
 
   return (
@@ -57,6 +109,25 @@ const CheckoutSummary = ({ list, totals }) => {
           </Heading>
         </div>
       </div>
+      {!shoppingCartCoupon ? (
+        <form className="coupon" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Coupon code"
+            value={code}
+            onChange={handleChange}
+          />
+          <Button type="submit" isLoading={isLoading} size="">
+            <Heading size={3} isInverted>
+              {isLoading ? 'Loading...' : 'Apply'}
+            </Heading>
+          </Button>
+        </form>
+      ) : (
+        <Paragraph color="red" style={{ marginTop: choices.spacing[6] }}>
+          Coupon <strong>{shoppingCartCoupon.code}</strong> has been applied.
+        </Paragraph>
+      )}
       <style jsx>{`
         .shoppingcart-list {
           display: flex;
@@ -67,6 +138,12 @@ const CheckoutSummary = ({ list, totals }) => {
           padding: ${choices.spacing[8]} ${choices.spacing[6]}
             ${choices.spacing[4]} ${choices.spacing[10]};
           width: 100%;
+        }
+
+        .coupon {
+          margin-top: ${choices.spacing[8]};
+          flex-wrap: wrap;
+          display: flex;
         }
 
         .shoppingcart-list-summary {
@@ -98,6 +175,15 @@ const CheckoutSummary = ({ list, totals }) => {
         }
 
         @media (${decisions.queries.screens.desktop}) {
+          .coupon {
+            flex-wrap: nowrap;
+          }
+
+          .coupon :global(input) {
+            width: 300px;
+            height: auto;
+          }
+
           .shoppingcart-list {
             background: linear-gradient(
               90deg,
@@ -121,6 +207,8 @@ const CheckoutSummary = ({ list, totals }) => {
 }
 
 CheckoutSummary.propTypes = {
+  handleSubmitCoupon: PropTypes.func.isRequired,
+  shoppingCartCoupon: PropTypes.object,
   totals: PropTypes.object,
   list: PropTypes.array
 }

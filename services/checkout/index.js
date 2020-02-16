@@ -70,13 +70,27 @@ class CheckoutService {
     }
   }
 
-  mapProducts({ id, quantity }) {
-    return { quantity, product_id: id }
+  mapProducts({ id, quantity, regular_price }) {
+    return { total: regular_price, quantity, product_id: id }
   }
 
-  buildOrder({ customer, userInfo, products }) {
+  buildCoupon({ coupon }) {
+    return coupon
+      ? {
+          coupon_lines: [
+            {
+              code: coupon.code,
+              discount: `${coupon.amount}`
+            }
+          ]
+        }
+      : {}
+  }
+
+  buildOrder({ customer, userInfo, products, coupon }) {
     return {
       ...this.buildPaymentMethod({ userInfo }),
+      ...this.buildCoupon({ coupon }),
       customer_id: customer.id,
       line_items: products,
       billing: this.buildCustomerBilling({ userInfo }),
@@ -98,22 +112,23 @@ class CheckoutService {
     }
   }
 
-  async createOrder({ customer, userInfo, shoppingCartItems }) {
+  async createOrder({ customer, userInfo, shoppingCartItems, coupon }) {
     const products = shoppingCartItems.map(this.mapProducts)
 
     const created = await this.wooCommerceService.createOrder({
-      order: this.buildOrder({ customer, userInfo, products })
+      order: this.buildOrder({ customer, userInfo, products, coupon })
     })
 
     return Promise.resolve(created)
   }
 
-  async processCheckout({ userInfo, shoppingCartItems }) {
+  async processCheckout({ userInfo, shoppingCartItems, coupon }) {
     const customer = await this.getOrCreateCustomer({ userInfo })
     const order = await this.createOrder({
       customer,
       userInfo,
-      shoppingCartItems
+      shoppingCartItems,
+      coupon
     })
 
     return Promise.resolve({
