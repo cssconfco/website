@@ -257,7 +257,7 @@ class CheckoutForm extends Component {
                   {isLoading ? 'Loading...' : 'Buy Ticket'}
                 </Heading>
               </Button>
-              <div style={{ margin: '10px 0 20px 1px' }}>
+              <div style={{ margin: '20px 0' }}>
                 <input
                   {...this.getDefaultCheckboxProps(
                     'termsAndConditionsAccepted'
@@ -297,6 +297,7 @@ class CheckoutForm extends Component {
 
           .terms-and-conditions > :global(.paragraph) {
             max-width: 250px;
+            line-height: ${choices.lineHeight.tight};
           }
 
           @media (${decisions.queries.screens.desktop}) {

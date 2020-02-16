@@ -104,7 +104,7 @@ const Team = ({ team }) => {
 
           .lizard {
             top: -250px;
-            right: -80px;
+            right: 0;
           }
         }
       `}</style>

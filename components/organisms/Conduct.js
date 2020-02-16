@@ -49,6 +49,10 @@ const Conduct = () => {
           max-width: ${choices.screens.md};
         }
 
+        .content :global(.paragraph) a {
+          color: ${choices.colors.brand.bayofmany};
+        }
+
         .conduct :global(.heading),
         .conduct :global(.paragraph) {
           position: relative;

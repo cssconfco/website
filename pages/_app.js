@@ -1,14 +1,28 @@
 import App, { Container as NextContainer } from 'next/app'
 import Head from 'next/head'
+import Router from 'next/router'
+import nprogress from 'nprogress'
 
+Router.onRouteChangeStart = () => {
+  nprogress.start()
+}
+Router.onRouteChangeComplete = () => {
+  nprogress.done()
+}
+Router.onRouteChangeError = () => {
+  nprogress.done()
+}
+
+import Footer from '../components/organisms/Footer'
 import GoogleAnalytics from '../components/layout/GoogleAnalytics'
+
 import {
   initialStyles,
   formStyles,
   checkboxStyles,
-  reactSelectStyles
+  reactSelectStyles,
+  nprogressStyles
 } from '../utils/globalStyles'
-import Footer from '../components/organisms/Footer'
 
 export default class CustomApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -66,6 +80,9 @@ export default class CustomApp extends App {
           </style>
           <style jsx global>
             {reactSelectStyles}
+          </style>
+          <style jsx global>
+            {nprogressStyles}
           </style>
         </GoogleAnalytics>
       </NextContainer>
