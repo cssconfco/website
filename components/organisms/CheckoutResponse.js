@@ -81,9 +81,9 @@ class CheckoutResponse extends Component {
   }
 
   componentDidMount() {
+    logEvent({ category: 'ticket', action: 'load', label: 'response' })
     scrollToTop()
     cleanUrlQueryParams()
-    logEvent({ category: 'ticket', action: 'load', label: 'response' })
   }
 
   render() {
