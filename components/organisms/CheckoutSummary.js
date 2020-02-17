@@ -131,7 +131,7 @@ const CheckoutSummary = ({
         </form>
       ) : (
         <Paragraph color="red" style={{ marginTop: choices.spacing[6] }}>
-          🎉 Coupon <strong>{shoppingCartCoupon.code}</strong> has been applied.
+          Coupon <strong>{shoppingCartCoupon.code}</strong> has been applied. 🎉
         </Paragraph>
       )}
       <style jsx>{`

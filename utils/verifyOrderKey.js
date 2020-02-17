@@ -1,7 +1,8 @@
 import boom from '@hapi/boom'
+import sanitizeString from './sanitizeString'
 
 const verifyOrderKey = (order, key) => {
-  if (order.order_key === `wc_order_${key}`) {
+  if (sanitizeString(order.order_key) === `wc_order_${sanitizeString(key)}`) {
     return order
   }
 

@@ -1,5 +1,6 @@
 import WooCommerceAPI from 'woocommerce-api'
 import { config } from '../../config/server'
+import sanitizeString from '../../utils/sanitizeString'
 
 class WooCommerceService {
   constructor(version = 'wc/v2') {
@@ -47,8 +48,12 @@ class WooCommerceService {
       : this.request(`orders?page=${page}&per_page=${perPage}`)
   }
 
-  getOrder({ orderId } = {}) {
-    return this.request(`orders/${orderId}`)
+  getOrder({ orderId = '' } = {}) {
+    const sanitizedOrderId = sanitizeString(orderId)
+
+    return sanitizedOrderId
+      ? this.request(`orders/${orderId}`)
+      : Promise.resolve({})
   }
 
   createOrder({ order } = {}) {
@@ -71,8 +76,10 @@ class WooCommerceService {
 
   // Customers
   getCustomer({ customerEmail, customerId } = {}) {
-    return customerEmail
-      ? this.request(`customers?email=${customerEmail}`)
+    const sanitizedCustomerEmail = sanitizeString(customerEmail)
+
+    return sanitizedCustomerEmail
+      ? this.request(`customers?email=${sanitizedCustomerEmail}`)
       : this.request(`customers/${customerId}`)
   }
 
@@ -82,7 +89,11 @@ class WooCommerceService {
 
   // Coupons
   getCoupon({ code }) {
-    return code ? this.request(`coupons?code=${code}`) : Promise.resolve([])
+    const sanitizedCode = sanitizeString(code)
+
+    return sanitizedCode
+      ? this.request(`coupons?code=${sanitizedCode}`)
+      : Promise.resolve([])
   }
 }
 
