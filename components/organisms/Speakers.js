@@ -22,7 +22,7 @@ const Speakers = ({ speakers }) => {
                     <Paragrapah weight="bold">
                       {flag} {name}
                     </Paragrapah>
-                    <Paragrapah>{title}</Paragrapah>
+                    <Paragrapah size="sm">{title}</Paragrapah>
                   </>
                 </Speaker>
               ))}

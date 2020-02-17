@@ -38,6 +38,14 @@ export const speakers = [
     title: 'UI Engineer - Facebook',
     twitterUrl: 'https://twitter.com/freezydorito',
     description: ''
+  },
+  {
+    id: 'joan-leon',
+    flag: '🇪🇸',
+    name: 'Joan León',
+    title: 'Frontend Developer - Adevinta',
+    twitterUrl: 'https://twitter.com/nucliweb',
+    description: ''
   }
 ]
 
