@@ -49,8 +49,7 @@ const CheckoutSummary = ({
         logEvent({
           category: 'ticket',
           action: 'submit',
-          label: 'coupon',
-          value: coupon.code
+          label: `coupon ${coupon.code}`
         })
         handleSubmitCoupon({ coupon })
       } else {
