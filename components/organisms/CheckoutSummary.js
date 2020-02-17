@@ -5,15 +5,16 @@ import swal from 'sweetalert'
 import fetchJson from '../../utils/fetchJson'
 
 import Button from '../atoms/Button'
+import Paragraph from '../atoms/Paragraph'
 import Currency from '../atoms/Currency'
 import Subtitle from '../atoms/Subtitle'
 import Heading from '../atoms/Heading'
 import ShoppingCartItem from './ShoppingCartItem'
 
 import { choices, decisions } from '../../utils/designTokens'
+import { logEvent } from '../../utils/analytics'
 
 import { config } from '../../config/client'
-import Paragraph from '../atoms/Paragraph'
 
 const CheckoutSummary = ({
   list,
@@ -45,6 +46,12 @@ const CheckoutSummary = ({
       setIsLoading(false)
 
       if (coupon && coupon.code) {
+        logEvent({
+          category: 'ticket',
+          action: 'submit',
+          label: 'coupon',
+          value: coupon.code
+        })
         handleSubmitCoupon({ coupon })
       } else {
         setCode('')
