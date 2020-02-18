@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { sortBy, isEmpty } from 'lodash'
+import { sortBy, isEmpty, lowerCase } from 'lodash'
 import swal from 'sweetalert'
 import fetchJson from '../../utils/fetchJson'
 
@@ -49,7 +49,7 @@ const CheckoutSummary = ({
         logEvent({
           category: 'ticket',
           action: 'submit',
-          label: `coupon ${coupon.code}`
+          label: `coupon — ${lowerCase(coupon.code)}`
         })
         handleSubmitCoupon({ coupon })
       } else {
@@ -130,8 +130,12 @@ const CheckoutSummary = ({
           </Button>
         </form>
       ) : (
-        <Paragraph color="red" style={{ marginTop: choices.spacing[6] }}>
-          Coupon <strong>{shoppingCartCoupon.code}</strong> has been applied. 🎉
+        <Paragraph
+          size="xs"
+          color="red"
+          style={{ marginTop: choices.spacing[6] }}
+        >
+          🎉 Coupon <strong>{shoppingCartCoupon.code}</strong> has been applied.
         </Paragraph>
       )}
       <style jsx>{`

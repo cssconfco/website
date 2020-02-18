@@ -1,6 +1,7 @@
 import WooCommerceAPI from 'woocommerce-api'
 import { config } from '../../config/server'
 import sanitizeString from '../../utils/sanitizeString'
+import validateEmail from '../../utils/validateEmail'
 
 class WooCommerceService {
   constructor(version = 'wc/v2') {
@@ -75,12 +76,19 @@ class WooCommerceService {
   }
 
   // Customers
-  getCustomer({ customerEmail, customerId } = {}) {
-    const sanitizedCustomerEmail = sanitizeString(customerEmail)
+  getCustomers({ customerEmail, customerId } = {}) {
+    if (customerEmail) {
+      validateEmail(customerEmail)
+      return this.request(`customers?email=${customerEmail}`)
+    }
 
-    return sanitizedCustomerEmail
-      ? this.request(`customers?email=${sanitizedCustomerEmail}`)
-      : this.request(`customers/${customerId}`)
+    const sanitizedCustomerId = sanitizeString(customerId)
+
+    if (sanitizedCustomerId) {
+      return this.request(`customers/${sanitizedCustomerId}`)
+    }
+
+    return Promise.resolve([])
   }
 
   createCustomer({ customer }) {

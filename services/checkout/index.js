@@ -99,7 +99,7 @@ class CheckoutService {
   }
 
   async getOrCreateCustomer({ userInfo }) {
-    const customers = await this.wooCommerceService.getCustomer({
+    const customers = await this.wooCommerceService.getCustomers({
       customerEmail: userInfo.email
     })
 
@@ -113,6 +113,11 @@ class CheckoutService {
   }
 
   async createOrder({ customer, userInfo, shoppingCartItems, coupon }) {
+    // FIXME: Receive just the couponCode and get the amount from the database,
+    // and use the amount to do the calculations. If the coupon code is not valid return
+    // an exception
+
+    // FIXME: map the regular_price just if there is a valid coupon code
     const products = shoppingCartItems.map(this.mapProducts)
 
     const created = await this.wooCommerceService.createOrder({
@@ -136,6 +141,7 @@ class CheckoutService {
     })
   }
 
+  // FIXME: Validate that the amount paid from ePayco matchs the order amount in the backend
   confirmOrder(ePaycoPayload) {
     const { ePaycoClientId, ePaycoSecretKey } = config
     const { x_id_invoice: orderId, x_cod_response: code } = ePaycoPayload
