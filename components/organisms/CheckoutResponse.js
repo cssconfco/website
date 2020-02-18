@@ -12,12 +12,15 @@ import Paragraph from '../atoms/Paragraph'
 import Date from '../atoms/Date'
 import Button from '../atoms/Button'
 import Container from '../atoms/Container'
+import Alert from '../atoms/Alert'
 
 import cleanUrlQueryParams from '../../utils/cleanUrlQueryParams'
 import scrollToTop from '../../utils/scrollToTop'
 import { choices } from '../../utils/designTokens'
 import { logEvent } from '../../utils/analytics'
 import { links } from '../../utils/constants'
+
+import { config } from '../../config/client'
 
 class CheckoutResponse extends Component {
   get fullName() {
@@ -83,7 +86,7 @@ class CheckoutResponse extends Component {
   componentDidMount() {
     logEvent({ category: 'ticket', action: 'load', label: 'response' })
     scrollToTop()
-    cleanUrlQueryParams()
+    config.isProduction && cleanUrlQueryParams()
   }
 
   render() {
@@ -109,6 +112,18 @@ class CheckoutResponse extends Component {
               .
             </Paragraph>
           </div>
+          <Alert isMarginLess>
+            <Paragraph size="sm" color="blue">
+              📬 An order receipt will be send to{' '}
+              <strong>{order.billing.email}</strong>. We are not generating any
+              sort of virtual or physical <strong>ticket</strong>.
+            </Paragraph>
+            <br />
+            <Paragraph size="sm" color="blue">
+              The <strong>assistant name</strong> and{' '}
+              <strong>identification</strong> will be enought to join event.
+            </Paragraph>
+          </Alert>
           <div className="checkout-response-container">
             <div className="checkout-response-info">
               <Subtitle size={1} color="gray">
@@ -128,33 +143,30 @@ class CheckoutResponse extends Component {
                 <strong>Total</strong> <span>{this.amount}</span>
               </Paragraph>
             </div>
-          </div>
+            <div className="checkout-response-order">
+              <Subtitle size={1} color="gray">
+                <Icon icon="receipt" size="lg" />{' '}
+                <span>Order #{order.number}</span>
+              </Subtitle>
 
-          <div className="checkout-response-order">
-            <Subtitle size={1} color="gray">
-              <Icon icon="receipt" size="lg" />{' '}
-              <span>Order #{order.number}</span>
-            </Subtitle>
+              <Subtitle size={2} color="gray">
+                Summary
+              </Subtitle>
+              {get(order, 'line_items', []).map(product => (
+                <div key={product.name} className="checkout-response-product">
+                  <Paragraph>
+                    <strong>Item</strong> <span>{product.name}</span>
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>Quantity</strong> <span>{product.quantity}</span>
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>Total</strong> <Currency>{product.total}</Currency>
+                  </Paragraph>
+                </div>
+              ))}
+            </div>
 
-            <Subtitle size={2} color="gray">
-              Summary
-            </Subtitle>
-            {get(order, 'line_items', []).map(product => (
-              <div key={product.name} className="checkout-response-product">
-                <Paragraph>
-                  <strong>Name</strong> <span>{product.name}</span>
-                </Paragraph>
-                <Paragraph>
-                  <strong>Quantity</strong> <span>{product.quantity}</span>
-                </Paragraph>
-                <Paragraph>
-                  <strong>Subtotal</strong> <Currency>{product.total}</Currency>
-                </Paragraph>
-              </div>
-            ))}
-          </div>
-
-          <div className="checkout-response-container">
             <div className="checkout-response-address">
               <Subtitle size={1} color="gray">
                 <Icon icon="invoice" size="lg" /> <span>Billing Details</span>
@@ -181,7 +193,6 @@ class CheckoutResponse extends Component {
               </Paragraph>
             </div>
           </div>
-          <br />
           <Link href={links.HOME}>
             <a>
               <Button>
@@ -205,34 +216,23 @@ class CheckoutResponse extends Component {
 
             .checkout-response-container {
               display: flex;
+              flex-direction: column;
+              background: ${choices.colors.gray[100]};
+              border: 2px dashed ${choices.colors.gray[500]};
+              margin: ${choices.spacing[4]} 0;
+              padding: ${choices.spacing[6]} ${choices.spacing[8]}
+                ${choices.spacing[4]};
+              width: 100%;
             }
 
             .checkout-response-product {
               margin-bottom: ${choices.spacing[2]};
             }
 
+            .checkout-response-order,
             .checkout-response-address,
             .checkout-response-info {
-              background: ${choices.colors.yellow[100]};
-              border: 2px dashed ${choices.colors.yellow[500]};
               margin: ${choices.spacing[4]} 0;
-              padding: ${choices.spacing[6]} ${choices.spacing[4]}
-                ${choices.spacing[4]};
-              width: 100%;
-            }
-
-            .checkout-response-address {
-              background: ${choices.colors.red[100]};
-              border: 2px dashed ${choices.colors.red[500]};
-            }
-
-            .checkout-response-order {
-              background: ${choices.colors.blue[100]};
-              border: 2px dashed ${choices.colors.blue[500]};
-              margin: ${choices.spacing[4]} 0;
-              padding: ${choices.spacing[6]} ${choices.spacing[4]}
-                ${choices.spacing[2]};
-              width: 100%;
             }
 
             .checkout-response :global(.subtitle),

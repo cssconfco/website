@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import { choices } from '../../utils/designTokens'
 
-const Alert = ({ children, type }) => (
+const Alert = ({ children, type, isMarginLess }) => (
   <>
     <div className={classNames('alert', { [`alert-${type}`]: type })}>
       {children}
@@ -15,7 +15,9 @@ const Alert = ({ children, type }) => (
         padding: ${choices.spacing[2]} ${choices.spacing[4]};
         border-radius: ${choices.borderRadius.md};
         height: ${choices.minHeight.full};
-        margin: ${choices.spacing[8]} ${choices.spacing[4]};
+        margin: ${isMarginLess
+          ? '0'
+          : `${choices.spacing[8]} ${choices.spacing[4]}`};
       }
 
       .alert-info {
@@ -35,7 +37,8 @@ const Alert = ({ children, type }) => (
 
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
-  type: PropTypes.string
+  type: PropTypes.string,
+  isMarginLess: PropTypes.bool
 }
 
 Alert.defaultProps = {

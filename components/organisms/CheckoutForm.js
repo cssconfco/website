@@ -123,11 +123,13 @@ class CheckoutForm extends Component {
     event && event.preventDefault()
 
     const { shoppingCartList, shoppingCartCoupon } = this.props
+    const { assistant, comments, billingCountry, ...values } = this.state.values
 
     const checkoutPayload = {
       userInfo: {
-        ...this.state.values,
-        billingCountry: this.state.values.billingCountry.value
+        ...values,
+        billingCountry: billingCountry.value,
+        comments: `Assistant: ${assistant}, t-shirt: ${comments}`
       },
       shoppingCartItems: shoppingCartList,
       coupon: shoppingCartCoupon
@@ -170,12 +172,12 @@ class CheckoutForm extends Component {
         <Form handleSubmit={this.handleSubmit}>
           <Form.Fieldset title="Billing Details">
             <Form.Group isHalf>
-              <Label htmlFor="firstname">Name</Label>
+              <Label htmlFor="firstname">Firstname</Label>
               <Responsive.Mobile>
                 <input
                   {...this.getDefaultInputProps('firstname')}
                   type="text"
-                  placeholder="Your Firstname"
+                  placeholder="Firstname"
                   required
                 />
               </Responsive.Mobile>
@@ -183,7 +185,7 @@ class CheckoutForm extends Component {
                 <input
                   {...this.getDefaultInputProps('firstname')}
                   type="text"
-                  placeholder="Your Firstname"
+                  placeholder="Firstname"
                   autoFocus
                   required
                 />
@@ -194,7 +196,7 @@ class CheckoutForm extends Component {
               <input
                 {...this.getDefaultInputProps('lastname')}
                 type="text"
-                placeholder="Your Lastname"
+                placeholder="Lastname"
                 required
               />
             </Form.Group>
@@ -245,8 +247,19 @@ class CheckoutForm extends Component {
                 required
               />
             </Form.Group>
+          </Form.Fieldset>
+          <Form.Fieldset title="Ticket Details">
             <Form.Group isHalf>
-              <Label htmlFor="comments">Comments: T-shirt size</Label>
+              <Label htmlFor="assistant">Assistant</Label>
+              <input
+                {...this.getDefaultInputProps('assistant')}
+                type="text"
+                placeholder="Assistant fullname"
+                required
+              />
+            </Form.Group>
+            <Form.Group isHalf>
+              <Label htmlFor="comments">T-shirt size</Label>
               <input
                 {...this.getDefaultInputProps('comments')}
                 type="text"
