@@ -116,7 +116,11 @@ class CheckoutResponse extends Component {
             <Paragraph size="sm" color="blue">
               📬 An order receipt will be send to{' '}
               <strong>{order.billing.email}</strong>. We are not generating any
-              sort of virtual or physical <strong>ticket</strong>.
+              sort of{' '}
+              <span style={{ textDecoration: 'underline' }}>
+                virtual or physical ticket
+              </span>
+              .
             </Paragraph>
             <br />
             <Paragraph size="sm" color="blue">

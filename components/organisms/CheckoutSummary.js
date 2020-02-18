@@ -135,7 +135,12 @@ const CheckoutSummary = ({
           color="red"
           style={{ marginTop: choices.spacing[6] }}
         >
-          🎉 Coupon <strong>{shoppingCartCoupon.code}</strong> has been applied.
+          🎉 A discount of{' '}
+          <strong>
+            <Currency>{shoppingCartCoupon.amount}</Currency>
+          </strong>{' '}
+          with the coupon <strong>{shoppingCartCoupon.code}</strong> has been
+          applied.
         </Paragraph>
       )}
       <style jsx>{`
