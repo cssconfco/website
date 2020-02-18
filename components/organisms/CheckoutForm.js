@@ -132,7 +132,7 @@ class CheckoutForm extends Component {
         comments: `Assistant: ${assistant}, t-shirt: ${comments}`
       },
       shoppingCartItems: shoppingCartList,
-      coupon: shoppingCartCoupon
+      couponCode: shoppingCartCoupon.code
     }
 
     try {
@@ -340,7 +340,8 @@ CheckoutForm.propTypes = {
 }
 
 CheckoutForm.defaultProps = {
-  countries: []
+  countries: [],
+  shoppingCartCoupon: {}
 }
 
 export default CheckoutForm

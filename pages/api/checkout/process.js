@@ -4,13 +4,13 @@ const checkoutService = new CheckoutService()
 
 export default async (req, res) => {
   if (req.method === 'POST') {
-    const { userInfo, shoppingCartItems, coupon } = req.body
+    const { userInfo, shoppingCartItems, couponCode } = req.body
 
     try {
       const response = await checkoutService.processCheckout({
         userInfo,
         shoppingCartItems,
-        coupon
+        couponCode
       })
 
       res.send(response)

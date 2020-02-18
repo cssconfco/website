@@ -1,19 +1,18 @@
 import { get } from 'lodash'
 import WooCommerceService from '../../services/woocommerce'
+import CheckoutService from '../../services/checkout'
+
 import { parseCoupon } from '../../utils/parseResponse'
 
 const wooCommerceService = new WooCommerceService()
-
-const isAvailable = coupon => coupon.usage_count < coupon.usage_limit
-const parseAmount = coupon =>
-  Object.assign({}, coupon, { amount: Number(coupon.amount) })
+const checkoutService = new CheckoutService()
 
 export default async (req, res) => {
   if (req.method === 'GET') {
     try {
       const code = get(req, 'query.code')
-      const coupons = await wooCommerceService.getCoupon({ code })
-      const [coupon] = coupons.filter(isAvailable).map(parseAmount)
+      const coupons = await wooCommerceService.getCoupons({ code })
+      const coupon = checkoutService.getValidatedCuopon({ coupons })
       const response = parseCoupon(coupon)
 
       res.send(response)

@@ -50,6 +50,7 @@ class CheckoutService {
       first_name: firstname,
       last_name: lastname,
       billing: this.buildCustomerBilling({ userInfo }),
+      username: email,
       password: cryptoRandomString(16)
     }
   }
@@ -70,8 +71,13 @@ class CheckoutService {
     }
   }
 
-  mapProducts({ id, quantity, regular_price }) {
-    return { total: regular_price, quantity, product_id: id }
+  mapProducts = ({ coupon }) => ({ id, quantity, price }) => {
+    if (coupon && coupon.amount) {
+      const total = `${Number(price) - coupon.amount}`
+      return { total, quantity, product_id: id }
+    }
+
+    return { quantity, product_id: id }
   }
 
   buildCoupon({ coupon }) {
@@ -112,13 +118,22 @@ class CheckoutService {
     }
   }
 
-  async createOrder({ customer, userInfo, shoppingCartItems, coupon }) {
-    // FIXME: Receive just the couponCode and get the amount from the database,
-    // and use the amount to do the calculations. If the coupon code is not valid return
-    // an exception
+  getValidatedCuopon({ coupons }) {
+    const isAvailable = coupon => coupon.usage_count < coupon.usage_limit
+    const parseAmount = coupon =>
+      Object.assign({}, coupon, { amount: Number(coupon.amount) })
 
-    // FIXME: map the regular_price just if there is a valid coupon code
-    const products = shoppingCartItems.map(this.mapProducts)
+    return coupons.filter(isAvailable).map(parseAmount)[0]
+  }
+
+  async createOrder({ customer, userInfo, shoppingCartItems, couponCode }) {
+    const coupons = await this.wooCommerceService.getCoupons({
+      code: couponCode
+    })
+
+    const coupon = this.getValidatedCuopon({ coupons })
+
+    const products = shoppingCartItems.map(this.mapProducts({ coupon }))
 
     const created = await this.wooCommerceService.createOrder({
       order: this.buildOrder({ customer, userInfo, products, coupon })
@@ -127,13 +142,14 @@ class CheckoutService {
     return Promise.resolve(created)
   }
 
-  async processCheckout({ userInfo, shoppingCartItems, coupon }) {
+  async processCheckout({ userInfo, shoppingCartItems, couponCode }) {
     const customer = await this.getOrCreateCustomer({ userInfo })
+
     const order = await this.createOrder({
       customer,
       userInfo,
       shoppingCartItems,
-      coupon
+      couponCode
     })
 
     return Promise.resolve({

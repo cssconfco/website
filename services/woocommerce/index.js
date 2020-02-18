@@ -96,7 +96,7 @@ class WooCommerceService {
   }
 
   // Coupons
-  getCoupon({ code }) {
+  getCoupons({ code }) {
     const sanitizedCode = sanitizeString(code)
 
     return sanitizedCode
