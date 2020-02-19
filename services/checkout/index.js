@@ -157,10 +157,29 @@ class CheckoutService {
     })
   }
 
-  // FIXME: Validate that the amount paid from ePayco matchs the order amount in the backend
+  validateCode(code) {
+    const parsedNumber = Number(code)
+
+    if (
+      !parsedNumber ||
+      parsedNumber > 12 ||
+      parsedNumber < 1 ||
+      parsedNumber === 5
+    ) {
+      return Promise.reject(new Error(`ePayco code is not valid: ${code}`))
+    }
+  }
+
   confirmOrder(ePaycoPayload) {
     const { ePaycoClientId, ePaycoSecretKey } = config
-    const { x_id_invoice: orderId, x_cod_response: code } = ePaycoPayload
+
+    // FIXME: Get amount and validate against the order
+    const {
+      x_id_invoice: orderId,
+      x_cod_transaction_state: code
+      // x_amount: amount,
+      // x_currency_code: currencyCode
+    } = ePaycoPayload
 
     const signature = createSignature(
       ePaycoPayload,
@@ -172,9 +191,7 @@ class CheckoutService {
       return Promise.reject(new Error('Signature is not valid.'))
     }
 
-    if (!code || code > 4 || code < 1) {
-      return Promise.reject(new Error(`Code not valid: ${code}`))
-    }
+    this.validateCode(code)
 
     return this.wooCommerceService.updateOrder(orderId, {
       status: epaycoToWooCommerce(code)
