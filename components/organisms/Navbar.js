@@ -38,15 +38,6 @@ const Navbar = () => {
               </a>
             </li>
             <li className="on-desktop">
-              <a
-                href={links.SCHOLARSHIP}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Paragraph size="sm">Scholarships</Paragraph>
-              </a>
-            </li>
-            <li className="on-desktop">
               <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
                 <Paragraph size="sm">Team</Paragraph>
               </a>
