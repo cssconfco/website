@@ -10,6 +10,7 @@ const Speaker = ({ image, children }) => {
       </div>
       <style jsx>{`
         .speaker {
+          position: relative;
           display: inline-flex;
           flex-direction: column;
           justify-content: flex-end;
@@ -19,13 +20,14 @@ const Speaker = ({ image, children }) => {
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
-          height: 300px;
-          width: 300px;
+          height: 280px;
+          width: 280px;
           margin: ${choices.spacing[8]} ${choices.spacing[8]} ${choices.spacing[10]} ;
         }
 
         .info {
-          margin-bottom: -20px;
+          position: absolute;
+          bottom: -${choices.spacing[6]};
         }
       `}</style>
     </Fragment>

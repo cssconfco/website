@@ -34,7 +34,7 @@ export const speakers = [
     id: 'laura-gonzalez',
     flag: '🇬🇧',
     name: 'Laura González',
-    title: 'UI Engineer - Facebook',
+    title: 'UI Engineer — Facebook',
     twitterUrl: 'https://twitter.com/freezydorito',
     description: ''
   },
@@ -42,9 +42,34 @@ export const speakers = [
     id: 'joan-leon',
     flag: '🇪🇸',
     name: 'Joan León',
-    title: 'Frontend Developer - Adevinta',
+    title: 'Frontend Developer — Adevinta',
     twitterUrl: 'https://twitter.com/nucliweb',
     description: ''
+  },
+  {
+    id: 'carmen-ansio',
+    flag: '🇪🇸',
+    name: 'Carmen Ansio',
+    title: 'Product Designer — Holaluz',
+    twitterUrl: 'https://twitter.com/carmenansio',
+    description: ''
+  },
+  {
+    id: 'alex-ramirez',
+    flag: '🇨🇴',
+    name: 'Alex Ramirez',
+    title: 'Software Developer — Cypress',
+    twitterUrl: 'https://twitter.com/RamirezAlex_',
+    description: ''
+  },
+  {
+    id: 'robin-dykema',
+    flag: '🇺🇸',
+    name: 'Robin Dykema',
+    title: 'UI Engineer - Taulia',
+    twitterUrl: 'https://twitter.com/RobinDykema',
+    description: '',
+    titlePosition: 'left'
   }
 ]
 

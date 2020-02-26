@@ -19,10 +19,10 @@ const Speakers = ({ speakers }) => {
               {speakers.map(({ id, name, flag, title }) => (
                 <Speaker key={id} image={id}>
                   <>
-                    <Paragrapah weight="bold">
+                    <Paragrapah size="sm" weight="bold">
                       {flag} {name}
                     </Paragrapah>
-                    <Paragrapah size="sm">{title}</Paragrapah>
+                    <Paragrapah size="xs">{title}</Paragrapah>
                   </>
                 </Speaker>
               ))}
