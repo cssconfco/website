@@ -153,3 +153,43 @@ export const team = [
     twitterHandle: '@manucastrillonm'
   }
 ]
+
+export const sponsors = {
+  platinum: [
+    {
+      id: 'astound-commerce',
+      name: 'Astound Commerce',
+      logo: ''
+    },
+    {
+      id: 'rutan',
+      name: 'Ruta N',
+      logo: ''
+    }
+  ],
+  gold: [
+    {
+      id: 'gorilla-logic',
+      name: 'Gorilla Logic',
+      logo: ''
+    },
+    {
+      id: 'uruit',
+      name: 'UruIT',
+      logo: ''
+    },
+    {
+      id: 'ilogica',
+      name: 'Ilogica',
+      logo: ''
+    }
+  ],
+  silver: [
+    {
+      id: 'getonboard',
+      name: 'Ilogica',
+      logo: ''
+    }
+  ],
+  support: []
+}
