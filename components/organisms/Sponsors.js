@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
 
-// import Container from '../atoms/Container'
 import Heading from '../atoms/Heading'
+import Sponsor from '../molecules/Sponsor'
 
-const Sponsors = () => {
+import { decisions } from '../../utils/designTokens'
+
+const Sponsors = ({ sponsors }) => {
   return (
     <>
       <section id="sponsors">
@@ -19,6 +21,10 @@ const Sponsors = () => {
               <div className="sponsor-separator__svg"></div>
             </div>
           </div>
+          <Sponsor sponsors={sponsors.platinum} title="Platinum" imgSize="xl" />
+          <Sponsor sponsors={sponsors.gold} title="Gold" imgSize="lg" />
+          <Sponsor sponsors={sponsors.silver} title="Silver" imgSize="md" />
+          <Sponsor sponsors={sponsors.support} title="Support" imgSize="sm" />
         </div>
       </section>
       <style jsx>
@@ -27,9 +33,7 @@ const Sponsors = () => {
             padding-top: 100px;
             min-height: 800px;
           }
-          .sponsor-separator__container {
-            width: 45%;
-          }
+
           .sponsor-separator__container--right {
             margin-right: 30px;
           }
@@ -48,6 +52,13 @@ const Sponsors = () => {
           .sponsor-title__container {
             display: flex;
             justify-content: center;
+            margin-bottom: 50px;
+          }
+
+          @media (${decisions.queries.screens.desktop}) {
+            .sponsor-separator__container {
+              width: 45%;
+            }
           }
         `}
       </style>
@@ -56,17 +67,49 @@ const Sponsors = () => {
 }
 
 Sponsors.defaultProps = {
-  sponsors: []
+  sponsors: {
+    platinum: [],
+    gold: [],
+    silver: [],
+    support: []
+  }
 }
 
 Sponsors.propTypes = {
-  sponsors: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      logo: PropTypes.string.isRequired
-    })
-  )
+  sponsors: PropTypes.shape({
+    platinum: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        logo: PropTypes.string.isRequired
+      })
+    ),
+    gold: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        logo: PropTypes.string.isRequired
+      })
+    ),
+    silver: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        logo: PropTypes.string.isRequired
+      })
+    ),
+    support: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        logo: PropTypes.string.isRequired
+      })
+    )
+  })
 }
 
 export default Sponsors

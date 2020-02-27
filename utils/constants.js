@@ -159,36 +159,42 @@ export const sponsors = {
     {
       id: 'astound-commerce',
       name: 'Astound Commerce',
-      logo: ''
+      url: 'https://astoundcommerce.com/',
+      logo: 'https://www.rutanmedellin.org/images/logo.svg'
     },
     {
       id: 'rutan',
       name: 'Ruta N',
-      logo: ''
+      url: 'https://rutanmedellin.org',
+      logo: 'https://www.rutanmedellin.org/images/logo.svg'
     }
   ],
   gold: [
     {
       id: 'gorilla-logic',
       name: 'Gorilla Logic',
-      logo: ''
+      url: 'https://rutanmedellin.org',
+      logo: 'https://www.rutanmedellin.org/images/logo.svg'
     },
     {
       id: 'uruit',
       name: 'UruIT',
-      logo: ''
+      url: 'https://rutanmedellin.org',
+      logo: 'https://www.rutanmedellin.org/images/logo.svg'
     },
     {
       id: 'ilogica',
       name: 'Ilogica',
-      logo: ''
+      url: 'https://rutanmedellin.org',
+      logo: 'https://www.rutanmedellin.org/images/logo.svg'
     }
   ],
   silver: [
     {
       id: 'getonboard',
-      name: 'Ilogica',
-      logo: ''
+      name: 'Get On Board',
+      url: 'https://rutanmedellin.org',
+      logo: 'https://www.rutanmedellin.org/images/logo.svg'
     }
   ],
   support: []
