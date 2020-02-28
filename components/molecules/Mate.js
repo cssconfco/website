@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import { lowerCase } from 'lodash'
 import { choices, decisions } from '../../utils/designTokens'
 
-const Mate = ({ id, type, children }) => {
+const Mate = ({ id, type, children, tribalPosition }) => {
   return (
     <>
       <div className={`container ${lowerCase(type)}`}>
         <div className="mate">
-          <div className="tribal"></div>
+          <div
+            className={classNames('tribal', {
+              [`tribal-${tribalPosition}`]: tribalPosition
+            })}
+          ></div>
         </div>
         {children && <div className="info">{children}</div>}
       </div>
@@ -55,6 +60,31 @@ const Mate = ({ id, type, children }) => {
           font-size: 10px;
         }
 
+        .tribal {
+          background: url("/static/images/team/${id}/tribal.svg") no-repeat;
+          background-position: center center;
+          background-size: contain;
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          opacity: ${choices.opacity[25]};
+        }
+
+        .tribal-top-left {
+          top: 10px;
+          left: -15px;
+        }
+
+        .tribal-top-right {
+          top: 10px;
+          right: -20px;
+        }
+
+        .tribal-bottom-left {
+          bottom: -10px;
+          left: -5px;
+        }
+
         @media (${decisions.queries.screens.desktop}) {
           .container {
             margin: ${choices.spacing[8]} ${choices.spacing[8]} ${choices.spacing[4]};
@@ -65,6 +95,35 @@ const Mate = ({ id, type, children }) => {
           .mate {
             height: 200px;
             width: 200px;
+          }
+
+          .mate:hover .tribal {
+            height: 100px;
+            width: 100px;
+            transition: all .2s ease-in;
+          }
+
+          .tribal {
+            width: 90px;
+            height: 90px;
+            opacity: ${choices.opacity[50]};
+            transition: all .1s ease-out;
+            transform-origin: 50% 50%;
+          }
+
+          .tribal-top-left {
+            top: 20px;
+            left: -30px;
+          }
+  
+          .tribal-top-right {
+            top: 10px;
+            right: -45px;
+          }
+  
+          .tribal-bottom-left {
+            bottom: -30px;
+            left: -10px;
           }
 
           .container.supporter .mate {
@@ -94,7 +153,8 @@ const Mate = ({ id, type, children }) => {
 Mate.propTypes = {
   id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  tribalPosition: PropTypes.string
 }
 
 export default Mate

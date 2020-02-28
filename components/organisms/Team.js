@@ -19,25 +19,27 @@ const Team = ({ team }) => {
             <div className="team-list">
               {team
                 .filter(mate => !mate.hide)
-                .map(({ id, name, title, twitterHandle }) => (
-                  <Mate key={id} id={id} type={title}>
-                    <Paragraph color="yellow" size="sm" weight="bold">
-                      {name}
-                    </Paragraph>
-                    <Paragraph color="yellow" size="sm">
-                      {title}
-                    </Paragraph>
-                    <a
-                      className="not-focus"
-                      href={`https://twitter.com/${twitterHandle}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                .map(({ id, name, title, twitterHandle, tribalPosition }) => (
+                  <a
+                    key={id}
+                    className="not-focus"
+                    href={`https://twitter.com/${twitterHandle}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Mate id={id} type={title} tribalPosition={tribalPosition}>
+                      <Paragraph color="yellow" size="sm" weight="bold">
+                        {name}
+                      </Paragraph>
+                      <Paragraph color="yellow" size="sm">
+                        {title}
+                      </Paragraph>
+
                       <Paragraph color="yellow" size="xs">
                         {twitterHandle}
                       </Paragraph>
-                    </a>
-                  </Mate>
+                    </Mate>
+                  </a>
                 ))}
             </div>
           </div>

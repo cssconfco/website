@@ -78,78 +78,91 @@ export const team = [
     id: 'estefa',
     name: 'Estefany Aguilar',
     title: 'Organizer',
-    twitterHandle: '@teffcode'
+    twitterHandle: '@teffcode',
+    tribalPosition: 'top-right'
   },
   {
     id: 'guillermo',
     name: 'Guillermo Rodas',
     title: 'Organizer',
-    twitterHandle: '@glrodasz'
+    twitterHandle: '@glrodasz',
+    tribalPosition: 'bottom-left'
   },
   {
     id: 'luisa',
     name: 'Luisa Vaca',
     title: 'Organizer',
-    twitterHandle: '@otra_gris'
+    twitterHandle: '@otra_gris',
+    tribalPosition: 'bottom-left'
   },
   {
     id: 'santiago',
     name: 'Santiago Sánchez',
     title: 'Organizer',
-    twitterHandle: '@gh0stl1m'
+    twitterHandle: '@gh0stl1m',
+    tribalPosition: 'top-left'
   },
   {
     id: 'paulina',
     name: 'Maria Arenas',
     title: 'Designer',
-    twitterHandle: '@je_mapau'
+    twitterHandle: '@je_mapau',
+    tribalPosition: 'top-left'
   },
   {
     id: 'andres',
     name: 'Andrés Bedoya',
     title: 'Designer',
-    twitterHandle: '@xacarana'
+    twitterHandle: '@xacarana',
+    tribalPosition: 'bottom-left'
   },
   {
     id: 'juan',
     name: 'Juan Perez',
     title: 'Designer',
-    twitterHandle: '@supeerperez'
+    twitterHandle: '@supeerperez',
+    tribalPosition: 'top-right'
   },
   {
     id: 'luis',
     name: 'Luis Perez',
     title: 'Designer',
-    twitterHandle: '@lperezp_pe'
+    twitterHandle: '@lperezp_pe',
+    tribalPosition: 'top-right'
   },
   {
     id: 'henry',
     name: 'Henry Zarsa',
     title: 'Supporter',
-    twitterHandle: '@henry_zarza'
+    twitterHandle: '@henry_zarza',
+    tribalPosition: 'top-right'
   },
   {
     id: 'andrea',
     name: 'Andrea Córdoba',
     title: 'Supporter',
-    twitterHandle: '@dandre_coder'
+    twitterHandle: '@dandre_coder',
+    tribalPosition: 'top-right'
   },
   {
     id: 'jonathan',
     name: 'Jonathan Avendaño',
     title: 'Supporter',
-    twitterHandle: '@jdavidavendano'
+    twitterHandle: '@jdavidavendano',
+    tribalPosition: 'top-right'
   },
   {
     id: 'maria',
     name: 'Maria Sanchez',
     title: 'Supporter',
-    twitterHandle: '@mariaballer1na'
+    twitterHandle: '@mariaballer1na',
+    tribalPosition: 'top-right'
   },
   {
     id: 'manuela',
     name: 'Manuela Castrillón',
     title: 'Supporter',
-    twitterHandle: '@manucastrillonm'
+    twitterHandle: '@manucastrillonm',
+    tribalPosition: 'top-right'
   }
 ]
