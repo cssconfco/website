@@ -10,7 +10,8 @@ export const choices = {
       bayofmany: '#204282',
       poloblue: '#8ea4ce',
       mystic: '#eceff4',
-      tuna: '#494949'
+      tuna: '#494949',
+      orange: '#fc9e12'
     },
 
     transparent: 'transparent',
@@ -285,6 +286,7 @@ export const decisions = {
         blue: choices.colors.brand.bayofmany,
         red: choices.colors.brand.cinnabar,
         yellow: choices.colors.brand.chiffon,
+        orange: choices.colors.brand.orange,
         gray: choices.colors.gray[800]
       }
     }
