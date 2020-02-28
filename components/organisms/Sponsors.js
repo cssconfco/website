@@ -15,7 +15,7 @@ const Sponsors = ({ sponsors }) => {
               <div className="sponsor-separator__svg"></div>
             </div>
             <Heading size={1} color="blue">
-              SPONSORS
+              Sponsors
             </Heading>
             <div className="sponsor-separator__container sponsor-separator__container--left">
               <div className="sponsor-separator__svg"></div>

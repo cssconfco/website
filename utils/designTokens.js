@@ -294,7 +294,7 @@ export const decisions = {
   subtitle: {
     fontFamily: choices.fontFamily.serif,
     fontWeight: choices.fontWeight.normal,
-    textTransform: 'upppercase',
+    textTransform: 'uppercase',
     fontSize: {
       '2': choices.fontSize.lg,
       '1': choices.fontSize['3xl']

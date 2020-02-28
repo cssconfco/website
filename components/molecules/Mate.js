@@ -106,7 +106,7 @@ const Mate = ({ id, type, children, tribalPosition }) => {
           .tribal {
             width: 90px;
             height: 90px;
-            opacity: ${choices.opacity[50]};
+            opacity: ${choices.opacity[75]};
             transition: all .1s ease-out;
             transform-origin: 50% 50%;
           }

@@ -26,7 +26,6 @@ const Speakers = ({ speakers }) => {
                   </>
                 </Speaker>
               ))}
-              <Speaker image="next-speaker" />
             </div>
           </div>
           <div className="fish"></div>
@@ -85,10 +84,6 @@ const Speakers = ({ speakers }) => {
 
           .container-list > :global(.heading) {
             text-align: left;
-          }
-
-          .speaker-list {
-            justify-content: flex-start;
           }
 
           .speaker-list :global(.speaker:first-child) {

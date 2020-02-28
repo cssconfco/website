@@ -68,8 +68,23 @@ export const speakers = [
     name: 'Robin Dykema',
     title: 'UI Engineer - Taulia',
     twitterUrl: 'https://twitter.com/RobinDykema',
-    description: '',
-    titlePosition: 'left'
+    description: ''
+  },
+  {
+    id: 'erifranck-nunez',
+    flag: '🇨🇴',
+    name: 'Erifranck Nuñez',
+    title: 'Frontend Developer',
+    twitterUrl: 'https://twitter.com/erifranckn',
+    description: ''
+  },
+  {
+    id: 'leonidas-esteban',
+    flag: '🇲🇽',
+    name: 'Leonidas Esteban',
+    title: 'Google Developer Expert',
+    twitterUrl: 'https://twitter.com/leonidasesteban',
+    description: ''
   }
 ]
 
