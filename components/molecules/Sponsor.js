@@ -15,7 +15,15 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
         </Heading>
         <div className={`sponsor__img sponsor__img--${imgSize}`}>
           {sponsors.map(sponsor => (
-            <a key={sponsor.id} href={sponsor.url}>
+            <a
+              key={sponsor.id}
+              href={sponsor.url}
+              style={{
+                border: 'unset !important',
+                boxShadow: 'unset !important',
+                outline: 'unset !important'
+              }}
+            >
               <img
                 className={`img-${imgSize}`}
                 src={sponsor.logo}
@@ -41,24 +49,40 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
             justify-content: space-around;
           }
 
-          img {
-            margin-top: 50px;
+          .img-xl {
+            height: 200px;
+            width: 260px;
           }
 
-          .img-xl {
-            height: 150px;
-          }
           .img-lg {
-            height: 130px;
+            height: 190px;
+            width: 250px;
           }
+
           .img-md {
-            height: 110px;
+            height: 140px;
+            width: 210px;
           }
+
           .img-sm {
-            height: 90px;
+            height: 120px;
+            width: 140px;
           }
 
           @media (${decisions.queries.screens.desktop}) {
+            a {
+              transition: all 0.5s;
+            }
+
+            img {
+              transition: 0.5s;
+            }
+
+            img:hover {
+              transition: 0.5s;
+              transform: scale(1.3);
+            }
+
             .sponsor__img--xl {
               width: 750px;
             }
