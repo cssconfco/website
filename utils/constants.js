@@ -153,3 +153,69 @@ export const team = [
     twitterHandle: '@manucastrillonm'
   }
 ]
+
+export const sponsors = {
+  platinum: [
+    {
+      id: 'astound-commerce',
+      name: 'Astound Commerce',
+      url: 'https://astoundcommerce.com/',
+      logo: '/static/images/sponsors/astound.svg'
+    },
+    {
+      id: 'globant',
+      name: 'Globant',
+      url: 'https://www.globant.com/#home',
+      logo: '/static/images/sponsors/globant.svg'
+    },
+    {
+      id: 'rutan',
+      name: 'Ruta N',
+      url: 'https://rutanmedellin.org',
+      logo: '/static/images/sponsors/ruta_n.svg'
+    }
+  ],
+  gold: [
+    {
+      id: 'gorilla-logic',
+      name: 'Gorilla Logic',
+      url: 'https://gorillalogic.com/',
+      logo: '/static/images/sponsors/gorilla_logic.svg'
+    },
+    {
+      id: 'uruit',
+      name: 'UruIT',
+      url: 'https://uruit.com/',
+      logo: '/static/images/sponsors/uru_it.svg'
+    },
+    {
+      id: 'ilogica',
+      name: 'Ilogica',
+      url: 'https://www.ilogica.cl/',
+      logo: '/static/images/sponsors/ilogica.svg'
+    }
+  ],
+  silver: [
+    {
+      id: 'mozilla',
+      name: 'Mozilla',
+      url: 'https://www.mozilla.org/',
+      logo: '/static/images/sponsors/mozilla.svg'
+    },
+    {
+      id: 'getonboard',
+      name: 'GetOnBoard',
+      url: 'https://www.getonbrd.com.co/',
+      logo: '/static/images/sponsors/getonboard.svg'
+    }
+  ],
+  support: [
+    {
+      id: 'adevinta',
+      name: 'Adevinta',
+      url: 'https://www.adevinta.com/',
+      logo:
+        'https://www.adevinta.com/wp-content/themes/scom/assets/img/Adevinta-logo.svg'
+    }
+  ]
+}

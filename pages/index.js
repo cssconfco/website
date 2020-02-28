@@ -8,10 +8,11 @@ import Newsletter from '../components/organisms/Newsletter'
 import Speakers from '../components/organisms/Speakers'
 import Team from '../components/organisms/Team'
 import What from '../components/organisms/What'
+import Sponsors from '../components/organisms/Sponsors'
 
 import fetchJson from '../utils/fetchJson'
 import { logEvent } from '../utils/analytics'
-import { speakers, team } from '../utils/constants'
+import { speakers, team, sponsors } from '../utils/constants'
 
 import { config } from '../config/client'
 
@@ -79,6 +80,7 @@ class Home extends Component {
         <Speakers speakers={speakers} />
         <Hero />
         <What />
+        <Sponsors sponsors={sponsors} />
         <Newsletter
           name={name}
           email={email}

@@ -59,6 +59,10 @@ const Heading = ({
           color: ${decisions.title.color.alt.yellow} !important;
         }
 
+        .alt-orange {
+          color: ${decisions.title.color.alt.orange} !important;
+        }
+
         .is-disabled {
           color: ${choices.colors.black} !important;
           opacity: 0.25;
