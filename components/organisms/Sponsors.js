@@ -34,25 +34,39 @@ const Sponsors = ({ sponsors }) => {
             min-height: 800px;
           }
 
+          .sponsor-separator__container {
+            width: 100%;
+          }
+
           .sponsor-separator__container--right {
             margin-right: 30px;
           }
+
           .sponsor-separator__container--left {
             margin-left: 30px;
           }
+
+          .sponsor-separator__container--right .sponsor-separator__svg {
+            background-position: center right;
+          }
+
+          .sponsor-separator__container--left .sponsor-separator__svg {
+            background-position: center left;
+          }
+
           .sponsor-separator__svg {
             background-image: url(/static/images/sponsors-separator.svg);
-            background-position: center center;
             background-repeat: no-repeat;
             background-size: contain;
             display: block;
             width: 100%;
             height: 100%;
           }
+
           .sponsor-title__container {
             display: flex;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
           }
 
           @media (${decisions.queries.screens.desktop}) {

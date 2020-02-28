@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import Subtitle from '../atoms/Subtitle'
 
-import { decisions } from '../../utils/designTokens'
+import { decisions, choices } from '../../utils/designTokens'
 
 const Sponsor = ({ sponsors, imgSize, title }) => {
   if (sponsors.length === 0) return <></>
@@ -37,39 +37,51 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
 
           .sponsor__container :global(.subtitle) {
             text-transform: none;
+            margin-bottom: 10px;
           }
 
           .sponsor__img {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
           }
 
           .sponsor__img :global(img) {
-            margin: 0 20px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px dashed ${choices.colors.brand.cinnabar};
+            background: ${choices.colors.white};
           }
 
-          .img-xl {
-            height: 150px;
-            width: 220px;
-          }
-
-          .img-lg {
-            height: 150px;
-            width: 180px;
-          }
-
-          .img-md {
-            height: 120px;
-            width: 150px;
-          }
-
+          .img-xl,
+          .img-lg,
+          .img-md,
           .img-sm {
-            height: 120px;
+            height: 80px;
             width: 100px;
           }
 
           @media (${decisions.queries.screens.desktop}) {
+            .img-xl {
+              height: 150px;
+              width: 220px;
+            }
+
+            .img-lg {
+              height: 150px;
+              width: 180px;
+            }
+
+            .img-md {
+              height: 120px;
+              width: 150px;
+            }
+
+            .img-sm {
+              height: 80px;
+              width: 100px;
+            }
+
             a {
               transition: all 0.2s;
             }
