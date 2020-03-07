@@ -187,7 +187,7 @@ export const sponsors = {
     {
       id: 'astound-commerce',
       name: 'Astound Commerce',
-      url: 'https://astoundcommerce.com/',
+      url: 'https://astoundcommerce.com',
       logo: '/static/images/sponsors/astound.svg'
     },
     {
@@ -195,6 +195,12 @@ export const sponsors = {
       name: 'Globant',
       url: 'https://www.globant.com/#home',
       logo: '/static/images/sponsors/globant.svg'
+    },
+    {
+      id: 'monoku',
+      name: 'Monoku',
+      url: 'https://monoku.com',
+      logo: '/static/images/sponsors/monoku.svg'
     },
     {
       id: 'rutan',
@@ -207,19 +213,19 @@ export const sponsors = {
     {
       id: 'gorilla-logic',
       name: 'Gorilla Logic',
-      url: 'https://gorillalogic.com/',
+      url: 'https://gorillalogic.com',
       logo: '/static/images/sponsors/gorilla_logic.svg'
     },
     {
       id: 'uruit',
       name: 'UruIT',
-      url: 'https://uruit.com/',
+      url: 'https://uruit.com',
       logo: '/static/images/sponsors/uru_it.svg'
     },
     {
       id: 'ilogica',
       name: 'Ilogica',
-      url: 'https://www.ilogica.cl/',
+      url: 'https://www.ilogica.cl',
       logo: '/static/images/sponsors/ilogica.svg'
     }
   ],
@@ -227,13 +233,13 @@ export const sponsors = {
     {
       id: 'mozilla',
       name: 'Mozilla',
-      url: 'https://www.mozilla.org/',
+      url: 'https://www.mozilla.org',
       logo: '/static/images/sponsors/mozilla.svg'
     },
     {
       id: 'getonboard',
       name: 'GetOnBoard',
-      url: 'https://www.getonbrd.com.co/',
+      url: 'https://www.getonbrd.com.co',
       logo: '/static/images/sponsors/getonboard.svg'
     }
   ],
@@ -241,9 +247,14 @@ export const sponsors = {
     {
       id: 'adevinta',
       name: 'Adevinta',
-      url: 'https://www.adevinta.com/',
-      logo:
-        'https://www.adevinta.com/wp-content/themes/scom/assets/img/Adevinta-logo.svg'
+      url: 'https://www.adevinta.com',
+      logo: '/static/images/sponsors/adevinta.svg'
+    },
+    {
+      id: 'gde',
+      name: 'Google Developers Expert',
+      url: 'https://developers.google.com/community/experts/',
+      logo: '/static/images/sponsors/gde.png'
     }
   ]
 }

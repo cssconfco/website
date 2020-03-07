@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 import Subtitle from '../atoms/Subtitle'
+import Picture from '../atoms/Picture'
 
 import { decisions, choices } from '../../utils/designTokens'
 
@@ -13,14 +14,14 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
         <Subtitle color="yellow" size={1} isCentered>
           {title}
         </Subtitle>
-        <div className={`sponsor__img sponsor__img--${imgSize}`}>
+        <div className={`sponsor__img`}>
           {sponsors.map(sponsor => (
-            <a className="not-focus" key={sponsor.id} href={sponsor.url}>
-              <img
-                className={`img-${imgSize}`}
-                src={sponsor.logo}
-                alt={sponsor.id}
-              />
+            <a
+              className={`not-focus sponsor-link sponsor-link-${imgSize}`}
+              key={sponsor.id}
+              href={sponsor.url}
+            >
+              <Picture image={{ url: sponsor.logo, alt: sponsor.id }} />
             </a>
           ))}
         </div>
@@ -46,53 +47,43 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
             justify-content: center;
           }
 
-          .sponsor__img :global(img) {
+          .sponsor-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin: 10px;
             padding: 10px;
             border: 2px dashed ${choices.colors.brand.cinnabar};
             background: ${choices.colors.white};
           }
 
-          .img-xl,
-          .img-lg,
-          .img-md,
-          .img-sm {
+          .sponsor-link-xl,
+          .sponsor-link-lg,
+          .sponsor-link-md,
+          .sponsor-link-sm {
             height: 80px;
             width: 100px;
           }
 
           @media (${decisions.queries.screens.desktop}) {
-            .img-xl {
+            .sponsor-link-xl {
               height: 150px;
               width: 220px;
             }
 
-            .img-lg {
+            .sponsor-link-lg {
               height: 150px;
               width: 180px;
             }
 
-            .img-md {
+            .sponsor-link-md {
               height: 120px;
               width: 150px;
             }
 
-            .img-sm {
+            .sponsor-link-sm {
               height: 80px;
               width: 100px;
-            }
-
-            a {
-              transition: all 0.2s;
-            }
-
-            img {
-              transition: all 0.2s;
-            }
-
-            img:hover {
-              transition: 0.3s;
-              transform: scale(1.2);
             }
           }
         `}

@@ -97,18 +97,10 @@ const Mate = ({ id, type, children, tribalPosition }) => {
             width: 200px;
           }
 
-          .mate:hover .tribal {
-            height: 100px;
-            width: 100px;
-            transition: all .2s ease-in;
-          }
-
           .tribal {
             width: 90px;
             height: 90px;
             opacity: ${choices.opacity[75]};
-            transition: all .1s ease-out;
-            transform-origin: 50% 50%;
           }
 
           .tribal-top-left {

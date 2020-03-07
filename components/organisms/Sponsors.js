@@ -14,7 +14,7 @@ const Sponsors = ({ sponsors }) => {
             <div className="sponsor-separator__container sponsor-separator__container--right">
               <div className="sponsor-separator__svg"></div>
             </div>
-            <Heading size={1} color="blue">
+            <Heading size={2} color="blue">
               Sponsors
             </Heading>
             <div className="sponsor-separator__container sponsor-separator__container--left">
@@ -57,7 +57,7 @@ const Sponsors = ({ sponsors }) => {
           .sponsor-separator__svg {
             background-image: url(/static/images/sponsors-separator.svg);
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             display: block;
             width: 100%;
             height: 100%;
@@ -72,6 +72,10 @@ const Sponsors = ({ sponsors }) => {
           @media (${decisions.queries.screens.desktop}) {
             .sponsor-separator__container {
               width: 45%;
+            }
+
+            .sponsor-separator__svg {
+              background-size: contain;
             }
           }
         `}
