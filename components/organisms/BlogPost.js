@@ -8,7 +8,7 @@ import Responsive from '../atoms/Responsive'
 import blogPosts from '../../blog/blogPosts'
 
 import { links } from '../../utils/constants'
-import { choices } from '../../utils/designTokens'
+import { choices, decisions } from '../../utils/designTokens'
 
 function BlogPost({ meta, children }) {
   const current = blogPosts.map(({ title }) => title).indexOf(meta.title)
@@ -17,7 +17,7 @@ function BlogPost({ meta, children }) {
   const prev = blogPosts[current + 1]
 
   return (
-    <div>
+    <div className="blog-post__container">
       <Container>
         <div>
           <Responsive.Mobile>
@@ -30,8 +30,10 @@ function BlogPost({ meta, children }) {
         <a className="back__link" href={links.BLOG}>
           {'<'} BACK TO BLOG{' '}
         </a>
-        <h4>{meta.title}</h4>
-        {children}
+        <div className="blog-post__container--content">
+          <h4>{meta.title}</h4>
+          {children}
+        </div>
         {next || prev ? (
           <div>
             <hr />
@@ -45,7 +47,7 @@ function BlogPost({ meta, children }) {
                   />
                 )}
               </div>
-              <div>
+              <div className="blog-paginator__container--right">
                 {next && (
                   <BlogPaginator
                     href={next.path}
@@ -77,6 +79,28 @@ function BlogPost({ meta, children }) {
           .blog-pagination__container {
             display: flex;
             justify-content: space-between;
+          }
+
+          .blog-post__container {
+            padding: 30px;
+          }
+
+          .blog-paginator__container--right {
+            text-align: right;
+          }
+
+          .blog-post__container--content {
+            text-align: justify;
+          }
+
+          @media (${decisions.queries.screens.desktop}) {
+            .blog-post__container {
+              padding-top: 20px;
+            }
+
+            .blog-paginator__container--right {
+              text-align: left;
+            }
           }
         `}
       </style>

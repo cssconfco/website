@@ -41,14 +41,14 @@ function BlogHeader() {
         }
 
         .lovers {
-          display: none;
+          display: block;
           background-image: url('/static/images/css-blog-text.svg');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
           width: 100%;
           height: 100%;
-          max-height: 300px;
+          max-height: 150px;
           margin: 80px 50px;
           transition: filter 0.5s ease;
         }
@@ -100,7 +100,9 @@ function BlogHeader() {
         }
 
         .blog-header__container {
+          height: 320px;
           margin-top: 20px;
+          margin-bottom: 30px;
         }
 
         @media (${decisions.queries.screens.desktop}) {
@@ -111,6 +113,7 @@ function BlogHeader() {
 
           .blog-header__container {
             margin-top: 20px;
+            margin-bottom: 250px;
           }
 
           .blog-header__picture {
@@ -119,6 +122,10 @@ function BlogHeader() {
 
           .tribals {
             flex-direction: row;
+          }
+
+          .lovers {
+            max-height: 300px;
           }
 
           .lovers:hover {
