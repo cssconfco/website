@@ -42,7 +42,7 @@ function BlogHeader() {
 
         .lovers {
           display: none;
-          background-image: url('/static/images/css-lovers-text.svg');
+          background-image: url('/static/images/css-blog-text.svg');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: contain;
