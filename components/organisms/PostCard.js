@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 
 const truncateDescription = text =>
   text && text.length >= 180 ? `${text.substring(0, 180)} ...` : text
@@ -6,13 +7,15 @@ const truncateDescription = text =>
 const PostCard = ({ post }) => {
   return (
     <>
-      <div className="card__container">
-        <div className="card-description__container">
-          <h3>{post.title}</h3>
-          <h4>{post.publishedAt}</h4>
-          <p>{truncateDescription(post.summary)}</p>
+      <Link href={post.path}>
+        <div className="card__container">
+          <div className="card-description__container">
+            <h3>{post.title}</h3>
+            <h4>{post.publishedAt}</h4>
+            <p>{truncateDescription(post.summary)}</p>
+          </div>
         </div>
-      </div>
+      </Link>
       <style jsx>
         {`
           .card__container {
@@ -57,7 +60,8 @@ PostCard.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string.isRequired,
     publishedAt: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired
+    summary: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired
   }).isRequired
 }
 
