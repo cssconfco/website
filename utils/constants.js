@@ -255,6 +255,12 @@ export const sponsors = {
       name: 'Google Developers Expert',
       url: 'https://developers.google.com/community/experts/',
       logo: '/static/images/sponsors/gde.png'
+    },
+    {
+      id: 'workia',
+      name: 'Workia',
+      url: 'https://workia.co',
+      logo: '/static/images/sponsors/workia.png'
     }
   ]
 }
