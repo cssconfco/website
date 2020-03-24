@@ -2,6 +2,7 @@
 export const links = {
   HOME: '/',
   TICKETS: '/tickets',
+  BLOG: '/blog',
   NEWSLETTER: '#newsletter',
   TEAM: '#team',
   INSTAGRAM: 'https://instagram.com/cssconfco', 

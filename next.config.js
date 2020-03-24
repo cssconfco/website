@@ -1,3 +1,10 @@
 const environmentSetup = require('./config/setup')
 
-module.exports = { env: environmentSetup }
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/
+})
+
+module.exports = withMDX({
+  env: environmentSetup,
+  pageExtensions: ['js', 'jsx', 'md', 'mdx']
+})
