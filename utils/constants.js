@@ -262,6 +262,12 @@ export const sponsors = {
       name: 'Workia',
       url: 'https://workia.co',
       logo: '/static/images/sponsors/workia.png'
+    },
+    {
+      id: 'acamica',
+      name: 'Acámica',
+      url: 'https://www.acamica.com/',
+      logo: '/static/images/sponsors/acamica.svg'
     }
   ]
 }
