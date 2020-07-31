@@ -13,6 +13,7 @@ const Paragraph = ({
   isInline,
   isCentered,
   isJustified,
+  isFull,
   withMargin,
   style
 }) => {
@@ -27,7 +28,8 @@ const Paragraph = ({
           'is-inverted': isInverted,
           'is-inline': isInline,
           'is-centered': isCentered,
-          'is-justified': isJustified
+          'is-justified': isJustified,
+          'is-full': isFull
         })}
       >
         {children}
@@ -38,6 +40,10 @@ const Paragraph = ({
           padding: 0;
           ${paragraphStyles}
           max-width: ${choices.screens.sm};
+        }
+
+        .is-full {
+          max-width: 100%;
         }
         
         .paragraph-normal {
@@ -98,6 +104,7 @@ Paragraph.propTypes = {
   isCentered: PropTypes.bool,
   isJustified: PropTypes.bool,
   isInline: PropTypes.bool,
+  isFull: PropTypes.bool,
   withMargin: PropTypes.bool,
   size: PropTypes.oneOf(['xs', 'sm', 'md']),
   weight: PropTypes.oneOf(['normal', 'bold']),

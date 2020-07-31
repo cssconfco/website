@@ -3,14 +3,20 @@ import classNames from 'classnames'
 
 import { choices } from '../../utils/designTokens'
 
-const Alert = ({ children, type, isMarginLess }) => (
+const Alert = ({ children, type, isMarginLess, isTop, isCentered }) => (
   <>
-    <div className={classNames('alert', { [`alert-${type}`]: type })}>
+    <div
+      className={classNames('alert', {
+        [`alert-${type}`]: type,
+        'is-centered': isCentered,
+        'is-top': isTop
+      })}
+    >
       {children}
     </div>
     <style jsx>{`
       .alert {
-        display: inline-flex;
+        display: ${isTop ? 'block' : 'inline-flex'};
         flex-direction: column;
         padding: ${choices.spacing[2]} ${choices.spacing[4]};
         border-radius: ${choices.borderRadius.md};
@@ -18,6 +24,16 @@ const Alert = ({ children, type, isMarginLess }) => (
         margin: ${isMarginLess
           ? '0'
           : `${choices.spacing[8]} ${choices.spacing[4]}`};
+      }
+
+      .is-centered {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .is-top {
+        width: 100%;
+        border-radius: 0;
       }
 
       .alert-info {
@@ -38,7 +54,9 @@ const Alert = ({ children, type, isMarginLess }) => (
 Alert.propTypes = {
   children: PropTypes.node.isRequired,
   type: PropTypes.string,
-  isMarginLess: PropTypes.bool
+  isMarginLess: PropTypes.bool,
+  isCentered: PropTypes.bool,
+  isTop: PropTypes.bool
 }
 
 Alert.defaultProps = {

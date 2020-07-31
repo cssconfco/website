@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 
 import Subtitle from '../atoms/Subtitle'
 import Picture from '../atoms/Picture'
@@ -14,15 +15,17 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
         <Subtitle color="yellow" size={1} isCentered>
           {title}
         </Subtitle>
-        <div className={`sponsor__img`}>
+        <div className="sponsor__img">
           {sponsors.map(sponsor => (
-            <a
-              className={`not-focus sponsor-link sponsor-link-${imgSize}`}
-              key={sponsor.id}
-              href={sponsor.url}
-            >
-              <Picture image={{ url: sponsor.logo, alt: sponsor.id }} />
-            </a>
+            <Link key={sponsor.id} href={sponsor.url}>
+              <a
+                className={`not-focus sp-link sp-link-${imgSize}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Picture image={{ url: sponsor.logo, alt: sponsor.id }} />
+              </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -45,9 +48,10 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
           }
 
-          .sponsor-link {
+          .sp-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -57,31 +61,31 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
             background: ${choices.colors.white};
           }
 
-          .sponsor-link-xl,
-          .sponsor-link-lg,
-          .sponsor-link-md,
-          .sponsor-link-sm {
+          .sp-link-xl,
+          .sp-link-lg,
+          .sp-link-md,
+          .sp-link-sm {
             height: 80px;
             width: 100px;
           }
 
           @media (${decisions.queries.screens.desktop}) {
-            .sponsor-link-xl {
+            .sp-link-xl {
               height: 150px;
               width: 220px;
             }
 
-            .sponsor-link-lg {
+            .sp-link-lg {
               height: 150px;
               width: 180px;
             }
 
-            .sponsor-link-md {
+            .sp-link-md {
               height: 120px;
               width: 150px;
             }
 
-            .sponsor-link-sm {
+            .sp-link-sm {
               height: 80px;
               width: 100px;
             }

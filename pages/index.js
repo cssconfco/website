@@ -9,12 +9,14 @@ import Speakers from '../components/organisms/Speakers'
 import Team from '../components/organisms/Team'
 import What from '../components/organisms/What'
 import Sponsors from '../components/organisms/Sponsors'
+import Alert from '../components/atoms/Alert'
 
 import fetchJson from '../utils/fetchJson'
 import { logEvent } from '../utils/analytics'
 import { speakers, team, sponsors } from '../utils/constants'
 
 import { config } from '../config/client'
+import Paragraph from '../components/atoms/Paragraph'
 
 class Home extends Component {
   state = { name: '', email: '', loading: false }
@@ -76,6 +78,20 @@ class Home extends Component {
 
     return (
       <>
+        <Alert isTop isCentered>
+          <Paragraph color="blue" size="sm" isFull>
+            📣 The CSS Conf Colombia <strong>has been postponed to 2021</strong>
+            , please read the official communication{' '}
+            <a
+              href="https://bit.ly/aplaza-cssconf"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              here
+            </a>{' '}
+            (Spanish).
+          </Paragraph>
+        </Alert>
         <Navbar />
         <Speakers speakers={speakers} />
         <Hero />
