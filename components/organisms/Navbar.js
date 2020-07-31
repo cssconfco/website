@@ -37,13 +37,6 @@ const Navbar = () => {
                 <Paragraph size="sm">Newsletter</Paragraph>
               </a>
             </li>
-            <li>
-              <Link href={links.BLOG}>
-                <a className="blog-button">
-                  <Paragraph size="sm">Blog</Paragraph>
-                </a>
-              </Link>
-            </li>
             <li className="on-desktop">
               <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
                 <Paragraph size="sm">Team</Paragraph>
@@ -91,12 +84,6 @@ const Navbar = () => {
 
         .navbar ul li :global(a) {
           text-decoration: none;
-        }
-
-        .blog-button:focus {
-          border: unset !important;
-          box-shadow: unset !important;
-          outline: unset !important;
         }
 
         .navbar ul li:hover:not(.has-navbar-button) {

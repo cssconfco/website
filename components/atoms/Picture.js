@@ -13,7 +13,7 @@ const Picture = ({ image, style, width, isInline, isCentered }) => {
       <picture
         style={{
           lineHeight: 0,
-          maxWidth: `${width}px`,
+          ...(width ? { maxWidth: `${width}px` } : {}),
           ...getCenteredStyles(isCentered),
           ...style // This needs to be at the end to override the styles
         }}
@@ -23,6 +23,7 @@ const Picture = ({ image, style, width, isInline, isCentered }) => {
       <style jsx>{`
         picture {
           display: ${isInline ? 'inline-block' : 'block'};
+          width: 100%;
         }
 
         img {
