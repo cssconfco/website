@@ -13,7 +13,7 @@ const Hero = () => {
               <div className="lovers"></div>
             </div>
             <Subtitle size={1} color="blue">
-              March 21 / 2020
+              March 2021
             </Subtitle>
           </div>
           <div className="tribal-container tribal-container-reverse">
