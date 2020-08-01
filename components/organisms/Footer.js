@@ -71,6 +71,8 @@ const Footer = () => {
         .footer ul {
           display: flex;
           justify-content: center;
+          align-items: center;
+          text-align: center;
           list-style: none;
           padding: 0;
           margin: 0;
@@ -103,6 +105,7 @@ const Footer = () => {
           .footer ul {
             justify-content: flex-start;
             margin-right: 10px;
+            text-align: left;
           }
         }
       `}</style>
