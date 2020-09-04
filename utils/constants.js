@@ -179,6 +179,13 @@ export const team = [
     title: 'Supporter',
     twitterHandle: '@manucastrillonm',
     tribalPosition: 'top-right'
+  },
+  {
+    id: 'johana',
+    name: 'Johana Salinas',
+    title: 'Supporter',
+    twitterHandle: '@jsnunki',
+    tribalPosition: 'top-right'
   }
 ]
 
