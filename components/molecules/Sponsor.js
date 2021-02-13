@@ -86,8 +86,8 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
             }
 
             .sp-link-sm {
-              height: 80px;
-              width: 100px;
+              height: 90px;
+              width: 120px;
             }
           }
         `}

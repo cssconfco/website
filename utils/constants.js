@@ -90,13 +90,6 @@ export const speakers = [
 
 export const team = [
   {
-    id: 'estefa',
-    name: 'Estefany Aguilar',
-    title: 'Organizer',
-    twitterHandle: '@teffcode',
-    tribalPosition: 'top-right'
-  },
-  {
     id: 'guillermo',
     name: 'Guillermo Rodas',
     title: 'Organizer',
@@ -109,6 +102,13 @@ export const team = [
     title: 'Organizer',
     twitterHandle: '@otra_gris',
     tribalPosition: 'bottom-left'
+  },
+  {
+    id: 'estefa',
+    name: 'Estefany Aguilar',
+    title: 'Organizer',
+    twitterHandle: '@teffcode',
+    tribalPosition: 'top-right'
   },
   {
     id: 'santiago',
@@ -167,24 +167,17 @@ export const team = [
     tribalPosition: 'top-right'
   },
   {
-    id: 'maria',
-    name: 'Maria Sanchez',
-    title: 'Supporter',
-    twitterHandle: '@mariaballer1na',
-    tribalPosition: 'top-right'
-  },
-  {
-    id: 'manuela',
-    name: 'Manuela Castrillón',
-    title: 'Supporter',
-    twitterHandle: '@manucastrillonm',
-    tribalPosition: 'top-right'
-  },
-  {
     id: 'johana',
     name: 'Johana Salinas',
     title: 'Supporter',
     twitterHandle: '@jsnunki',
+    tribalPosition: 'top-right'
+  },
+  {
+    id: 'agustina',
+    name: 'Agustina Marijanovic',
+    title: 'Supporter',
+    twitterHandle: '@straycatdev',
     tribalPosition: 'top-right'
   }
 ]
@@ -196,12 +189,6 @@ export const sponsors = {
       name: 'Astound Commerce',
       url: 'https://astoundcommerce.com',
       logo: '/static/images/sponsors/astound.svg'
-    },
-    {
-      id: 'globant',
-      name: 'Globant',
-      url: 'https://www.globant.com/#home',
-      logo: '/static/images/sponsors/globant.svg'
     },
     {
       id: 'monoku',
@@ -274,6 +261,12 @@ export const sponsors = {
       name: 'Acámica',
       url: 'https://www.acamica.com/',
       logo: '/static/images/sponsors/acamica.svg'
+    },
+    {
+      id: 'frontendcafe',
+      name: 'FrontendCafe',
+      url: 'https://frontend.cafe/',
+      logo: '/static/images/sponsors/fec.png'
     }
   ]
 }

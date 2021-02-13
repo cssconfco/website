@@ -13,20 +13,14 @@ const Hero = () => {
               <div className="lovers"></div>
             </div>
             <Subtitle size={1} color="blue">
-              March 2021
+              April 2021
             </Subtitle>
           </div>
           <div className="tribal-container tribal-container-reverse">
             <div className="city-tribal tribal"></div>
-            <Subtitle size={1} color="red">
-              Medellín
-            </Subtitle>
           </div>
           <div className="tribal-container">
             <div className="place-tribal tribal"></div>
-            <Subtitle size={1} color="yellow">
-              Ruta N
-            </Subtitle>
           </div>
         </div>
       </Container>

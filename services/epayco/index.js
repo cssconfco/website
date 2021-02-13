@@ -4,7 +4,7 @@ import { encodeOrderParams } from '../../utils/orderParams'
 
 const defaultValues = {
   name: 'CSS Conf Colombia',
-  description: 'CSS Conf Colombia 2020',
+  description: 'CSS Conf Colombia 2021',
   currency: 'cop',
   tax_base: '0',
   country: 'co',

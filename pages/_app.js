@@ -39,7 +39,7 @@ export default class CustomApp extends App {
       <NextContainer>
         <GoogleAnalytics>
           <Head>
-            <title>CSS Conf Colombia 2020 — A CSS Lovers Conference</title>
+            <title>CSS Conf Colombia 2021 — A CSS Lovers Conference</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"

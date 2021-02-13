@@ -8,7 +8,7 @@ const SimpleNavbar = () => {
     <>
       <div className="simple-navbar">
         <Logo width={50} />
-        <Heading size={3}>CSS Conf Colombia 2020</Heading>
+        <Heading size={3}>CSS Conf Colombia 2021</Heading>
       </div>
       <style jsx>{`
         .simple-navbar {
