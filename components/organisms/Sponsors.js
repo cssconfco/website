@@ -30,7 +30,7 @@ const Sponsors = ({ sponsors }) => {
       <style jsx>
         {`
           .sponsors__container {
-            padding-top: 100px;
+            padding: 100px 20px 30px;
             min-height: 800px;
           }
 

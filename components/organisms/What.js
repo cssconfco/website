@@ -9,15 +9,15 @@ const What = () => {
     <section className="what">
       <Container>
         <Heading size={1} color="red" withMargin>
-          What is CSS Conf?
+          What is the CSS Conf?
         </Heading>
         <Paragraph color="red" withMargin>
-          The CSSConf is a worldwide organization dedicated to holding
+          The CSS Conf is a worldwide organization dedicated to holding
           conferences for designers, programmers and web interface creators,
           with the purpose of connecting the community in different countries.
         </Paragraph>
         <Paragraph color="red">
-          CSSConf Colombia joined the family on January 29th, 2019, for the
+          CSS Conf Colombia joined the family on January 29th, 2019, for the
           first time.
         </Paragraph>
         <div className="monkey"></div>

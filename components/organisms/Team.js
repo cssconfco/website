@@ -34,7 +34,6 @@ const Team = ({ team }) => {
                       <Paragraph color="yellow" size="sm">
                         {title}
                       </Paragraph>
-
                       <Paragraph color="yellow" size="xs">
                         {twitterHandle}
                       </Paragraph>
@@ -52,7 +51,7 @@ const Team = ({ team }) => {
           background: ${choices.colors.brand.bayofmany};
           padding: 30px ${decisions.container.padding};
           height: 100%;
-          min-height: 800px;
+          min-height: 600px;
           overflow: hidden;
         }
 
@@ -70,7 +69,7 @@ const Team = ({ team }) => {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
-          justify-content: center;
+          justify-content: space-evenly;
         }
 
         .lizard {
@@ -81,7 +80,7 @@ const Team = ({ team }) => {
           background-repeat: no-repeat;
           background-size: contain;
           top: 0;
-          right: -600px;
+          right: -400px;
           width: 1000px;
           height: 1000px;
           opacity: 0.8;
@@ -105,7 +104,7 @@ const Team = ({ team }) => {
           }
 
           .lizard {
-            top: -250px;
+            top: -100px;
             right: 0;
           }
         }

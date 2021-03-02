@@ -6,14 +6,20 @@ import Heading from '../atoms/Heading'
 import Subtitle from '../atoms/Subtitle'
 
 import { choices, decisions } from '../../utils/designTokens'
+import Paragraph from '../atoms/Paragraph'
 
 const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
   return (
     <section id="newsletter" className="newsletter">
       <Container>
-        <Heading size={1} isInverted withMargin>
-          Newsletter
-        </Heading>
+        <div className="description">
+          <Heading size={1} isInverted>
+            The CSS Conf Colombia 2021
+          </Heading>
+          <Subtitle size={1} isInverted withMargin>
+            is going online and open for everyone 🎉
+          </Subtitle>
+        </div>
         <form className="form" onSubmit={handleSubmit}>
           <div className="field-group">
             <label htmlFor="name">
@@ -47,9 +53,16 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           </div>
           <Button type="submit" withMargin isDisabled={isLoading}>
             <Heading size={3} isInverted>
-              Subscribe
+              Register for free
             </Heading>
           </Button>
+          <Paragraph size="xs" isInverted>
+            ✅ By registering, you agree with the FAQS and our Code of Conduct.
+          </Paragraph>
+          <Paragraph size="xs" isInverted>
+            ✅ The data will be used just for the event and we are not sharing
+            it with any third party or sponsor.
+          </Paragraph>
         </form>
         <div className="bird"></div>
       </Container>
@@ -57,16 +70,18 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
         .newsletter {
           position: relative;
           background: ${choices.colors.brand.bayofmany};
-          padding: 100px ${decisions.container.padding} 50px;
+          padding: 200px ${decisions.container.padding} 50px;
           overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
         }
 
         .newsletter :global(.container) > :global(.heading) {
           position: relative;
           z-index: 1;
+        }
+
+        .description {
+          margin-bottom: 50px;
+          text-align: center;
         }
 
         .form {
@@ -75,6 +90,10 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           flex-direction: column;
           max-width: ${choices.screens.xs};
           z-index: 1;
+        }
+
+        .form :global(.paragraph) {
+          margin-top: 20px;
         }
 
         .field-group {
@@ -111,25 +130,31 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           background-size: contain;
           top: 50%;
           left: 0;
-          transform: translate(-50%, -50%);
-          width: 450px;
-          height: 450px;
-          opacity: 0.2;
+          transform: translate(40%, -50%);
+          width: 500px;
+          height: 500px;
+          opacity: 0.1;
+          pointer-events: none;
         }
 
         @media (${decisions.queries.screens.desktop}) {
           .newsletter {
-            overflow: visible;
+            padding-top: 60px;
+          }
+
+          .description {
+            margin-top: 100px;
+            text-align: left;
           }
 
           .bird {
             display: inline-block;
-            top: -205px;
-            left: -350px;
-            width: 300px;
-            height: 300px;
+            bottom: 0;
+            right: 0;
+            width: 600px;
+            height: 600px;
             opacity: 1;
-            transform: translate(0, 0);
+            transform: translate(120%, -40%);
           }
         }
       `}</style>

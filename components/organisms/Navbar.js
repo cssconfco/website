@@ -25,7 +25,9 @@ const Navbar = () => {
             <li className="has-navbar-button">
               <Link href={links.TICKETS}>
                 <a className="navbar-button">
-                  <Paragraph size="sm">Buy a Ticket</Paragraph>
+                  <Paragraph size="sm" color="blue">
+                    Minibootcamp
+                  </Paragraph>
                 </a>
               </Link>
             </li>
@@ -34,12 +36,16 @@ const Navbar = () => {
                 href={links.NEWSLETTER}
                 onClick={smoothScroll(links.NEWSLETTER)}
               >
-                <Paragraph size="sm">Newsletter</Paragraph>
+                <Paragraph size="sm" isInverted>
+                  Newsletter
+                </Paragraph>
               </a>
             </li>
             <li className="on-desktop">
               <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
-                <Paragraph size="sm">Team</Paragraph>
+                <Paragraph size="sm" isInverted>
+                  Team
+                </Paragraph>
               </a>
             </li>
             <li>
@@ -48,7 +54,9 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Paragraph size="sm">Contact</Paragraph>
+                <Paragraph size="sm" isInverted>
+                  Contact
+                </Paragraph>
               </a>
             </li>
           </ul>
@@ -63,9 +71,11 @@ const Navbar = () => {
         }
 
         .navbar {
-          position: relative;
+          position: absolute;
+          width: 100%;
+          z-index: 1;
           margin-top: 20px;
-          z-index: 10;
+          padding: 0 25px;
         }
 
         .navbar ul {
@@ -87,18 +97,18 @@ const Navbar = () => {
         }
 
         .navbar ul li:hover:not(.has-navbar-button) {
-          border-bottom: 3px solid currentColor;
+          border-bottom: 3px solid ${choices.colors.white};
         }
 
         .navbar-button {
-          background: ${choices.colors.brand.bayofmany};
+          background: ${choices.colors.brand.koromiko};
           padding: ${choices.spacing[1]} ${choices.spacing[6]};
           border-radius: ${choices.borderRadius.full};
           text-align: center;
         }
 
         .navbar-button:hover {
-          background: ${choices.colors.blue[800]};
+          background: ${choices.colors.brand.chiffon};
         }
 
         .navbar-button > :global(p) {
@@ -117,10 +127,6 @@ const Navbar = () => {
           }
 
           .navbar {
-            position: absolute;
-            width: 100%;
-            z-index: 1;
-            margin-top: 20px;
           }
 
           .navbar ul {

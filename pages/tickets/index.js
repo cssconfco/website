@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Link from 'next/link'
 
 import Alert from '../../components/atoms/Alert'
 import Paragraph from '../../components/atoms/Paragraph'
@@ -84,27 +83,15 @@ const Tickets = ({ countries, products }) => {
           ) : (
             <Alert type="info">
               <Heading size={2} color="blue">
-                Tickets, Sold out!! 🤯
+                Minibootcamp and Workshop tickets are coming!!
               </Heading>
               <Paragraph
                 style={{ marginTop: choices.spacing[4] }}
                 size="sm"
                 color="blue"
               >
-                We recommend you to suscribe to our{' '}
-                <Link href={links.NEWSLETTER}>
-                  <a>newsletter</a>
-                </Link>{' '}
-                so you can know with anticipation the date of our next batch of
-                tickets and have another chance.
-              </Paragraph>
-              <Paragraph
-                style={{ marginTop: choices.spacing[4] }}
-                size="sm"
-                color="blue"
-              >
-                Remember that we also publish that information in our social
-                networks. Please, follow us in{' '}
+                We will be publishing information about the Minibootcamp and
+                Workshop in our social networks soon. Please, follow us in{' '}
                 <a
                   href={links.TWITTER}
                   target="_blank"
