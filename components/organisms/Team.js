@@ -69,7 +69,7 @@ const Team = ({ team }) => {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
-          justify-content: space-evenly;
+          justify-content: center;
         }
 
         .lizard {

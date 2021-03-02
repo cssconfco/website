@@ -154,7 +154,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
             width: 600px;
             height: 600px;
             opacity: 1;
-            transform: translate(120%, -40%);
+            transform: translate(120%, -50%);
           }
         }
       `}</style>

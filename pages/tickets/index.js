@@ -83,15 +83,15 @@ const Tickets = ({ countries, products }) => {
           ) : (
             <Alert type="info">
               <Heading size={2} color="blue">
-                Minibootcamp and Workshop tickets are coming!!
+                Minibootcamp & Workshop tickets are coming!!
               </Heading>
               <Paragraph
                 style={{ marginTop: choices.spacing[4] }}
                 size="sm"
                 color="blue"
               >
-                We will be publishing information about the Minibootcamp and
-                Workshop in our social networks soon. Please, follow us in{' '}
+                We will be publishing information about the tickets in our
+                social networks. Please, follow us in{' '}
                 <a
                   href={links.TWITTER}
                   target="_blank"

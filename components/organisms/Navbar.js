@@ -26,7 +26,7 @@ const Navbar = () => {
               <Link href={links.TICKETS}>
                 <a className="navbar-button">
                   <Paragraph size="sm" color="blue">
-                    Minibootcamp
+                    Minibootcamp & Workshop
                   </Paragraph>
                 </a>
               </Link>
@@ -105,6 +105,10 @@ const Navbar = () => {
           padding: ${choices.spacing[1]} ${choices.spacing[6]};
           border-radius: ${choices.borderRadius.full};
           text-align: center;
+        }
+
+        .navbar-button :global(.paragraph) {
+          font-size: 14px;
         }
 
         .navbar-button:hover {

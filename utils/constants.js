@@ -160,13 +160,6 @@ export const team = [
     tribalPosition: 'top-right'
   },
   {
-    id: 'jonathan',
-    name: 'Jonathan Avendaño',
-    title: 'Supporter',
-    twitterHandle: '@jdavidavendano',
-    tribalPosition: 'top-right'
-  },
-  {
     id: 'johana',
     name: 'Johana Salinas',
     title: 'Supporter',
@@ -243,18 +236,6 @@ export const sponsors = {
       name: 'Adevinta',
       url: 'https://www.adevinta.com',
       logo: '/static/images/sponsors/adevinta.svg'
-    },
-    {
-      id: 'gde',
-      name: 'Google Developers Expert',
-      url: 'https://developers.google.com/community/experts/',
-      logo: '/static/images/sponsors/gde.png'
-    },
-    {
-      id: 'workia',
-      name: 'Workia',
-      url: 'https://workia.co',
-      logo: '/static/images/sponsors/workia.png'
     },
     {
       id: 'acamica',
