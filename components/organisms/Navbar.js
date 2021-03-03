@@ -38,7 +38,7 @@ const Navbar = () => {
                 </Paragraph>
               </a>
             </li>
-            <li>
+            <li className="on-desktop">
               <a
                 href={links.CONTACT_EMAIL}
                 target="_blank"
@@ -65,6 +65,10 @@ const Navbar = () => {
           z-index: 1;
           margin-top: 20px;
           padding: 0 25px;
+        }
+
+        .navbar-button :global(.paragraph) {
+          font-size: 16px;
         }
 
         .navbar ul {

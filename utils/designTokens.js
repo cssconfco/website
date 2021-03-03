@@ -278,7 +278,7 @@ export const decisions = {
       '4': choices.fontSize.md,
       '3': choices.fontSize.lg,
       '2': choices.fontSize['3xl'],
-      '1': choices.fontSize['5xl']
+      '1': choices.fontSize['4xl']
     },
     color: {
       default: choices.colors.brand.tuna,
@@ -297,7 +297,7 @@ export const decisions = {
     textTransform: 'uppercase',
     fontSize: {
       '2': choices.fontSize.lg,
-      '1': choices.fontSize['3xl']
+      '1': choices.fontSize['2xl']
     },
     color: {
       default: choices.colors.brand.tuna,

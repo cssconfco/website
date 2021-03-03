@@ -83,13 +83,42 @@ const Tickets = ({ countries, products }) => {
           ) : (
             <Alert type="info">
               <Heading size={2} color="blue">
-                Minibootcamp & Workshop tickets are coming!!
+                Minibootcamp & Workshop tickets
               </Heading>
-              <Paragraph
-                style={{ marginTop: choices.spacing[4] }}
-                size="sm"
-                color="blue"
-              >
+              <Paragraph size="sm" color="blue">
+                We will offering a limited amount of tickets for join our{' '}
+                <strong>Minibootcamp</strong> where you can learn about:
+              </Paragraph>
+
+              <Paragraph size="sm" color="blue">
+                <strong>
+                  Semantic HTML and CSS Layout for everyday (March 27th)
+                </strong>
+                <br />
+                <strong>
+                  Advanced CSS Layout with Flexbox and CSS Grid (April 3rd)
+                </strong>
+              </Paragraph>
+
+              <Paragraph size="sm" color="blue">
+                We also will have a more advanced workshop for a very limited
+                number of people as well, well you can learn about:
+              </Paragraph>
+
+              <Paragraph size="sm" color="blue">
+                <strong>
+                  Building a Component Library with Storybook, Atomic Design,
+                  and Design Tokens (April 17th)
+                </strong>
+              </Paragraph>
+
+              <Paragraph size="sm" color="blue">
+                Each session will be for groups of maximun{' '}
+                <strong>25 people</strong> so you can a better experience and
+                learning.
+              </Paragraph>
+
+              <Paragraph size="sm" color="blue">
                 We will be publishing information about the tickets in our
                 social networks. Please, follow us in{' '}
                 <a
@@ -117,6 +146,10 @@ const Tickets = ({ countries, products }) => {
               display: flex;
               flex-direction: column-reverse;
               padding: 0 ${choices.spacing[4]};
+            }
+
+            .checkout :global(.paragraph) {
+              margin-top: ${choices.spacing[4]};
             }
 
             @media (${decisions.queries.screens.desktop}) {

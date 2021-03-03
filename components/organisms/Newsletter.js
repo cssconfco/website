@@ -73,7 +73,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           align-items: center;
           position: relative;
           background: ${choices.colors.brand.bayofmany};
-          padding: 200px ${decisions.container.padding} 50px;
+          padding: 120px ${decisions.container.padding} 50px;
           overflow: hidden;
         }
 
