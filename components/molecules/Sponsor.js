@@ -65,29 +65,29 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
           .sp-link-lg,
           .sp-link-md,
           .sp-link-sm {
-            height: 80px;
-            width: 100px;
+            height: 60px;
+            width: 90px;
           }
 
           @media (${decisions.queries.screens.desktop}) {
             .sp-link-xl {
-              height: 150px;
-              width: 220px;
+              height: 130px;
+              width: 240px;
             }
 
             .sp-link-lg {
-              height: 150px;
+              height: 120px;
               width: 180px;
             }
 
             .sp-link-md {
-              height: 120px;
-              width: 150px;
+              height: 90px;
+              width: 160px;
             }
 
             .sp-link-sm {
-              height: 90px;
-              width: 120px;
+              height: 60px;
+              width: 150px;
             }
           }
         `}

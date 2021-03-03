@@ -20,7 +20,7 @@ const Footer = () => {
           </li>
           <li>
             <a href={links.FAQS} target="_blank" rel="noopener noreferrer">
-              <Paragraph color="red">FAQS</Paragraph>
+              <Paragraph color="red">FAQs</Paragraph>
             </a>
           </li>
           <li>

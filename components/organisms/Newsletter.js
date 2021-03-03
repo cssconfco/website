@@ -57,7 +57,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
             </Heading>
           </Button>
           <Paragraph size="xs" isInverted>
-            ✅ By registering, you agree with the FAQS and our Code of Conduct.
+            ✅ By registering, you agree with the FAQs and our Code of Conduct.
           </Paragraph>
           <Paragraph size="xs" isInverted>
             ✅ The data will be used just for the event and we are not sharing
@@ -68,6 +68,9 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
       </Container>
       <style jsx>{`
         .newsletter {
+          display: flex;
+          flex-direction: colum;
+          align-items: center;
           position: relative;
           background: ${choices.colors.brand.bayofmany};
           padding: 200px ${decisions.container.padding} 50px;
@@ -90,6 +93,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           flex-direction: column;
           max-width: ${choices.screens.xs};
           z-index: 1;
+          margin: 0 auto;
         }
 
         .form :global(.paragraph) {
@@ -139,7 +143,12 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
 
         @media (${decisions.queries.screens.desktop}) {
           .newsletter {
+            display: block;
             padding-top: 60px;
+          }
+
+          .form {
+            margin 0;
           }
 
           .description {

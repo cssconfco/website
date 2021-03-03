@@ -31,16 +31,6 @@ const Navbar = () => {
                 </a>
               </Link>
             </li>
-            <li>
-              <a
-                href={links.NEWSLETTER}
-                onClick={smoothScroll(links.NEWSLETTER)}
-              >
-                <Paragraph size="sm" isInverted>
-                  Newsletter
-                </Paragraph>
-              </a>
-            </li>
             <li className="on-desktop">
               <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
                 <Paragraph size="sm" isInverted>
@@ -66,8 +56,7 @@ const Navbar = () => {
         header {
           display: flex;
           align-items: center;
-          flex-wrap: wrap;
-          flex-direction: column;
+          justify-content: space-around;
         }
 
         .navbar {
@@ -105,10 +94,6 @@ const Navbar = () => {
           padding: ${choices.spacing[1]} ${choices.spacing[6]};
           border-radius: ${choices.borderRadius.full};
           text-align: center;
-        }
-
-        .navbar-button :global(.paragraph) {
-          font-size: 14px;
         }
 
         .navbar-button:hover {
