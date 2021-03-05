@@ -32,9 +32,34 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="on-desktop">
+              <a href={links.SPEAKERS} onClick={smoothScroll(links.SPEAKERS)}>
+                <Paragraph size="sm" isInverted>
+                  Speakers
+                </Paragraph>
+              </a>
+            </li>
+            <li className="on-desktop">
+              <a href={links.SPONSORS} onClick={smoothScroll(links.SPONSORS)}>
+                <Paragraph size="sm" isInverted>
+                  Sponsors
+                </Paragraph>
+              </a>
+            </li>
+            <li className="on-desktop">
               <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
                 <Paragraph size="sm" isInverted>
                   Team
+                </Paragraph>
+              </a>
+            </li>
+            <li className="on-desktop">
+              <a
+                href={links.CODE_OF_CONDUCT}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Paragraph size="sm" isInverted>
+                  Code of Conduct
                 </Paragraph>
               </a>
             </li>

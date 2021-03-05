@@ -101,8 +101,8 @@ const Tickets = ({ countries, products }) => {
               </Paragraph>
 
               <Paragraph size="sm" color="blue">
-                We also will have a more advanced workshop for a very limited
-                number of people as well, well you can learn about:
+                We also will have a more advanced workshop for a limited number
+                of people as well, where you can learn about:
               </Paragraph>
 
               <Paragraph size="sm" color="blue">

@@ -8,6 +8,8 @@ import Speakers from '../components/organisms/Speakers'
 import Team from '../components/organisms/Team'
 import What from '../components/organisms/What'
 import Sponsors from '../components/organisms/Sponsors'
+import Alert from '../components/atoms/Alert'
+import Paragraph from '../components/atoms/Paragraph'
 
 import fetchJson from '../utils/fetchJson'
 import { logEvent } from '../utils/analytics'
@@ -75,6 +77,18 @@ class Home extends Component {
 
     return (
       <>
+        <Alert isTop isCentered>
+          <Paragraph color="blue" size="sm" isFull>
+            💬 We have a <strong>Discord Server</strong> join us{' '}
+            <a
+              href="https://glrz.me/discord-css"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              here
+            </a>{' '}
+          </Paragraph>
+        </Alert>
         <Navbar />
         <Newsletter
           name={name}

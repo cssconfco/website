@@ -2,6 +2,8 @@
 export const links = {
   HOME: '/',
   TICKETS: '/tickets',
+  SPEAKERS: '#speakers',
+  SPONSORS: '#sponsors',
   NEWSLETTER: '#newsletter',
   TEAM: '#team',
   INSTAGRAM: 'https://instagram.com/cssconfco', 
