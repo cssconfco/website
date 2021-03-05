@@ -79,13 +79,13 @@ class Home extends Component {
       <>
         <Alert isTop isCentered>
           <Paragraph color="blue" size="sm" isFull>
-            💬 We have a <strong>Discord Server</strong> join us{' '}
+            💬 We have a <strong>Discord Server</strong>{' '}
             <a
               href="https://glrz.me/discord-css"
               rel="noopener noreferrer"
               target="_blank"
             >
-              here
+              join us
             </a>{' '}
           </Paragraph>
         </Alert>
