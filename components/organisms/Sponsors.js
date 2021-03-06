@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 
+import Container from '../atoms/Container'
 import Heading from '../atoms/Heading'
 import Sponsor from '../molecules/Sponsor'
 
@@ -7,7 +8,7 @@ import { decisions } from '../../utils/designTokens'
 
 const Sponsors = ({ sponsors }) => {
   return (
-    <>
+    <Container>
       <section id="sponsors">
         <div className="sponsors__container">
           <div className="sponsor-title__container">
@@ -21,15 +22,25 @@ const Sponsors = ({ sponsors }) => {
               <div className="sponsor-separator__svg"></div>
             </div>
           </div>
-          <Sponsor sponsors={sponsors.platinum} title="Platinum" imgSize="xl" />
-          <Sponsor sponsors={sponsors.gold} title="Gold" imgSize="lg" />
-          <Sponsor sponsors={sponsors.silver} title="Silver" imgSize="md" />
-          <Sponsor sponsors={sponsors.support} title="Support" imgSize="sm" />
+          <Sponsor
+            sponsors={sponsors.platinum}
+            title="🏅 Platinum"
+            imgSize="xl"
+          />
+          <Sponsor sponsors={sponsors.gold} title="🥇 Gold" imgSize="lg" />
+          <Sponsor sponsors={sponsors.silver} title="🥈 Silver" imgSize="md" />
+          <Sponsor
+            sponsors={sponsors.support}
+            title="🥉 Support"
+            imgSize="sm"
+          />
+          <div className="frog"></div>
         </div>
       </section>
       <style jsx>
         {`
           .sponsors__container {
+            position: relative;
             padding: 100px 20px 30px;
             min-height: 800px;
           }
@@ -69,7 +80,26 @@ const Sponsors = ({ sponsors }) => {
             margin-bottom: 30px;
           }
 
+          .frog {
+            position: absolute;
+            display: inline-block;
+            background-image: url('/static/images/frog-tribal-vector.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            top: 0;
+            left: -400px;
+            width: 800px;
+            height: 800px;
+            opacity: 0.1;
+            z-index: -1;
+          }
+
           @media (${decisions.queries.screens.desktop}) {
+            .sponsors__container {
+              overflow: hidden;
+            }
+
             .sponsor-separator__container {
               width: 45%;
             }
@@ -77,10 +107,19 @@ const Sponsors = ({ sponsors }) => {
             .sponsor-separator__svg {
               background-size: contain;
             }
+
+            .frog {
+              top: 180px;
+              right: 0;
+              left: auto;
+              width: 800px;
+              height: 800px;
+              opacity: 1;
+            }
           }
         `}
       </style>
-    </>
+    </Container>
   )
 }
 

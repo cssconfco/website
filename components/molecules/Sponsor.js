@@ -13,7 +13,7 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
     <>
       <div className="sponsor__container">
         <Subtitle color="yellow" size={1} isCentered>
-          {title}
+          {title.toUpperCase()}
         </Subtitle>
         <div className="sponsor__img">
           {sponsors.map(sponsor => (
@@ -70,6 +70,15 @@ const Sponsor = ({ sponsors, imgSize, title }) => {
           }
 
           @media (${decisions.queries.screens.desktop}) {
+            .sponsor__container {
+              align-items: flex-start;
+            }
+
+            .sponsor__img {
+              justify-content: flex-start;
+              width: 100%;
+            }
+
             .sp-link-xl {
               height: 130px;
               width: 240px;

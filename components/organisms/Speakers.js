@@ -35,7 +35,7 @@ const Speakers = ({ speakers }) => {
         .speakers {
           position: relative;
           background: ${choices.colors.white};
-          padding: 50px ${decisions.container.padding} 0;
+          padding: 50px ${decisions.container.padding} 80px;
           height: 100%;
           min-height: 800px;
           overflow: hidden;
