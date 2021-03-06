@@ -47,24 +47,13 @@ class Home extends Component {
         }
       })
 
-      swal(
-        'Great!',
-        'We will send you more information to your email',
-        'success'
-      )
-
+      swal('Great!', 'We will send you more information via email', 'success')
       logEvent({ category: 'signup', action: 'click', label: 'newsletter' })
 
       this.resetForm()
     } catch (error) {
-      swal(
-        'Opps!',
-        'Something went wrong with your subscription, please try again',
-        'error'
-      )
-
+      swal('Opps!', 'Something went wrong, please try again', 'error')
       this.stopLoading()
-      console.error('Error callilng api/subscribe', error)
     }
   }
 
