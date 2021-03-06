@@ -43,6 +43,7 @@ const Sponsors = ({ sponsors }) => {
             position: relative;
             padding: 100px 20px 30px;
             min-height: 800px;
+            overflow: hidden;
           }
 
           .sponsor-separator__container {

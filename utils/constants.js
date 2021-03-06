@@ -20,7 +20,7 @@ export const speakers = [
     id: 'luis-gadea',
     flag: '🇨🇦',
     name: 'Luis Gadea',
-    title: 'Character designer',
+    title: 'Character Designer',
     twitterUrl: 'https://twitter.com/LuisGadea',
     description: ''
   },
@@ -36,7 +36,8 @@ export const speakers = [
     id: 'laura-gonzalez',
     flag: '🇬🇧',
     name: 'Laura González',
-    title: 'UI Engineer — Facebook',
+    title: 'UI Engineer',
+    company: 'Facebook',
     twitterUrl: 'https://twitter.com/freezydorito',
     description: ''
   },
@@ -44,7 +45,8 @@ export const speakers = [
     id: 'joan-leon',
     flag: '🇪🇸',
     name: 'Joan León',
-    title: 'Frontend Developer — Adevinta',
+    title: 'Frontend Developer',
+    company: 'Adevinta',
     twitterUrl: 'https://twitter.com/nucliweb',
     description: ''
   },
@@ -52,7 +54,8 @@ export const speakers = [
     id: 'carmen-ansio',
     flag: '🇪🇸',
     name: 'Carmen Ansio',
-    title: 'Product Designer — Holaluz',
+    title: 'Product Designer',
+    company: 'Holaluz',
     twitterUrl: 'https://twitter.com/carmenansio',
     description: ''
   },
@@ -60,7 +63,7 @@ export const speakers = [
     id: 'alex-ramirez',
     flag: '🇨🇴',
     name: 'Alex Ramirez',
-    title: 'Software Developer — Cypress',
+    title: 'Software Developer',
     twitterUrl: 'https://twitter.com/RamirezAlex_',
     description: ''
   },
@@ -68,7 +71,8 @@ export const speakers = [
     id: 'robin-dykema',
     flag: '🇺🇸',
     name: 'Robin Dykema',
-    title: 'UI Engineer - Taulia',
+    title: 'UI Engineer',
+    company: 'Taulia',
     twitterUrl: 'https://twitter.com/RobinDykema',
     description: ''
   },

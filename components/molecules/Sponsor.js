@@ -120,7 +120,7 @@ Sponsor.propTypes = {
     })
   ),
   imgSize: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
-  title: PropTypes.oneOf(['Platinum', 'Gold', 'Silver', 'Support'])
+  title: PropTypes.string
 }
 
 export default Sponsor

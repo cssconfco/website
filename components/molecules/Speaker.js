@@ -20,19 +20,27 @@ const Speaker = ({ image, children }) => {
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
-          height: 150px;
-          width: 150px;
-          margin: ${choices.spacing[8]} ${choices.spacing[8]} ${choices.spacing[10]} ;
+          height: 110px;
+          width: 110px;
+          margin: ${choices.spacing[8]} ${choices.spacing[6]} ${choices.spacing[10]} ;
         }
 
         .info {
           position: absolute;
-          bottom: -${choices.spacing[8]};
+          top: 110px;
           white-space: nowrap;
         }
 
-        .info :global(.paragraph:last-child) {
+        .info :global(.paragraph) {
+          font-size: 14px;
+        }
+
+        .info :global(.paragraph.size-xs) {
           font-size: 12px;
+        }
+
+        .info :global(.paragraph span) {
+          display: none;
         }
 
         @media (${decisions.queries.screens.desktop}) {
@@ -42,11 +50,20 @@ const Speaker = ({ image, children }) => {
           }
 
           .info {
-            bottom: -${choices.spacing[6]};
+            top: 250px;
           }
 
-          .info :global(.paragraph:last-child) {
-            font-size: 18px;
+          .info :global(.paragraph) {
+            font-size: 20px;
+            text-shadow: -1px -1px 0 white;
+          }
+  
+          .info :global(.paragraph.size-xs) {
+            font-size: 20px;
+          }
+  
+          .info :global(.paragraph span) {
+            display: inline;
           }
         }
       `}</style>

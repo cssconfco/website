@@ -16,13 +16,15 @@ const Speakers = ({ speakers }) => {
               Speakers
             </Heading>
             <div className="speaker-list">
-              {speakers.map(({ id, name, flag, title }) => (
+              {speakers.map(({ id, name, flag, title, company }) => (
                 <Speaker key={id} image={id}>
                   <>
                     <Paragrapah size="sm" weight="bold">
                       {flag} {name}
                     </Paragrapah>
-                    <Paragrapah size="xs">{title}</Paragrapah>
+                    <Paragrapah size="xs">
+                      {title} {company && <span>({company})</span>}
+                    </Paragrapah>
                   </>
                 </Speaker>
               ))}
