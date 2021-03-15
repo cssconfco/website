@@ -123,13 +123,13 @@ class CheckoutForm extends Component {
     event && event.preventDefault()
 
     const { shoppingCartList, shoppingCartCoupon } = this.props
-    const { assistant, comments, billingCountry, ...values } = this.state.values
+    const { assistant, billingCountry, ...values } = this.state.values
 
     const checkoutPayload = {
       userInfo: {
         ...values,
         billingCountry: billingCountry.value,
-        comments: `Assistant: ${assistant}, t-shirt: ${comments}`
+        comments: `Assistant: ${assistant}`
       },
       shoppingCartItems: shoppingCartList,
       couponCode: shoppingCartCoupon.code
@@ -249,21 +249,12 @@ class CheckoutForm extends Component {
             </Form.Group>
           </Form.Fieldset>
           <Form.Fieldset title="Ticket Details">
-            <Form.Group isHalf>
+            <Form.Group>
               <Label htmlFor="assistant">Assistant</Label>
               <input
                 {...this.getDefaultInputProps('assistant')}
                 type="text"
                 placeholder="Assistant fullname"
-                required
-              />
-            </Form.Group>
-            <Form.Group isHalf>
-              <Label htmlFor="comments">T-shirt size</Label>
-              <input
-                {...this.getDefaultInputProps('comments')}
-                type="text"
-                placeholder="Size S / M / L / XL"
                 required
               />
             </Form.Group>
@@ -289,7 +280,7 @@ class CheckoutForm extends Component {
                   className="terms-and-conditions"
                   htmlFor="termsAndConditionsAccepted"
                 >
-                  <Paragraph size="xs" isInline>
+                  <Paragraph style={{ marginTop: 0 }} size="xs" isInline>
                     I have read and accepted the{' '}
                     <a
                       href={links.CODE_OF_CONDUCT}
