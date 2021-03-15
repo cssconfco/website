@@ -13,19 +13,19 @@ const Hero = () => {
               <div className="lovers"></div>
             </div>
             <Subtitle size={1} color="blue">
-              April 10, 2021
+              📆 April 10th, 2021
             </Subtitle>
           </div>
           <div className="tribal-container tribal-container-reverse">
             <div className="city-tribal tribal"></div>
             <Subtitle size={1} color="red">
-              Live streaming
+              📹 Live Streaming
             </Subtitle>
           </div>
           <div className="tribal-container">
             <div className="place-tribal tribal"></div>
             <Subtitle size={1} color="yellow">
-              Open for everyone
+              🌈 Open for Everyone
             </Subtitle>
           </div>
         </div>

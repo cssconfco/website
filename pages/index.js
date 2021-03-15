@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import swal from 'sweetalert'
 
 import Conduct from '../components/organisms/Conduct'
+import Hero from '../components/organisms/Hero'
 import Navbar from '../components/organisms/Navbar'
 import Newsletter from '../components/organisms/Newsletter'
 import Speakers from '../components/organisms/Speakers'
@@ -86,8 +87,8 @@ class Home extends Component {
           handleChange={this.handleChange}
           isLoading={loading}
         />
+        <Hero />
         <Speakers speakers={speakers} />
-        {/* <Hero /> */}
         <What />
         <Sponsors sponsors={sponsors} />
         <Team team={team} />
