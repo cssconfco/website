@@ -16,7 +16,7 @@ const Hero = () => {
               📆 April 10th, 2021
             </Subtitle>
           </div>
-          <div className="tribal-container tribal-container-reverse">
+          <div className="tribal-container">
             <div className="city-tribal tribal"></div>
             <Subtitle size={1} color="red">
               📹 Live Streaming
@@ -119,12 +119,15 @@ const Hero = () => {
             padding-top: 20px;
           }
 
+          .tribal {
+            margin-bottom: 20px;
+          }
+
           .tribals {
             flex-direction: row;
           }
 
           .tribal-container {
-            align-items: flex-end;
             height: 100%;
             margin: 20px;
           }
