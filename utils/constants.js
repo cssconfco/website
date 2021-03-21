@@ -112,7 +112,7 @@ export const speakers = [
       'Frontend Developer with 6 years of experience, Digital artist and author of the draw my code web comic. I like to combine the illustration and programming skills to share interesting content.',
     twitterHandler: 'erifranckn',
     website: 'https://drawmy.codes',
-    talkTitle: 'Ilustracion para programadores',
+    talkTitle: 'Ilustración para programadores',
     talkDescription:
       'Ser programador y artista es algo muy poco comun, pero los procesos de pensamientos de ambas habilidades pueden complementarse de maneras interesantes, en esta charla hablaremos de la posibilidad de usar los procesos del pensamiento logico y creativo para tener un perfil mas unico y caracteristico en esta industria tecnologica.',
     talkLanguage: 'Spanish',
