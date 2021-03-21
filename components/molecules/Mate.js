@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { lowerCase } from 'lodash'
 import { choices, decisions } from '../../utils/designTokens'
 
 const Mate = ({ id, type, children, tribalPosition }) => {
   return (
     <>
-      <div className={`container ${lowerCase(type)}`}>
+      <div className={`container ${type}`}>
         <div className="mate">
           <div
             className={classNames('tribal', {

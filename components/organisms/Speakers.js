@@ -109,16 +109,7 @@ Speakers.defaultProps = {
 }
 
 Speakers.propTypes = {
-  speakers: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      flag: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      twitterUrl: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
-    })
-  )
+  speakers: PropTypes.array
 }
 
 export default Speakers
