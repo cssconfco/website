@@ -128,8 +128,9 @@ export const speakers = [
       'Leonidas ha trabajado en la industria de la educación en Ingeniería de Software por más de 8 años, creando cursos, talleres y proyectos. Hoy está creando desde su propia escuela en leonidasesteban.com y puedes seguir las mentorías en vivo desde youtube.com/LeonidasEsteban',
     twitterHandler: 'leonidasesteban',
     website: 'https://leonidasesteban.com',
-    talkTitle: '',
-    talkDescription: '',
+    talkTitle: 'Figma para Frontends',
+    talkDescription:
+      'Desde exportar e interpretar bien un diseño, hasta poder aportarle al sistema de diseño siguiendo el lenguaje de los diseñadores, esta conferencia pretende que te involucres más allá de la implementación para que diseño e ingeniería sean una unidad ❤️',
     talkLanguage: 'Spanish'
   },
   {
@@ -271,14 +272,6 @@ export const team = [
     tribalPosition: 'top-left'
   },
   {
-    id: 'andres',
-    name: 'Andrés Bedoya',
-    title: 'Designer',
-    type: 'designer',
-    twitterHandle: '@xacarana',
-    tribalPosition: 'bottom-left'
-  },
-  {
     id: 'juan',
     name: 'Juan Perez',
     title: 'Designer',
@@ -301,6 +294,14 @@ export const team = [
     type: 'supporter',
     twitterHandle: '@henry_zarza',
     tribalPosition: 'top-right'
+  },
+  {
+    id: 'andres',
+    name: 'Andrés Bedoya',
+    title: 'Former Designer',
+    type: 'designer',
+    twitterHandle: '@xacarana',
+    tribalPosition: 'bottom-left'
   },
   {
     id: 'andrea',
