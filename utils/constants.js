@@ -20,7 +20,7 @@ export const speakers = [
     id: 'evangelina-ferreira',
     flag: '🇦🇷',
     name: 'Eva Ferreira',
-    title: 'Lead Frontend Developer',
+    title: 'Lead Front-end Developer',
     company: 'Fabriik',
     bio:
       'Eva Ferreira is a front-end developer and teacher. She is currently working at Aerolab as a Front-end Developer and has been teaching web technologies at the National Technological University of Argentina for more than five years. In her free time she organizes CSSConf Argentina.',
@@ -49,10 +49,10 @@ export const speakers = [
     id: 'joan-leon',
     flag: '🇪🇸',
     name: 'Joan León',
-    title: 'Frontend Engineer',
+    title: 'Front-end Engineer',
     company: 'Adevinta',
     bio:
-      "I'm a Frontend Developer at @AdevintaSpain, Perf Reviewer at @PerfReviews_ . I'm Google Developer Expert in web technology and Media Developer Expert by Cloudinary. I ❤️ CSS, Web Animation & Web Performance... Open Source lover too.",
+      "I'm a Front-end Developer at @AdevintaSpain, Perf Reviewer at @PerfReviews_ . I'm Google Developer Expert in web technology and Media Developer Expert by Cloudinary. I ❤️ CSS, Web Animation & Web Performance... Open Source lover too.",
     twitterHandler: 'nucliweb',
     website: 'https://joanleon.dev/',
     talkTitle: 'CSS Performance',
@@ -121,10 +121,10 @@ export const speakers = [
     id: 'erifranck-nunez',
     flag: '🇨🇴',
     name: 'Erifranck Nuñez',
-    title: 'Frontend Developer',
+    title: 'Front-end Developer',
     company: '',
     bio:
-      'Frontend Developer with 6 years of experience, Digital artist and author of the draw my code web comic. I like to combine the illustration and programming skills to share interesting content.',
+      'Front-end Developer with 6 years of experience, Digital artist and author of the draw my code web comic. I like to combine the illustration and programming skills to share interesting content.',
     twitterHandler: 'erifranckn',
     website: 'https://drawmy.codes',
     talkTitle: 'Ilustración para programadores',
@@ -172,12 +172,12 @@ export const speakers = [
     title: 'Front-end Developer',
     company: 'Hanzo',
     bio:
-      'Alena is a frontend developer based in Germany. She started her web developer journey in Spain and she is been using tools like Vue.js and Nuxt.js. She is advocating for accessibility, implementation of design systems and introducing accessibility tools into development process.',
+      'Alena is a front-end developer based in Germany. She started her web developer journey in Spain and she is been using tools like Vue.js and Nuxt.js. She is advocating for accessibility, implementation of design systems and introducing accessibility tools into development process.',
     twitterHandler: 'alenanik11',
     website: 'https://cool-beans.now.sh/',
     talkTitle: 'When accessibility and CSS come together',
     talkDescription:
-      'The talk is focused on giving a quick tips for frontend developers to start their accessibility journey and highlight best practices on writing CSS with accessibility in mind.',
+      'The talk is focused on giving a quick tips for front end developers to start their accessibility journey and highlight best practices on writing CSS with accessibility in mind.',
     talkLanguage: 'English',
     isLightningTalk: true
   },
@@ -185,7 +185,7 @@ export const speakers = [
     id: 'bramus-vandamme',
     flag: '🇧🇪',
     name: 'Bramus Van Damme',
-    title: 'Freelance Frontend Expert',
+    title: 'Freelance Front-end Expert',
     company: '',
     bio:
       'Bramus Van Damme is a web developer from Belgium. From the moment he discovered view-source at the age of 14 (way back in 1997), he fell in love with the web and has been tinkering with it ever since.',
