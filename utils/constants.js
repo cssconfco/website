@@ -103,6 +103,21 @@ export const speakers = [
     talkLanguage: 'English'
   },
   {
+    id: 'leonidas-esteban',
+    flag: '🇲🇽',
+    name: 'Leonidas Esteban',
+    title: 'Online Teacher',
+    company: 'LeonidasEsteban',
+    bio:
+      'Leonidas ha trabajado en la industria de la educación en Ingeniería de Software por más de 8 años, creando cursos, talleres y proyectos. Hoy está creando desde su propia escuela en leonidasesteban.com y puedes seguir las mentorías en vivo desde youtube.com/LeonidasEsteban',
+    twitterHandler: 'leonidasesteban',
+    website: 'https://leonidasesteban.com',
+    talkTitle: 'Figma para Frontends',
+    talkDescription:
+      'Desde exportar e interpretar bien un diseño, hasta poder aportarle al sistema de diseño siguiendo el lenguaje de los diseñadores, esta conferencia pretende que te involucres más allá de la implementación para que diseño e ingeniería sean una unidad ❤️',
+    talkLanguage: 'Spanish'
+  },
+  {
     id: 'erifranck-nunez',
     flag: '🇨🇴',
     name: 'Erifranck Nuñez',
@@ -117,21 +132,6 @@ export const speakers = [
       'Ser programador y artista es algo muy poco comun, pero los procesos de pensamientos de ambas habilidades pueden complementarse de maneras interesantes, en esta charla hablaremos de la posibilidad de usar los procesos del pensamiento logico y creativo para tener un perfil mas unico y caracteristico en esta industria tecnologica.',
     talkLanguage: 'Spanish',
     isLightningTalk: true
-  },
-  {
-    id: 'leonidas-esteban',
-    flag: '🇲🇽',
-    name: 'Leonidas Esteban',
-    title: 'Online Teacher',
-    company: 'LeonidasEsteban',
-    bio:
-      'Leonidas ha trabajado en la industria de la educación en Ingeniería de Software por más de 8 años, creando cursos, talleres y proyectos. Hoy está creando desde su propia escuela en leonidasesteban.com y puedes seguir las mentorías en vivo desde youtube.com/LeonidasEsteban',
-    twitterHandler: 'leonidasesteban',
-    website: 'https://leonidasesteban.com',
-    talkTitle: 'Figma para Frontends',
-    talkDescription:
-      'Desde exportar e interpretar bien un diseño, hasta poder aportarle al sistema de diseño siguiendo el lenguaje de los diseñadores, esta conferencia pretende que te involucres más allá de la implementación para que diseño e ingeniería sean una unidad ❤️',
-    talkLanguage: 'Spanish'
   },
   {
     id: 'jimena-castro',
