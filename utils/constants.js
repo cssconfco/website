@@ -78,13 +78,15 @@ export const speakers = [
     id: 'alex-ramirez',
     flag: '🇨🇴',
     name: 'Alex Ramirez',
-    title: 'Software Developer',
-    company: '',
-    bio: '',
+    title: 'FullStack Engineer',
+    company: 'HealthIQ',
+    bio:
+      'Alex Ramírez es un Desarrollador de Software con experiencia en múltiples lenguajes, trabaja como Full Stack developer en HealthIQ, se apasiona por las nuevas tecnologías, el cine, ha contribuido a Open Source y hace parte del equipo detrás de MedellinJS',
     twitterHandler: 'RamirezAlex_',
-    website: '',
-    talkTitle: '',
-    talkDescription: '',
+    website: 'https://ramirezalex.com/',
+    talkTitle: 'CSS Testing for Humans in the AI Era',
+    talkDescription:
+      'CSS Testing has always been difficult; looking at different screens, different devices, or browsers to find out that this div is shifted to the left by 1px compared to the design, or this title font is not bold anymore in this browser. Do these issues sound familiar to you? I want to share some old and new technologies and tools, including some that are AI-powered, that will ease this CSS testing journey for you.',
     talkLanguage: 'Spanish'
   },
   {
