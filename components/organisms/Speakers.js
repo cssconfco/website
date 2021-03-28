@@ -106,12 +106,13 @@ const Speakers = ({ speakers }) => {
                 </Heading>
                 <div className="talk-info">
                   <Paragraph>
+                    {speaker?.talkLanguage === 'English' ? '🇬🇧' : '🇪🇸'}{' '}
                     <strong>
                       {speaker?.isLightningTalk
-                        ? '⚡️ Lightning talk:'
-                        : '🎙 Main talk:'}
-                    </strong>{' '}
-                    {speaker?.talkLanguage === 'English' ? '🇬🇧' : '🇪🇸'}{' '}
+                        ? '⚡️ Lightning talk'
+                        : '🎙 Main talk'}
+                    </strong>
+                    <br />
                     {speaker?.talkTitle}
                   </Paragraph>
                 </div>
@@ -157,7 +158,7 @@ const Speakers = ({ speakers }) => {
         .speakers {
           position: relative;
           background: ${choices.colors.white};
-          padding: 50px ${decisions.container.padding} 80px;
+          padding: 20px ${decisions.container.padding} 80px;
           height: 100%;
           min-height: 800px;
           overflow: hidden;
@@ -166,7 +167,7 @@ const Speakers = ({ speakers }) => {
         .container-list {
           position: relative;
           width: 100%;
-          margin-top: 50px;
+          margin-top: 20px;
           display: flex;
           flex-direction: column;
           z-index: 10;
@@ -248,6 +249,24 @@ const Speakers = ({ speakers }) => {
 
         .talk-info {
           margin: 30px 0 10px;
+        }
+
+        @media (${decisions.queries.screens.mobile}) {
+          .modal-content :global(.heading.size-0) {
+            font-size: 18px;
+          }
+
+          .modal-content :global(.heading.size-3) {
+            font-size: 14px;
+          }
+
+          .modal-content .talk-info :global(.paragraph) {
+            font-size: 16px;
+          }
+
+          .modal-content :global(.paragraph) {
+            font-size: 15px;
+          }
         }
 
         @media (${decisions.queries.screens.desktop}) {
