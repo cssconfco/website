@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { choices, decisions } from '../../utils/designTokens'
 
-const Speaker = ({ image, children }) => {
+const Speaker = ({ image, onClick, children }) => {
   return (
     <Fragment>
-      <div className="speaker">
+      <div className="speaker" onClick={onClick}>
         {children && <div className="info">{children}</div>}
       </div>
       <style jsx>{`
@@ -23,6 +23,7 @@ const Speaker = ({ image, children }) => {
           height: 110px;
           width: 110px;
           margin: ${choices.spacing[8]} ${choices.spacing[6]} ${choices.spacing[10]} ;
+          cursor: pointer;
         }
 
         .info {
@@ -72,6 +73,7 @@ const Speaker = ({ image, children }) => {
 }
 
 Speaker.propTypes = {
+  onClick: PropTypes.func,
   children: PropTypes.node,
   image: PropTypes.string
 }

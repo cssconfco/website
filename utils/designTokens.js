@@ -278,7 +278,8 @@ export const decisions = {
       '4': choices.fontSize.md,
       '3': choices.fontSize.lg,
       '2': choices.fontSize['3xl'],
-      '1': choices.fontSize['4xl']
+      '1': choices.fontSize['4xl'],
+      '0': choices.fontSize['5xl']
     },
     color: {
       default: choices.colors.brand.tuna,

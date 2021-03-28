@@ -68,6 +68,10 @@ const Heading = ({
           opacity: 0.25;
         }
 
+        .size-0 {
+          font-size: ${decisions.title.fontSize['0']};
+        }
+
         .size-1 {
           font-size: ${decisions.title.fontSize['1']};
         }

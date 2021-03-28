@@ -37,7 +37,7 @@ export const speakers = [
     title: 'UI Engineer',
     company: 'Facebook',
     bio:
-      'Laura is a Designer turned UI Engineer with a passion for cracking the web wide open and bringing the platform to life. In her free time she stalks squirrels at the park',
+      'Laura is a Designer turned UI Engineer with a passion for cracking the web wide open and bringing the platform to life. In her free time she stalks squirrels at the park.',
     twitterHandler: 'freezydorito',
     website: 'https://laura.monster/',
     talkTitle: 'An intro to CSS Houdini',
@@ -67,7 +67,7 @@ export const speakers = [
     title: 'UX Engineer',
     company: 'Holaluz',
     bio:
-      'Currently working as Product Designer at Holaluz. She has worked at Desigual as a UX Engineer.She has collaborated in the organization of several technological events, as speaker and host. Mixing design and development, she is an enthusiast for creative coding and SVG animations.',
+      'Currently working as Product Designer at Holaluz. She has worked at Desigual as a UX Engineer. She has collaborated in the organization of several technological events, as speaker and host. Mixing design and development, she is an enthusiast for creative coding and SVG animations.',
     twitterHandler: 'carmenansio',
     website: 'https://www.carmenansio.com/',
     talkTitle: 'The SVG Files',
@@ -81,7 +81,7 @@ export const speakers = [
     title: 'FullStack Engineer',
     company: 'HealthIQ',
     bio:
-      'Alex Ramírez es un Desarrollador de Software con experiencia en múltiples lenguajes, trabaja como Full Stack developer en HealthIQ, se apasiona por las nuevas tecnologías, el cine, ha contribuido a Open Source y hace parte del equipo detrás de MedellinJS',
+      'Alex Ramírez is a Software Developer with experience in multiple languages. He works as a Full Stack developer at HealthIQ, is passionate about new technologies, cinema. he has contributed to Open Source and is part of the team behind MedellinJS.',
     twitterHandler: 'RamirezAlex_',
     website: 'https://ramirezalex.com/',
     talkTitle: 'CSS Testing for Humans in the AI Era',
@@ -111,7 +111,7 @@ export const speakers = [
     title: 'Online Teacher',
     company: 'LeonidasEsteban',
     bio:
-      'Leonidas ha trabajado en la industria de la educación en Ingeniería de Software por más de 8 años, creando cursos, talleres y proyectos. Hoy está creando desde su propia escuela en leonidasesteban.com y puedes seguir las mentorías en vivo desde youtube.com/LeonidasEsteban',
+      'Leonidas has worked in the Software Engineering education industry for more than 8 years, creating courses, workshops and projects. Today he is creating his own Front-end school and you can follow his live mentoring on his Youtube channel.',
     twitterHandler: 'leonidasesteban',
     website: 'https://leonidasesteban.com',
     talkTitle: 'Figma para Frontends',
@@ -205,7 +205,8 @@ export const speakers = [
     name: 'Carlos Azaustre',
     title: 'Google Developer Expert',
     company: '',
-    bio: 'Desarrollador y formador en tecnologías web. Divulgador en Youtube',
+    bio:
+      'He has worked for Google, IBM Research and Eventbrite, in addition to having co-founded his own startup and working as a freelancer. He is a Developer and trainer in web technologies, disseminator on YouTube and Google Developer Expert in web technologies.',
     twitterHandler: 'carlosazaustre',
     website: 'https://carlosazaustre.es',
     talkTitle: 'Como publicar un libro técnico fácilmente',
@@ -221,7 +222,7 @@ export const speakers = [
     title: 'UI/UX',
     company: 'NodeSource',
     bio:
-      'Marian Villa es docente, diseñadora, comunicadora, desarrolladora y Magister en Mercadeo. Asesora en UI|UX en Google Launchpad y es miembro calificador de SXSW 2021. Co-fundadora de Eveersocial y de @pionerasdev, la Comunidad/ONG más grande de #WomenInTech en Colombia.',
+      'Marian Villa is a teacher, designer, communicator, developer and Master in Marketing. She advises on UI | UX at Google Launchpad and is a qualifying member of SXSW 2021. She is Co-founder of Eveersocial and @pionerasdev, the largest #WomenInTech Community / NGO in Colombia.',
     twitterHandler: 'marianvilla',
     website: 'https://marianvilla.dev',
     talkTitle: 'Design and Marketing the Sweet Spot <3',
