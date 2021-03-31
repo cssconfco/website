@@ -216,7 +216,7 @@ const Speakers = ({ speakers }) => {
 
         .modal-tribal {
           position: absolute;
-          bottom: -100px;
+          bottom: -180px;
           right: 10%;
         }
 
@@ -236,7 +236,7 @@ const Speakers = ({ speakers }) => {
           width: 100%;
           max-width: 800px;
           border-radius: 8px;
-          padding: 55px 60px;
+          padding: 55px 25px;
         }
 
         .modal-bio {
@@ -257,7 +257,7 @@ const Speakers = ({ speakers }) => {
           }
 
           .modal-content :global(.heading.size-3) {
-            font-size: 14px;
+            font-size: 12px;
           }
 
           .modal-content .talk-info :global(.paragraph) {
