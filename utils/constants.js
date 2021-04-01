@@ -383,6 +383,12 @@ export const sponsors = {
       name: 'Ilogica',
       url: 'https://www.ilogica.cl',
       logo: '/static/images/sponsors/ilogica.svg'
+    },
+    {
+      id: 'wolox',
+      name: 'Wolox',
+      url: 'https://www.wolox.com.ar',
+      logo: '/static/images/sponsors/wolox.png'
     }
   ],
   silver: [
