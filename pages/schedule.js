@@ -106,8 +106,11 @@ const schedule = () => {
   return (
     <div className="schedule">
       <Container>
-        <Heading size="0" color="blue" withMargin>
+        <Heading size="0" color="blue">
           Schedule
+        </Heading>
+        <Heading size={4} color="blue" withMargin>
+          CSS Conf Colombia, April 10th
         </Heading>
         {scheduleData.map(schedule => (
           <ScheduleBlock
