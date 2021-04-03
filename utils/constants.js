@@ -1,6 +1,7 @@
 // prettier-ignore
 export const links = {
   HOME: '/',
+  BLOG: 'https://blog.cssconf.co',
   TICKETS: '/tickets',
   SPEAKERS: '#speakers',
   SPONSORS: '#sponsors',

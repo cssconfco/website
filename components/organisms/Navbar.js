@@ -23,10 +23,19 @@ const Navbar = () => {
           </Responsive.Desktop>
           <ul>
             <li className="has-navbar-button">
+              <Link href={links.BLOG}>
+                <a className="navbar-button navbar-button--red">
+                  <Paragraph size="sm" color="white">
+                    Blog
+                  </Paragraph>
+                </a>
+              </Link>
+            </li>
+            <li className="has-navbar-button">
               <Link href={links.TICKETS}>
                 <a className="navbar-button">
                   <Paragraph size="sm" color="blue">
-                    Minibootcamp & Workshop
+                    Workshop
                   </Paragraph>
                 </a>
               </Link>
@@ -125,8 +134,16 @@ const Navbar = () => {
           text-align: center;
         }
 
+        .navbar-button--red {
+          background: ${choices.colors.brand.cinnabar};
+        }
+
         .navbar-button:hover {
           background: ${choices.colors.brand.chiffon};
+        }
+
+        .navbar-button--red:hover {
+          background: ${choices.colors.brand.mandyspink};
         }
 
         .navbar-button > :global(p) {
