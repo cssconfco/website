@@ -7,11 +7,15 @@ import Heading from '../atoms/Heading'
 import { decisions, choices } from '../../utils/designTokens'
 import getFlag from '../../utils/getFlag'
 import Paragraph from '../atoms/Paragraph'
+import getTalkType from '../../utils/getTalkType'
 
-const ScheduleBlock = ({ time, title, speaker, isBreak }) => {
+const ScheduleBlock = ({ time, title, speaker, isBreak, isDone }) => {
   return (
     <>
-      <div className="schedule-block">
+      <div
+        className={classNames('schedule-block', { 'is-done': isDone })}
+        id={new Date(time).getTime()}
+      >
         <span className={classNames('heading', { 'is-break': isBreak })}>
           <div className="time">
             <Subtitle color="red">{dayjs(time).format('h:mm A')}</Subtitle>
@@ -20,6 +24,11 @@ const ScheduleBlock = ({ time, title, speaker, isBreak }) => {
             <Heading size={2} color="blue">
               {title || `${getFlag(speaker)} ${speaker.talkTitle}`}
             </Heading>
+            {speaker && (
+              <Paragraph color="blue" size="xs">
+                {getTalkType(speaker)}
+              </Paragraph>
+            )}
             {isBreak && <div className="break-divider" />}
           </div>
         </span>
@@ -54,6 +63,11 @@ const ScheduleBlock = ({ time, title, speaker, isBreak }) => {
           display: flex;
           flex-direction: column;
           margin-bottom: 50px;
+          padding-top: 10px;
+        }
+
+        .schedule-block.is-done {
+          opacity: 0.5;
         }
 
         .heading {
@@ -73,7 +87,9 @@ const ScheduleBlock = ({ time, title, speaker, isBreak }) => {
 
         .title {
           display: flex;
+          flex-direction: row;
           align-items: center;
+          justify-content: flex-start;
           padding-bottom: 8px;
           border-bottom: 4px solid ${choices.colors.brand.cinnabar};
           width: 100%;
@@ -83,6 +99,13 @@ const ScheduleBlock = ({ time, title, speaker, isBreak }) => {
         .heading.is-break .title {
           border-bottom: none;
           padding-bottom: 0;
+          white-space: nowrap;
+        }
+
+        .heading:not(.is-break) .title {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
         }
 
         .description {
@@ -152,7 +175,8 @@ ScheduleBlock.propTypes = {
   time: PropTypes.string,
   title: PropTypes.string,
   speaker: PropTypes.object,
-  isBreak: PropTypes.bool
+  isBreak: PropTypes.bool,
+  isDone: PropTypes.bool
 }
 
 export default ScheduleBlock

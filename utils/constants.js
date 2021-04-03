@@ -72,7 +72,7 @@ export const speakers = [
     twitterHandler: 'carmenansio',
     website: 'https://www.carmenansio.com/',
     talkTitle: 'The SVG Files',
-    talkDescription: 'You will learn to create an SVG animation with CSS',
+    talkDescription: 'You will learn to create an SVG animation with CSS.',
     talkLanguage: 'Spanish'
   },
   {
@@ -117,7 +117,7 @@ export const speakers = [
     website: 'https://leonidasesteban.com',
     talkTitle: 'Figma para Frontends',
     talkDescription:
-      'Desde exportar e interpretar bien un diseño, hasta poder aportarle al sistema de diseño siguiendo el lenguaje de los diseñadores, esta conferencia pretende que te involucres más allá de la implementación para que diseño e ingeniería sean una unidad ❤️',
+      'Desde exportar e interpretar bien un diseño, hasta poder aportarle al sistema de diseño siguiendo el lenguaje de los diseñadores, esta charla pretende que te involucres más allá de la implementación para que diseño e ingeniería sean una unidad.',
     talkLanguage: 'Spanish'
   },
   {

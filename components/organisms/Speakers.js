@@ -8,6 +8,7 @@ import Heading from '../atoms/Heading'
 import { choices, decisions } from '../../utils/designTokens'
 import Paragraph from '../atoms/Paragraph'
 import getFlag from '../../utils/getFlag'
+import getTalkType from '../../utils/getTalkType'
 
 const handleClickOpenModal = ({
   setSpeaker,
@@ -107,12 +108,7 @@ const Speakers = ({ speakers }) => {
                 </Heading>
                 <div className="talk-info">
                   <Paragraph>
-                    {getFlag(speaker)}{' '}
-                    <strong>
-                      {speaker?.isLightningTalk
-                        ? '⚡️ Lightning talk'
-                        : '🎙 Main talk'}
-                    </strong>
+                    {getFlag(speaker)} <strong>{getTalkType(speaker)}</strong>
                     <br />
                     {speaker?.talkTitle}
                   </Paragraph>
