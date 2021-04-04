@@ -42,7 +42,8 @@ const ScheduleBlock = ({ time, title, speaker, isBreak, isDone }) => {
             />
             <div className="content">
               <Heading size={4} color="red">
-                {speaker.flag} {speaker.name}
+                {speaker.flag} {speaker.name} — {speaker.title}{' '}
+                {speaker?.company ? `(${speaker?.company})` : ''}
               </Heading>
               {speaker?.twitterHandler && (
                 <Paragraph size="xs" color="red">
