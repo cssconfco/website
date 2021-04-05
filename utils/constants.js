@@ -430,5 +430,5 @@ export const sponsors = {
   ]
 }
 
-export const conferenceDate = '2021-04-05'
+export const conferenceDate = '2021-04-10'
 export const conferenceStartTime = '08:00-05:00'
