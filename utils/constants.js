@@ -3,6 +3,7 @@ export const links = {
   HOME: '/',
   BLOG: 'https://blog.cssconf.co',
   TICKETS: '/tickets',
+  SCHEDULE: '/schedule',
   SPEAKERS: '#speakers',
   SPONSORS: '#sponsors',
   NEWSLETTER: '#newsletter',
@@ -13,7 +14,8 @@ export const links = {
   FAQS: 'https://github.com/cssconfco/faqs',
   CONTACT_EMAIL: 'mailto:hello@cssconf.co',
   EPAYCO_ISSUE: 'https://github.com/epayco/Plugin_ePayco_WooCommerce/issues/5#issuecomment-523054153',
-  CSSCONF_ORG: 'http://cssconf.org'
+  CSSCONF_ORG: 'http://cssconf.org',
+  STREAMING: ''
 }
 
 export const speakers = [
@@ -427,3 +429,6 @@ export const sponsors = {
     }
   ]
 }
+
+export const conferenceDate = '2021-04-05'
+export const conferenceStartTime = '08:00-05:00'

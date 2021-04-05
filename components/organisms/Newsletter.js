@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 
 import Button from '../atoms/Button'
 import Container from '../atoms/Container'
@@ -7,8 +8,16 @@ import Subtitle from '../atoms/Subtitle'
 
 import { choices, decisions } from '../../utils/designTokens'
 import Paragraph from '../atoms/Paragraph'
+import {
+  links,
+  conferenceDate,
+  conferenceStartTime
+} from '../../utils/constants'
 
 const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
+  const isHappening =
+    new Date(`${conferenceDate}T${conferenceStartTime}`) <= Date.now()
+
   return (
     <section id="newsletter" className="newsletter">
       <Container>
@@ -17,53 +26,69 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
             The CSS Conf Colombia 2021
           </Heading>
           <Subtitle size={1} isInverted withMargin>
-            is going online and open for everyone 🎉
+            {isHappening
+              ? 'is happening right now 🦄'
+              : 'is going online and open for everyone 🎉'}
           </Subtitle>
+          {isHappening && (
+            <Link href={links.SCHEDULE}>
+              <a>
+                <Button withMargin>
+                  <Heading size={3} isInverted>
+                    Check the Schedule
+                  </Heading>
+                </Button>
+              </a>
+            </Link>
+          )}
         </div>
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="field-group">
-            <label htmlFor="name">
-              <Subtitle size={2} isInverted>
-                Fullname:
-              </Subtitle>
-            </label>
-            <input
-              name="name"
-              type="name"
-              placeholder="Your name"
-              value={name}
-              onChange={handleChange('name')}
-              required
-            />
-          </div>
-          <div className="field-group">
-            <label htmlFor="email">
-              <Subtitle size={2} isInverted>
-                Email:
-              </Subtitle>
-            </label>
-            <input
-              name="email"
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={handleChange('email')}
-              required
-            />
-          </div>
-          <Button type="submit" withMargin isDisabled={isLoading}>
-            <Heading size={3} isInverted>
-              Register for free
-            </Heading>
-          </Button>
-          <Paragraph size="xs" isInverted>
-            ✅ By registering, you agree with the FAQs and our Code of Conduct.
-          </Paragraph>
-          <Paragraph size="xs" isInverted>
-            ✅ The data will be used just for the event and we are not sharing
-            it with any third party or sponsor.
-          </Paragraph>
-        </form>
+        {!isHappening && (
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="field-group">
+              <label htmlFor="name">
+                <Subtitle size={2} isInverted>
+                  Fullname:
+                </Subtitle>
+              </label>
+              <input
+                name="name"
+                type="name"
+                placeholder="Your name"
+                value={name}
+                onChange={handleChange('name')}
+                required
+              />
+            </div>
+            <div className="field-group">
+              <label htmlFor="email">
+                <Subtitle size={2} isInverted>
+                  Email:
+                </Subtitle>
+              </label>
+              <input
+                name="email"
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={handleChange('email')}
+                required
+              />
+            </div>
+            <Button type="submit" withMargin isDisabled={isLoading}>
+              <Heading size={3} isInverted>
+                Register for free
+              </Heading>
+            </Button>
+            <Paragraph size="xs" isInverted>
+              ✅ By registering, you agree with the FAQs and our Code of
+              Conduct.
+            </Paragraph>
+            <Paragraph size="xs" isInverted>
+              ✅ The data will be used just for the event and we are not sharing
+              it with any third party or sponsor.
+            </Paragraph>
+          </form>
+        )}
         <div className="bird"></div>
       </Container>
       <style jsx>{`
@@ -83,8 +108,10 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
         }
 
         .description {
+          position: relative;
           margin-bottom: 50px;
           text-align: center;
+          z-index: 1;
         }
 
         .form {

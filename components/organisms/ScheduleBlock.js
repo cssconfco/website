@@ -8,6 +8,8 @@ import { decisions, choices } from '../../utils/designTokens'
 import getFlag from '../../utils/getFlag'
 import Paragraph from '../atoms/Paragraph'
 import getTalkType from '../../utils/getTalkType'
+import Button from '../atoms/Button'
+import { links } from '../../utils/constants'
 
 const ScheduleBlock = ({
   time,
@@ -31,14 +33,31 @@ const ScheduleBlock = ({
             <Subtitle color="red">{dayjs(time).format('h:mm A')}</Subtitle>
           </div>
           <div className="title">
-            <Heading size={2} color="blue">
-              {title || `${getFlag(speaker)} ${speaker.talkTitle}`}
-            </Heading>
+            <div className="title-content">
+              <Heading size={2} color="blue">
+                {title || `${getFlag(speaker)} ${speaker.talkTitle}`}
+              </Heading>
+
+              {!isBreak && isCurrent && (
+                <a
+                  href={links.STREAMING}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button style={{ marginLeft: 30, width: 200 }}>
+                    <Heading size={4} isInverted>
+                      WATCH IT
+                    </Heading>
+                  </Button>
+                </a>
+              )}
+            </div>
             {speaker && (
               <Paragraph color="blue" size="xs">
                 {getTalkType(speaker)}
               </Paragraph>
             )}
+
             {isBreak && <div className="break-divider" />}
           </div>
         </span>
@@ -125,6 +144,13 @@ const ScheduleBlock = ({
           flex-direction: column;
           align-items: flex-start;
           justify-content: center;
+        }
+
+        .title-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
         }
 
         .description {

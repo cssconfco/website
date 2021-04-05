@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { choices, decisions } from '../../utils/designTokens'
 
 const Button = ({
+  style,
   children,
   type,
   handleClick,
@@ -13,6 +14,7 @@ const Button = ({
   return (
     <>
       <button
+        style={style}
         type={type}
         className="button"
         onClick={handleClick}
@@ -53,7 +55,8 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   withMargin: PropTypes.bool,
   isDisabled: PropTypes.bool,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  style: PropTypes.object
 }
 
 Button.defaultProps = {
