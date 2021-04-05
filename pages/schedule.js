@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Container from '../components/atoms/Container'
 import Heading from '../components/atoms/Heading'
 import Logo from '../components/atoms/Logo'
@@ -96,14 +96,19 @@ const scheduleData = [
 const itIsDone = time => new Date(time).getTime() < Date.now()
 
 const schedule = () => {
+  const [currentBlockId, setCurrentBlockId] = useState(null)
+
   useEffect(() => {
-    const currentBlock = scheduleData.find(
+    const nextBlock = scheduleData.find(
       block => new Date(block.time).getTime() > Date.now()
     )
 
-    const id = new Date(currentBlock.time).getTime()
+    const id = new Date(nextBlock.time).getTime()
+
     if (id && id !== new Date(scheduleData[0].time).getTime()) {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      const currentBlock = document.getElementById(id)?.previousSibling
+      currentBlock?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      setCurrentBlockId(currentBlock.id)
     }
   }, [])
 
@@ -120,6 +125,7 @@ const schedule = () => {
           <ScheduleBlock
             key={schedule.time}
             isDone={itIsDone(schedule.time)}
+            isCurrent={currentBlockId == new Date(schedule.time).getTime()}
             {...schedule}
           />
         ))}

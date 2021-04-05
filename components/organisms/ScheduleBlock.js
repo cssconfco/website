@@ -9,11 +9,21 @@ import getFlag from '../../utils/getFlag'
 import Paragraph from '../atoms/Paragraph'
 import getTalkType from '../../utils/getTalkType'
 
-const ScheduleBlock = ({ time, title, speaker, isBreak, isDone }) => {
+const ScheduleBlock = ({
+  time,
+  title,
+  speaker,
+  isBreak,
+  isDone,
+  isCurrent
+}) => {
   return (
     <>
       <div
-        className={classNames('schedule-block', { 'is-done': isDone })}
+        className={classNames('schedule-block', {
+          'is-done': isDone,
+          'is-current': isCurrent
+        })}
         id={new Date(time).getTime()}
       >
         <span className={classNames('heading', { 'is-break': isBreak })}>
@@ -67,8 +77,16 @@ const ScheduleBlock = ({ time, title, speaker, isBreak, isDone }) => {
           padding-top: 10px;
         }
 
-        .schedule-block.is-done {
+        .schedule-block.is-done:not(.is-current) {
           opacity: 0.5;
+        }
+
+        .schedule-block.is-current {
+          box-shadow: ${choices.shadows.down.lg},
+            0 -1px 3px 0 rgba(0, 0, 0, 0.06);
+          border-radius: ${choices.borderRadius.lg};
+          background: ${choices.colors.brand.beige};
+          padding: 20px;
         }
 
         .heading {
@@ -177,7 +195,8 @@ ScheduleBlock.propTypes = {
   title: PropTypes.string,
   speaker: PropTypes.object,
   isBreak: PropTypes.bool,
-  isDone: PropTypes.bool
+  isDone: PropTypes.bool,
+  isCurrent: PropTypes.bool
 }
 
 export default ScheduleBlock
