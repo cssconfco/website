@@ -105,7 +105,7 @@ const schedule = () => {
       block => new Date(block.time).getTime() > Date.now()
     )
 
-    const nextBlockId = new Date(nextBlock.time).getTime()
+    const nextBlockId = new Date(nextBlock?.time).getTime()
     const initialBlockId = new Date(scheduleData[0].time).getTime()
 
     if (nextBlockId && nextBlockId !== initialBlockId) {
