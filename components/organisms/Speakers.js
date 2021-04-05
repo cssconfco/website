@@ -281,7 +281,7 @@ const Speakers = ({ speakers }) => {
           }
 
           .fish {
-            top: -450px;
+            top: -350px;
             right: -250px;
             width: 1200px;
             height: 1200px;

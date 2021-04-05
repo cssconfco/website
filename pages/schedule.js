@@ -55,6 +55,10 @@ const scheduleData = [
     isBreak: true
   },
   {
+    time: '2021-04-10T12:55-05:00',
+    title: 'SWAG Raffle 🎁'
+  },
+  {
     time: '2021-04-10T13:05-05:00',
     speaker: normalizedSpeakers['robin-dykema']
   },
