@@ -35,7 +35,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
               <a>
                 <Button withMargin>
                   <Heading size={3} isInverted>
-                    Check the schedule here
+                    Check the schedule
                   </Heading>
                 </Button>
               </a>
