@@ -94,6 +94,8 @@ const scheduleData = [
 ]
 
 const itIsDone = time => new Date(time).getTime() < Date.now()
+const scrollIntoView = block =>
+  block?.scrollIntoView({ behavior: 'smooth', block: 'center' })
 
 const schedule = () => {
   const [currentBlockId, setCurrentBlockId] = useState(null)
@@ -103,12 +105,13 @@ const schedule = () => {
       block => new Date(block.time).getTime() > Date.now()
     )
 
-    const id = new Date(nextBlock.time).getTime()
+    const nextBlockId = new Date(nextBlock.time).getTime()
+    const initialBlockId = new Date(scheduleData[0].time).getTime()
 
-    if (id && id !== new Date(scheduleData[0].time).getTime()) {
-      const currentBlock = document.getElementById(id)?.previousSibling
-      currentBlock?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    if (nextBlockId && nextBlockId !== initialBlockId) {
+      const currentBlock = document.getElementById(nextBlockId).previousSibling
       setCurrentBlockId(currentBlock.id)
+      setTimeout(() => scrollIntoView(currentBlock), 0)
     }
   }, [])
 

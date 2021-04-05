@@ -27,7 +27,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
           </Heading>
           <Subtitle size={1} isInverted withMargin>
             {isHappening
-              ? 'is happening right now 🦄'
+              ? 'is happening right now 🔴'
               : 'is going online and open for everyone 🎉'}
           </Subtitle>
           {isHappening && (
@@ -35,7 +35,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
               <a>
                 <Button withMargin>
                   <Heading size={3} isInverted>
-                    Check the Schedule
+                    Check the schedule here
                   </Heading>
                 </Button>
               </a>

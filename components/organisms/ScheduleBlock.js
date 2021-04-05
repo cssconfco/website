@@ -32,30 +32,31 @@ const ScheduleBlock = ({
           <div className="time">
             <Subtitle color="red">{dayjs(time).format('h:mm A')}</Subtitle>
           </div>
-          <div className="title">
-            <div className="title-content">
+          <div className="title-content">
+            <div className="title">
               <Heading size={2} color="blue">
                 {title || `${getFlag(speaker)} ${speaker.talkTitle}`}
               </Heading>
-
-              {!isBreak && isCurrent && (
-                <a
-                  href={links.STREAMING}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button style={{ marginLeft: 30, width: 200 }}>
-                    <Heading size={4} isInverted>
-                      WATCH IT
-                    </Heading>
-                  </Button>
-                </a>
+              {speaker && (
+                <Paragraph color="blue" size="xs">
+                  {getTalkType(speaker)}
+                </Paragraph>
               )}
             </div>
-            {speaker && (
-              <Paragraph color="blue" size="xs">
-                {getTalkType(speaker)}
-              </Paragraph>
+
+            {!isBreak && isCurrent && (
+              <a
+                className="watch-button"
+                href={links.STREAMING}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button>
+                  <Heading size={4} isInverted>
+                    🔴 WATCH IT LIVE
+                  </Heading>
+                </Button>
+              </a>
             )}
 
             {isBreak && <div className="break-divider" />}
@@ -138,6 +139,7 @@ const ScheduleBlock = ({
           border-bottom: none;
           padding-bottom: 0;
           white-space: nowrap;
+          width: auto;
         }
 
         .heading:not(.is-break) .title {
@@ -148,9 +150,14 @@ const ScheduleBlock = ({
 
         .title-content {
           display: flex;
+          flex-direction: row;
           justify-content: space-between;
           align-items: flex-start;
           width: 100%;
+        }
+
+        .heading.is-break .title-content {
+          align-items: center;
         }
 
         .description {
@@ -183,6 +190,11 @@ const ScheduleBlock = ({
           width: 100%;
         }
 
+        .watch-button {
+          margin-left: 40px;
+          width: 400px;
+        }
+
         @media (${decisions.queries.screens.mobile}) {
           .title :global(.heading) {
             font-size: 18px;
@@ -209,6 +221,16 @@ const ScheduleBlock = ({
 
           .time :global(.subtitle) {
             font-size: 24px;
+          }
+
+          .heading:not(.is-break) .title-content {
+            flex-direction: column;
+          }
+
+          .watch-button {
+            margin-top: 20px;
+            margin-left: 0;
+            width: auto;
           }
         }
       `}</style>
