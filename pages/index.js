@@ -48,7 +48,11 @@ class Home extends Component {
         }
       })
 
-      swal('Great!', 'We will send you more information via email', 'success')
+      swal(
+        "That's it!",
+        'You will receive an email the day before of the event with more information.',
+        'success'
+      )
       logEvent({ category: 'signup', action: 'click', label: 'newsletter' })
 
       this.resetForm()
