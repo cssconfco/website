@@ -379,7 +379,7 @@ export const sponsors = {
       id: 'uruit',
       name: 'UruIT',
       url: 'https://uruit.com',
-      logo: '/static/images/sponsors/uru_it.svg'
+      logo: '/static/images/sponsors/uruit.png'
     },
     {
       id: 'ilogica',
