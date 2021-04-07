@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+
 import Container from '../components/atoms/Container'
 import Heading from '../components/atoms/Heading'
 import Logo from '../components/atoms/Logo'
@@ -6,6 +8,7 @@ import Logo from '../components/atoms/Logo'
 import { choices } from '../utils/designTokens'
 import { speakers, conferenceDate } from '../utils/constants'
 import ScheduleBlock from '../components/organisms/ScheduleBlock'
+import Subtitle from '../components/atoms/Subtitle'
 
 const normalizedSpeakers = speakers.reduce((prev, cur) => {
   prev[cur.id] = cur
@@ -118,12 +121,23 @@ const schedule = () => {
   return (
     <div className="schedule">
       <Container>
-        <Heading size="0" color="blue">
-          Schedule
-        </Heading>
-        <Heading size={4} color="blue" withMargin>
-          CSS Conf Colombia, April 10th
-        </Heading>
+        <div className="heading">
+          <div>
+            {' '}
+            <Heading size="0" color="blue">
+              Schedule
+            </Heading>
+            <Heading size={4} color="blue" withMargin>
+              CSS Conf Colombia, April 10th
+            </Heading>
+          </div>
+          <Subtitle size={1} color="red">
+            <Link href="/">
+              <a style={{ color: choices.colors.brand.cinnabar }}> &lt; Back</a>
+            </Link>
+          </Subtitle>
+        </div>
+
         {scheduleData.map(schedule => (
           <ScheduleBlock
             key={schedule.time}
@@ -144,6 +158,11 @@ const schedule = () => {
           background-position: right top;
           width: 100%;
           padding: 50px 20px;
+        }
+
+        .heading {
+          display: flex;
+          justify-content: space-between;
         }
 
         .logo {

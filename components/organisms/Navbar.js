@@ -41,6 +41,15 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="on-desktop">
+              <Link href={links.SCHEDULE}>
+                <a>
+                  <Paragraph size="sm" isInverted>
+                    Schedule
+                  </Paragraph>
+                </a>
+              </Link>
+            </li>
+            <li className="on-desktop">
               <a href={links.SPEAKERS} onClick={smoothScroll(links.SPEAKERS)}>
                 <Paragraph size="sm" isInverted>
                   Speakers

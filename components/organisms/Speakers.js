@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import Link from 'next/link'
+
 import Paragrapah from '../atoms/Paragraph'
 import Container from '../atoms/Container'
 import Speaker from '../molecules/Speaker'
@@ -9,6 +11,8 @@ import { choices, decisions } from '../../utils/designTokens'
 import Paragraph from '../atoms/Paragraph'
 import getFlag from '../../utils/getFlag'
 import getTalkType from '../../utils/getTalkType'
+import { links } from '../../utils/constants'
+import Button from '../atoms/Button'
 
 const handleClickOpenModal = ({
   setSpeaker,
@@ -44,9 +48,20 @@ const Speakers = ({ speakers }) => {
       <section id="speakers" className="speakers">
         <Container>
           <div className="container-list">
-            <Heading color="red" size={2}>
-              Speakers
-            </Heading>
+            <div className="heading">
+              <Heading color="red" size={2}>
+                Speakers
+              </Heading>
+              <Link href={links.SCHEDULE}>
+                <a>
+                  <Button withMargin>
+                    <Heading size={4} isInverted>
+                      View schedule
+                    </Heading>
+                  </Button>
+                </a>
+              </Link>
+            </div>
             <div className="speaker-list">
               {speakers.map(
                 ({
@@ -161,6 +176,13 @@ const Speakers = ({ speakers }) => {
           overflow: hidden;
         }
 
+        .heading {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+
         .container-list {
           position: relative;
           width: 100%;
@@ -268,8 +290,12 @@ const Speakers = ({ speakers }) => {
 
         @media (${decisions.queries.screens.desktop}) {
           .container-list {
-            margin: 150px 0 20px;
+            margin: 100px 0 20px;
             padding: 0 100px;
+          }
+
+          .heading {
+            flex-direction: row;
           }
 
           .container-list > :global(.heading) {
@@ -281,7 +307,7 @@ const Speakers = ({ speakers }) => {
           }
 
           .fish {
-            top: -350px;
+            top: -300px;
             right: -250px;
             width: 1200px;
             height: 1200px;
