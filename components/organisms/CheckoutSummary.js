@@ -90,6 +90,7 @@ const CheckoutSummary = ({
             type,
             image,
             name,
+            description,
             price,
             regular_price: regularPrice,
             quantity
@@ -100,6 +101,7 @@ const CheckoutSummary = ({
               type={type}
               image={image}
               name={name}
+              description={description}
               price={price}
               regularPrice={regularPrice}
               quantity={quantity}

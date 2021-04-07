@@ -92,7 +92,7 @@ const Tickets = ({ countries, products }) => {
 
               <Paragraph size="sm" color="blue">
                 <strong>
-                  Creando una libería de Componentes con Storybook, Atomic
+                  Creando una librería de Componentes con Storybook, Atomic
                   Design, y Design Tokens (17 de Abril)
                 </strong>
               </Paragraph>

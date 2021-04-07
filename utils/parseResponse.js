@@ -16,6 +16,7 @@ const productParams = [
   'type',
   'slug',
   'name',
+  'description',
   'price',
   'regular_price',
   'featured',

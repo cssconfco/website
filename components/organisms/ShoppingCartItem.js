@@ -9,7 +9,14 @@ import { choices } from '../../utils/designTokens'
 const getQuantitiesUnits = quantity =>
   `${quantity} unit${quantity > 1 ? 's' : ''}`
 
-const ShoppingCartItem = ({ image, name, price, regularPrice, quantity }) => {
+const ShoppingCartItem = ({
+  image,
+  name,
+  description,
+  price,
+  regularPrice,
+  quantity
+}) => {
   return (
     <div className="shoppingcart-item">
       <div className="shoppingcart-item-image">
@@ -17,6 +24,7 @@ const ShoppingCartItem = ({ image, name, price, regularPrice, quantity }) => {
       </div>
       <div className="shoppingcart-item-info">
         <Subtitle size={2}>{name}</Subtitle>
+        <span dangerouslySetInnerHTML={{ __html: description }}></span>
         <Paragraph weight="bold">
           {price !== regularPrice ? (
             <>
@@ -63,9 +71,8 @@ const ShoppingCartItem = ({ image, name, price, regularPrice, quantity }) => {
         .shoppingcart-item-image {
           display: flex;
           justify-content: center;
-          align-items: center;
+          align-items: flex-start;
           padding: 5px 10px;
-          border: 1px solid ${choices.colors.gray[300]};
           width: 100%;
           max-width: 120px;
         }
@@ -79,7 +86,8 @@ ShoppingCartItem.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   regularPrice: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired
+  quantity: PropTypes.number.isRequired,
+  description: PropTypes.string
 }
 
 export default ShoppingCartItem
