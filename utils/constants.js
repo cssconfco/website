@@ -231,7 +231,7 @@ export const speakers = [
     talkTitle: 'Design and Marketing the Sweet Spot <3',
     talkDescription:
       'I am going to share my experience through the case presentation of NodeSource, the company in which I currently work with a high performance team in engineering. And as with holistic knowledge I can establish bridges between design, marketing and engineering.',
-    talkLanguage: 'English',
+    talkLanguage: 'Spanish',
     isLightningTalk: true
   }
 ]
