@@ -26,7 +26,7 @@ export const speakers = [
     title: 'Lead Front-end Developer',
     company: 'Fabriik',
     bio:
-      'Eva Ferreira is a front-end developer and teacher. She is currently working at Aerolab as a Front-end Developer and has been teaching web technologies at the National Technological University of Argentina for more than five years. In her free time she organizes CSSConf Argentina.',
+      'Eva Ferreira is a front-end developer and teacher. She is currently working at Fabriik as a Lead Front-end Developer and has been teaching web technologies at the National Technological University of Argentina for more than five years. In her free time she organizes CSSConf Argentina.',
     twitterHandler: 'evaferreira92',
     talkTitle: 'Printing in CSS',
     talkDescription:
