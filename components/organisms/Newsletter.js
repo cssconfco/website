@@ -33,7 +33,7 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
               <a>
                 <Button withMargin>
                   <Heading size={3} isInverted>
-                    Join the party ✨
+                    Join the party #csslover
                   </Heading>
                 </Button>
               </a>
