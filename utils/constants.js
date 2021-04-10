@@ -15,7 +15,8 @@ export const links = {
   CONTACT_EMAIL: 'mailto:hello@cssconf.co',
   EPAYCO_ISSUE: 'https://github.com/epayco/Plugin_ePayco_WooCommerce/issues/5#issuecomment-523054153',
   CSSCONF_ORG: 'http://cssconf.org',
-  STREAMING: 'https://youtu.be/EVnzunpx7Ds'
+  STREAMING: 'https://youtu.be/EVnzunpx7Ds',
+  VIRTUAL_PARTY: 'https://bit.ly/cssconf-party'
 }
 
 export const speakers = [
