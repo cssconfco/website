@@ -26,14 +26,14 @@ const Newsletter = ({ name, email, handleSubmit, handleChange, isLoading }) => {
             The CSS Conf Colombia 2021
           </Heading>
           <Subtitle size={1} isInverted withMargin>
-            is over, but we have a party 🎉
+            is over, but you can watch it again 🎉
           </Subtitle>
           {isHappening && (
-            <Link href={links.VIRTUAL_PARTY}>
+            <Link href={links.RECORDING}>
               <a>
                 <Button withMargin>
                   <Heading size={3} isInverted>
-                    Join the party #csslover
+                    Watch the recording
                   </Heading>
                 </Button>
               </a>

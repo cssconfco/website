@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import Container from '../components/atoms/Container'
@@ -42,7 +41,7 @@ const scheduleData = [
   },
   {
     time: `${conferenceDate}T10:55-05:00`,
-    speaker: normalizedSpeakers['jimena-castro']
+    speaker: normalizedSpeakers['facundo-corradini']
   },
   {
     time: `${conferenceDate}T11:15-05:00`,
@@ -50,7 +49,7 @@ const scheduleData = [
   },
   {
     time: `${conferenceDate}T11:55-05:00`,
-    speaker: normalizedSpeakers['facundo-corradini']
+    speaker: normalizedSpeakers['jimena-castro']
   },
   {
     time: `${conferenceDate}T12:15-05:00`,
@@ -96,28 +95,7 @@ const scheduleData = [
   }
 ]
 
-const itIsDone = time => new Date(time).getTime() < Date.now()
-const scrollIntoView = block =>
-  block?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-
 const schedule = () => {
-  const [currentBlockId, setCurrentBlockId] = useState(null)
-
-  useEffect(() => {
-    const nextBlock = scheduleData.find(
-      block => new Date(block.time).getTime() > Date.now()
-    )
-
-    const nextBlockId = new Date(nextBlock?.time).getTime()
-    const initialBlockId = new Date(scheduleData[0].time).getTime()
-
-    if (nextBlockId && nextBlockId !== initialBlockId) {
-      const currentBlock = document.getElementById(nextBlockId).previousSibling
-      setCurrentBlockId(currentBlock.id)
-      setTimeout(() => scrollIntoView(currentBlock), 0)
-    }
-  }, [])
-
   return (
     <div className="schedule">
       <Container>
@@ -141,8 +119,8 @@ const schedule = () => {
         {scheduleData.map(schedule => (
           <ScheduleBlock
             key={schedule.time}
-            isDone={itIsDone(schedule.time)}
-            isCurrent={currentBlockId == new Date(schedule.time).getTime()}
+            isDone={false}
+            isCurrent={false}
             {...schedule}
           />
         ))}

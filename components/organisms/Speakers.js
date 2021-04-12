@@ -56,7 +56,7 @@ const Speakers = ({ speakers }) => {
                 <a>
                   <Button withMargin>
                     <Heading size={4} isInverted>
-                      View schedule
+                      View the schedule
                     </Heading>
                   </Button>
                 </a>
