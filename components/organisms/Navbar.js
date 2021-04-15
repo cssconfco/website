@@ -31,15 +31,6 @@ const Navbar = () => {
                 </a>
               </Link>
             </li>
-            <li className="has-navbar-button">
-              <Link href={links.TICKETS}>
-                <a className="navbar-button">
-                  <Paragraph size="sm" color="blue">
-                    Workshop
-                  </Paragraph>
-                </a>
-              </Link>
-            </li>
             <li className="on-desktop">
               <Link href={links.SCHEDULE}>
                 <a>
