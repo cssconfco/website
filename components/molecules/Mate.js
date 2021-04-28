@@ -7,6 +7,11 @@ const Mate = ({ id, type, children, tribalPosition }) => {
     <>
       <div className={`container ${type}`}>
         <div className="mate">
+          <img
+            className="mate-image"
+            src={`/static/images/team/${id}/${id}-avatar.jpg`}
+            alt={id}
+          />
           <div
             className={classNames('tribal', {
               [`tribal-${tribalPosition}`]: tribalPosition
@@ -33,7 +38,6 @@ const Mate = ({ id, type, children, tribalPosition }) => {
           align-items: flex-end;
           text-align: right;
           background-color: ${choices.colors.brand.cinnabar};
-          background-image: url('/static/images/team/${id}/${id}-avatar.jpg');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -41,6 +45,11 @@ const Mate = ({ id, type, children, tribalPosition }) => {
           width: 100px;
           outline-offset: -2px;
           outline: 2px solid ${choices.colors.brand.bayofmany};
+        }
+
+        .mate-image {
+          max-width: 100%;
+          mix-blend-mode: hard-light;
         }
         
         .info {
