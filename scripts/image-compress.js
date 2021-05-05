@@ -11,15 +11,23 @@ const spinner = ora('Optimizing images 🏞')
 ;(async () => {
   spinner.start()
   spinner.color = 'blue'
-  await imagemin(['originals-assets/**/*.{jpg,png,svg}'], {
+  await imagemin(['originals-assets/**/*.{jpg,png}'], {
     destination: 'static',
     plugins: [
       imageminMozjpeg({ quality: 84 }),
       imageminPngquant({
         strip: true,
         quality: [0.84, 0.86]
-      }),
-      imageminWebp(),
+      })
+    ]
+  })
+  await imagemin(['originals-assets/**/*.{jpg,png}'], {
+    destination: 'static',
+    plugins: [imageminWebp()]
+  })
+  await imagemin(['originals-assets/**/*.svg'], {
+    destination: 'static',
+    plugins: [
       imageminSVGO({
         plugins: extendDefaultPlugins([
           { name: 'removeViewBox', active: false },
