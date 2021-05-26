@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "dev": "next",
+    "prebuild": "node ./scripts/image-compress.js",
     "build": "next build",
     "start": "next start"
   },
@@ -53,7 +54,14 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "husky": ">=1",
+    "imagemin": "^7.0.1",
+    "imagemin-dir": "^1.0.0-alpha.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
+    "imagemin-webp": "^6.0.0",
     "lint-staged": ">=8",
+    "ora": "^5.4.0",
     "prettier": "^1.19.1"
   },
   "husky": {
