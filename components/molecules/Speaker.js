@@ -16,7 +16,7 @@ const Speaker = ({ image, onClick, children }) => {
           justify-content: flex-end;
           align-items: flex-end;
           text-align: right;
-          background-image: url('/static/images/speakers/${image}.png');
+          background-image: url('/static/images/speakers/${image}.webp');
           background-position: center center;
           background-repeat: no-repeat;
           background-size: cover;
