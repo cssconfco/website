@@ -71,18 +71,6 @@ class Home extends Component {
 
     return (
       <>
-        <Alert isTop isCentered>
-          <Paragraph color="blue" size="sm" isFull>
-            💬 We have a <strong>Discord Server</strong>{' '}
-            <a
-              href="https://glrz.me/discord-css"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              join us
-            </a>{' '}
-          </Paragraph>
-        </Alert>
         <Navbar />
         <Newsletter
           name={name}
