@@ -1,9 +1,3 @@
 {
-  "version": 2,
-  "build": {
-    "env": {
-      "CLIENT_URL": "@cssconfco-client-url",
-      "API_URL": "@cssconfco-api-url"
-    }
-  }
+  "version": 2
 }
