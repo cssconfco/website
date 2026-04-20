@@ -74,16 +74,16 @@ const Navbar = () => {
             ))}
           </ul>
         </header>
-        {menuOpen && (
-          <ul className="mobile-nav">
-            {navItems.map(item => (
-              <li key={item.label}>
-                <NavLink item={item} onClick={() => setMenuOpen(false)} />
-              </li>
-            ))}
-          </ul>
-        )}
       </Container>
+      {menuOpen && (
+        <ul className="mobile-nav">
+          {navItems.map(item => (
+            <li key={item.label}>
+              <NavLink item={item} onClick={() => setMenuOpen(false)} />
+            </li>
+          ))}
+        </ul>
+      )}
       <style jsx>{`
         header {
           display: flex;
@@ -94,9 +94,10 @@ const Navbar = () => {
         .navbar {
           position: absolute;
           width: 100%;
-          z-index: 1;
+          z-index: 100;
           margin-top: 20px;
           padding: 0 25px;
+          box-sizing: border-box;
         }
 
         .hamburger {
@@ -125,12 +126,11 @@ const Navbar = () => {
 
         .mobile-nav {
           list-style: none;
-          margin: 10px 0 0;
-          padding: 0 ${choices.spacing[4]};
+          margin: 10px -25px 0;
+          padding: 0 25px;
           display: flex;
           flex-direction: column;
           background: ${choices.colors.brand.bayofmany};
-          border-radius: ${choices.borderRadius.md};
         }
 
         .mobile-nav li {
