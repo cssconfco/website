@@ -126,9 +126,11 @@ const Navbar = () => {
         .mobile-nav {
           list-style: none;
           margin: 10px 0 0;
-          padding: 0;
+          padding: 0 ${choices.spacing[4]};
           display: flex;
           flex-direction: column;
+          background: ${choices.colors.brand.bayofmany};
+          border-radius: ${choices.borderRadius.md};
         }
 
         .mobile-nav li {
