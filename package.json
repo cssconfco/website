@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint .",
     "dev": "next",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "start": "next start"
   },
   "repository": {
