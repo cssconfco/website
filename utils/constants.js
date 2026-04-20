@@ -2,8 +2,7 @@
 export const links = {
   HOME: '/',
   BLOG: 'https://blog.cssconf.co',
-  TICKETS: '/tickets',
-  SCHEDULE: '/schedule',
+SCHEDULE: '/schedule',
   SPEAKERS: '#speakers',
   SPONSORS: '#sponsors',
   NEWSLETTER: '#newsletter',
@@ -13,8 +12,7 @@ export const links = {
   CODE_OF_CONDUCT: 'https://github.com/cssconfco/code-of-conduct',
   FAQS: 'https://github.com/cssconfco/faqs',
   CONTACT_EMAIL: 'mailto:hello@cssconf.co',
-  EPAYCO_ISSUE: 'https://github.com/epayco/Plugin_ePayco_WooCommerce/issues/5#issuecomment-523054153',
-  CSSCONF_ORG: 'http://cssconf.org',
+CSSCONF_ORG: 'http://cssconf.org',
   STREAMING: 'https://bit.ly/cssconf-live',
   VIRTUAL_PARTY: 'https://bit.ly/cssconf-party',
   RECORDING: 'https://bit.ly/cssconf-recording'

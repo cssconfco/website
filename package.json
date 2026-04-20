@@ -25,9 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@hapi/boom": "^9.0.0",
-    "base-64": "^0.1.0",
     "classnames": "^2.2.6",
-    "crypto-random-string": "^1.0.0",
     "dayjs": "^1.10.4",
     "dotenv": "^8.2.0",
     "isomorphic-unfetch": "^3.0.0",
@@ -41,9 +39,7 @@
     "react-responsive": "^8.0.1",
     "react-select": "^2.0.0",
     "react-text-mask": "^5.4.3",
-    "sha256": "^0.2.0",
-    "sweetalert": "^2.1.2",
-    "woocommerce-api": "^1.5.0"
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
