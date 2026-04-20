@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Link from 'next/link'
 
 import Logo from '../atoms/Logo'
@@ -10,7 +11,42 @@ import smoothScroll from '../../utils/smoothScroll'
 import { decisions, choices } from '../../utils/designTokens'
 import { links } from '../../utils/constants'
 
+const navItems = [
+  { label: 'Schedule', href: links.SCHEDULE, type: 'link' },
+  { label: 'Speakers', href: links.SPEAKERS, type: 'scroll' },
+  { label: 'Sponsors', href: links.SPONSORS, type: 'scroll' },
+  { label: 'Team', href: links.TEAM, type: 'scroll' },
+  { label: 'Code of Conduct', href: links.CODE_OF_CONDUCT, type: 'external' },
+  { label: 'Contact', href: links.CONTACT_EMAIL, type: 'external' }
+]
+
+const NavLink = ({ item, onClick }) => {
+  if (item.type === 'external') {
+    return (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" onClick={onClick}>
+        <Paragraph size="sm" isInverted>{item.label}</Paragraph>
+      </a>
+    )
+  }
+  if (item.type === 'scroll') {
+    return (
+      <a href={item.href} onClick={e => { smoothScroll(item.href)(e); onClick && onClick() }}>
+        <Paragraph size="sm" isInverted>{item.label}</Paragraph>
+      </a>
+    )
+  }
+  return (
+    <Link href={item.href}>
+      <a onClick={onClick}>
+        <Paragraph size="sm" isInverted>{item.label}</Paragraph>
+      </a>
+    </Link>
+  )
+}
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <nav className="navbar">
       <Container>
@@ -21,76 +57,38 @@ const Navbar = () => {
           <Responsive.Desktop>
             <Logo width={100} />
           </Responsive.Desktop>
-          <ul>
-            <li className="has-navbar-button">
-              <Link href={links.BLOG}>
-                <a className="navbar-button navbar-button--red">
-                  <Paragraph size="sm" color="white">
-                    Blog
-                  </Paragraph>
-                </a>
-              </Link>
-            </li>
-            <li className="on-desktop">
-              <Link href={links.SCHEDULE}>
-                <a>
-                  <Paragraph size="sm" isInverted>
-                    Schedule
-                  </Paragraph>
-                </a>
-              </Link>
-            </li>
-            <li className="on-desktop">
-              <a href={links.SPEAKERS} onClick={smoothScroll(links.SPEAKERS)}>
-                <Paragraph size="sm" isInverted>
-                  Speakers
-                </Paragraph>
-              </a>
-            </li>
-            <li className="on-desktop">
-              <a href={links.SPONSORS} onClick={smoothScroll(links.SPONSORS)}>
-                <Paragraph size="sm" isInverted>
-                  Sponsors
-                </Paragraph>
-              </a>
-            </li>
-            <li className="on-desktop">
-              <a href={links.TEAM} onClick={smoothScroll(links.TEAM)}>
-                <Paragraph size="sm" isInverted>
-                  Team
-                </Paragraph>
-              </a>
-            </li>
-            <li className="on-desktop">
-              <a
-                href={links.CODE_OF_CONDUCT}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Paragraph size="sm" isInverted>
-                  Code of Conduct
-                </Paragraph>
-              </a>
-            </li>
-            <li className="on-desktop">
-              <a
-                href={links.CONTACT_EMAIL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Paragraph size="sm" isInverted>
-                  Contact
-                </Paragraph>
-              </a>
-            </li>
+          <button
+            className="hamburger"
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle navigation"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <ul className="desktop-nav">
+            {navItems.map(item => (
+              <li key={item.label}>
+                <NavLink item={item} />
+              </li>
+            ))}
           </ul>
         </header>
+        {menuOpen && (
+          <ul className="mobile-nav">
+            {navItems.map(item => (
+              <li key={item.label}>
+                <NavLink item={item} onClick={() => setMenuOpen(false)} />
+              </li>
+            ))}
+          </ul>
+        )}
       </Container>
       <style jsx>{`
         header {
           display: flex;
           align-items: center;
-          justify-content: space-around;
+          justify-content: space-between;
         }
 
         .navbar {
@@ -101,76 +99,81 @@ const Navbar = () => {
           padding: 0 25px;
         }
 
-        .navbar-button :global(.paragraph) {
-          font-size: 16px;
-        }
-
-        .navbar ul {
+        .hamburger {
           display: flex;
-          justify-content: center;
-          align-items: center;
-          list-style: none;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 24px;
+          height: 18px;
+          background: none;
+          border: none;
+          cursor: pointer;
           padding: 0;
-          margin: 20px 0;
         }
 
-        .navbar ul li {
-          margin: 0 10px;
-          border-bottom: 3px solid transparent;
+        .hamburger span {
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: ${choices.colors.white};
+          border-radius: 2px;
         }
 
-        .navbar ul li :global(a) {
-          text-decoration: none;
-        }
-
-        .navbar ul li:hover:not(.has-navbar-button) {
-          border-bottom: 3px solid ${choices.colors.white};
-        }
-
-        .navbar-button {
-          background: ${choices.colors.brand.koromiko};
-          padding: ${choices.spacing[1]} ${choices.spacing[6]};
-          border-radius: ${choices.borderRadius.full};
-          text-align: center;
-        }
-
-        .navbar-button--red {
-          background: ${choices.colors.brand.cinnabar};
-        }
-
-        .navbar-button:hover {
-          background: ${choices.colors.brand.chiffon};
-        }
-
-        .navbar-button--red:hover {
-          background: ${choices.colors.brand.mandyspink};
-        }
-
-        .navbar-button > :global(p) {
-          color: ${choices.colors.white};
-        }
-
-        .on-desktop {
+        .desktop-nav {
           display: none;
         }
 
+        .mobile-nav {
+          list-style: none;
+          margin: 10px 0 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .mobile-nav li {
+          padding: ${choices.spacing[2]} 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-nav li:last-child {
+          border-bottom: none;
+        }
+
+        .mobile-nav li :global(a) {
+          text-decoration: none;
+        }
+
         @media (${decisions.queries.screens.desktop}) {
-          header {
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
+          .hamburger {
+            display: none;
           }
 
-          .navbar {
-          }
-
-          .navbar ul {
+          .desktop-nav {
+            display: flex;
+            list-style: none;
             justify-content: flex-end;
+            align-items: center;
+            margin: 20px 0;
             margin-right: 10px;
+            padding: 0;
           }
 
-          .on-desktop {
-            display: inline-block;
+          .desktop-nav li {
+            margin: 0 10px;
+            border-bottom: 3px solid transparent;
+          }
+
+          .desktop-nav li :global(a) {
+            text-decoration: none;
+          }
+
+          .desktop-nav li:hover {
+            border-bottom: 3px solid ${choices.colors.white};
+          }
+
+          .mobile-nav {
+            display: none;
           }
         }
       `}</style>
