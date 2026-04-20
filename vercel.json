@@ -11,9 +11,7 @@
     }
   },
   "env": {
-    "MAILCHIMP_API_KEY": "@cssconfco-mailchimp-api-key",
-    "MAILCHIMP_AUDIENCE_ID": "@cssconfco-mailchimp-audience-id",
-    "WP_CONSUMER_KEY": "@cssconfco-wp-consumer-key",
+"WP_CONSUMER_KEY": "@cssconfco-wp-consumer-key",
     "WP_CONSUMER_SECRET": "@cssconfco-wp-consumer-secret",
     "WORDPRESS_URL": "@cssconfco-wordpress-url",
     "EPAYCO_CLIENT_ID": "@cssconfco-epayco-client-id",
