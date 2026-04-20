@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "CSSConf Colombia Website",
   "main": "pages/index.js",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "lint": "eslint .",
     "dev": "next",
