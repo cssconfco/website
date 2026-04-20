@@ -35,13 +35,6 @@ class CustomDocument extends Document {
 
           <link rel="icon" href="/static/favicons/favicon.ico" />
           <link rel="manifest" href="/static/favicons/site.webmanifest" />
-
-          <script
-            async
-            defer
-            type="text/javascript"
-            src="https://checkout.epayco.co/checkout.js"
-          />
         </Head>
         <body>
           <Main />
