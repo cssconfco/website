@@ -1,3 +1,3 @@
-const keys = ['GOOGLE_ANALYTICS_ID', 'CLIENT_URL', 'API_URL']
+const keys = ['CLIENT_URL', 'API_URL']
 
 module.exports = keys
